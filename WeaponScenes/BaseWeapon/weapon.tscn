@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://WeaponScenes/BaseWeapon/weapon.gd" id="1_7ytmb"]
 [ext_resource type="PackedScene" uid="uid://clh4fylns42ke" path="res://WeaponScenes/BaseWeapon/weapon_stats_component.tscn" id="2_6k4xr"]
 [ext_resource type="Script" path="res://WeaponScenes/BaseWeapon/TriggerWeaponEffects.gd" id="3_v4xmw"]
-[ext_resource type="PackedScene" uid="uid://ctvs7pcmrcthn" path="res://weapon_effect.tscn" id="4_sy5ns"]
+[ext_resource type="PackedScene" uid="uid://ctvs7pcmrcthn" path="res://WeaponScenes/BaseEffect/weapon_effect.tscn" id="4_sy5ns"]
 
-[node name="Weapon" type="Node2D"]
+[node name="Weapon" type="Node2D" groups=["Enemy"]]
 script = ExtResource("1_7ytmb")
 
 [node name="WeaponStats" parent="." instance=ExtResource("2_6k4xr")]
