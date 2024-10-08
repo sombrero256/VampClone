@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv2lth071a2o2"]
+[gd_scene load_steps=4 format=3 uid="uid://bv2lth071a2o2"]
 
 [ext_resource type="PackedScene" uid="uid://p7n34e1115r3" path="res://movement_component.tscn" id="1_0rly8"]
 [ext_resource type="PackedScene" uid="uid://qwywgspyv7bu" path="res://stats_component.tscn" id="1_iqsip"]
+[ext_resource type="PackedScene" uid="uid://dr42wcypjhkji" path="res://WeaponScenes/BaseWeapon/weapon.tscn" id="1_oyuyn"]
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="RigidBody2D" groups=["Player"]]
 gravity_scale = 0.0
+
+[node name="Weapon" parent="." instance=ExtResource("1_oyuyn")]
 
 [node name="Stats" parent="." instance=ExtResource("1_iqsip")]
 
