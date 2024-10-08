@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://crlcgy1tsofs0"]
+
+[ext_resource type="PackedScene" uid="uid://c1hyusqyue7r2" path="res://EnemyScenes/EnemyMovementComponent.tscn" id="1_v6epu"]
+[ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="2_hy0ws"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3j0n5"]
+radius = 20.3961
+
+[node name="Enemy" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_3j0n5")
+
+[node name="EnemyMovementComponent" parent="." instance=ExtResource("1_v6epu")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+
+[node name="HurtBox" parent="." instance=ExtResource("2_hy0ws")]
+position = Vector2(20, 20)
+scale = Vector2(2.425, 2.425)

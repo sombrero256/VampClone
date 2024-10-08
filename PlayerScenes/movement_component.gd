@@ -27,5 +27,6 @@ func _physics_process(delta: float) -> void:
 	# normalize direction
 	dir = dir.normalized()
 	
-	if parent is RigidBody2D:
-		parent.move_and_collide(dir * player_stats.Speed)
+	if parent is CharacterBody2D:
+		parent.velocity = dir * player_stats.Speed
+		parent.move_and_slide()
