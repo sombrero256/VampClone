@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr42wcypjhkji"]
+
+[ext_resource type="Script" path="res://WeaponScenes/BaseWeapon/weapon.gd" id="1_7ytmb"]
+[ext_resource type="PackedScene" uid="uid://clh4fylns42ke" path="res://WeaponScenes/BaseWeapon/weapon_stats_component.tscn" id="2_6k4xr"]
+[ext_resource type="Script" path="res://WeaponScenes/BaseWeapon/TriggerWeaponEffects.gd" id="3_v4xmw"]
+[ext_resource type="PackedScene" uid="uid://ctvs7pcmrcthn" path="res://weapon_effect.tscn" id="4_sy5ns"]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_7ytmb")
+
+[node name="WeaponStats" parent="." instance=ExtResource("2_6k4xr")]
+
+[node name="Cooldown" type="Timer" parent="."]
+script = ExtResource("3_v4xmw")
+
+[node name="WeaponEffect" parent="Cooldown" instance=ExtResource("4_sy5ns")]
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Cooldown" to="Cooldown" method="_on_timeout"]
