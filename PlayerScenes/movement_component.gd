@@ -29,4 +29,13 @@ func _physics_process(delta: float) -> void:
 	
 	if parent is CharacterBody2D:
 		parent.velocity = dir * player_stats.Speed
+		for i in parent.get_slide_collision_count():
+			var col = parent.get_slide_collision(i) as KinematicCollision2D
+			var other = col.get_collider()
+			if other is Enemy:
+				other = other as Enemy
+				#other.position += parent.velocity
+				other.apply_central_impulse(parent.velocity * delta)
 		parent.move_and_slide()
+		
+			
