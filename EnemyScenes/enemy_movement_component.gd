@@ -11,8 +11,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var dir = parent.position.direction_to(player.position)
 	parent.velocity = dir * 50
-	pass
 
 func _physics_process(delta: float) -> void:
 	parent.move_and_slide()
-	pass
