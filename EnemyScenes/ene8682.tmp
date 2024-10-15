@@ -27,14 +27,3 @@ position = Vector2(20, 20)
 scale = Vector2(2.425, 2.425)
 
 [node name="EnemyStats" parent="." instance=ExtResource("3_ri0bn")]
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_top = -32.0
-offset_right = 4.0
-offset_bottom = -5.0
-scale = Vector2(0.989018, 0.993286)
-step = 0.1
-value = 99.0
-fill_mode = 1
-
-[connection signal="ready" from="ProgressBar" to="." method="_on_progress_bar_ready"]

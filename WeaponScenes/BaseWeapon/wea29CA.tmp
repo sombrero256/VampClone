@@ -7,7 +7,6 @@ script/source = "extends Sprite2D
 
 var Weapon_Stats: WeaponStats
 var enemies: Array
-var damage = 30
 # if we want to get really advanced we could add an export list here
 # which takes in the weapon effects as a list of scenes(?) and adds them as children
 # of the cooldown component
@@ -29,19 +28,18 @@ func _physics_process(delta) -> void:
 	#radius += radius_speed * deltadwwd
 	#var angular_speed = linear_speed / radius
 	#angle += angular_speed * delta
-	move_local_x(3+delta)
-	move_local_y(3+delta)
+	move_local_x(1+delta)
+	move_local_y(1+delta)
+
+
 
 func _on_timer_timeout() -> void:
 	queue_free()
 
 func _on_node_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Enemy\"):
-		body.process_hit(damage)
-
-func _on_node_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group(\"Enemy\"):
-		body.reset()
+		print(\"enemy_hit\")
+	pass # Replace with function body.
 "
 
 [node name="Weapon" type="Sprite2D" groups=["Enemy"]]
@@ -62,4 +60,3 @@ polygon = PackedVector2Array(-2, -9, 0, -6, 3, -9, 7, -11, 11, -10, 12, -6, 12, 
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Node2D" to="." method="_on_node_2d_body_entered"]
-[connection signal="body_exited" from="Node2D" to="." method="_on_node_2d_body_exited"]

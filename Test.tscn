@@ -6,9 +6,10 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_rwsgl")]
+position = Vector2(18, 55)
 
-[node name="Enemy" parent="." instance=ExtResource("2_4ayy0")]
+[node name="Enemy" parent="." groups=["Enemy"] instance=ExtResource("2_4ayy0")]
 position = Vector2(-6, 74)
 
-[node name="Enemy2" parent="." instance=ExtResource("2_4ayy0")]
+[node name="Enemy2" parent="." groups=["Enemy"] instance=ExtResource("2_4ayy0")]
 position = Vector2(47, 40)

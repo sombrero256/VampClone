@@ -1,5 +1,7 @@
 extends Timer
 
+@onready var heart = preload("res://WeaponScenes/BaseWeapon/weapon.tscn")
+var num_hearts = 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,8 +14,9 @@ func _process(delta: float) -> void:
 
 
 func _on_timeout() -> void:
-	var children = get_children()
-	for child in children:
-		if child.has_method('fire'):
-			child.fire()
+	for i in num_hearts:
+		var heart_inst = heart.instantiate() as Node2D
+		heart_inst.global_position = get_parent().global_position
+		heart_inst.set_start_offset(i)
+		get_node("/root").add_child(heart_inst)
 	pass # Replace with function body.
