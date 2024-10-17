@@ -1,6 +1,6 @@
 extends Timer
 
-@onready var star_ = preload("res://WeaponScenes/StarBomb/star_fire.tscn")
+@onready var boomerang_ = preload("res://WeaponScenes/Boomerang/Boomerang.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +13,6 @@ func _process(delta: float) -> void:
 
 
 func _on_timeout() -> void:
-	var star_inst = star_.instantiate() as Node2D
-	star_inst.global_position = get_parent().global_position
-	get_node("/root").add_child(star_inst)
+	var b_inst = boomerang_.instantiate() as Node2D
+	b_inst.global_position = get_parent().global_position
+	get_node("/root").add_child(b_inst)

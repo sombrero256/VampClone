@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv2lth071a2o2"]
+[gd_scene load_steps=7 format=3 uid="uid://bv2lth071a2o2"]
 
-[ext_resource type="PackedScene" uid="uid://p7n34e1115r3" path="res://PlayerScenes/movement_component.tscn" id="1_0rly8"]
 [ext_resource type="PackedScene" uid="uid://qwywgspyv7bu" path="res://PlayerScenes/player_stats_component.tscn" id="1_iqsip"]
 [ext_resource type="Script" path="res://PlayerScenes/player.gd" id="1_iyv2b"]
 [ext_resource type="Script" path="res://WeaponScenes/BaseWeapon/TriggerWeaponEffects.gd" id="4_v25xb"]
+[ext_resource type="Script" path="res://PlayerScenes/boomerang_cd.gd" id="5_enjst"]
+[ext_resource type="Script" path="res://PlayerScenes/heart_cd.gd" id="5_s73jc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ti3m6"]
 radius = 19.2354
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_iyv2b")
 
 [node name="Stats" parent="." instance=ExtResource("1_iqsip")]
@@ -20,14 +23,25 @@ offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
 
-[node name="MovementComponent" parent="." instance=ExtResource("1_0rly8")]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ti3m6")
 one_way_collision_margin = 0.0
 
-[node name="Cooldown" type="Timer" parent="."]
+[node name="star_cd" type="Timer" parent="."]
+wait_time = 2.5
 autostart = true
 script = ExtResource("4_v25xb")
 
-[connection signal="timeout" from="Cooldown" to="Cooldown" method="_on_timeout"]
+[node name="heart_cd" type="Timer" parent="."]
+autostart = true
+script = ExtResource("5_s73jc")
+
+[node name="boomerang_cd" type="Timer" parent="."]
+wait_time = 2.277
+one_shot = true
+autostart = true
+script = ExtResource("5_enjst")
+
+[connection signal="timeout" from="star_cd" to="star_cd" method="_on_timeout"]
+[connection signal="timeout" from="heart_cd" to="heart_cd" method="_on_timeout"]
+[connection signal="timeout" from="boomerang_cd" to="boomerang_cd" method="_on_timeout"]

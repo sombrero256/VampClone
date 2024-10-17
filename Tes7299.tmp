@@ -7,26 +7,10 @@
 
 [node name="Player" parent="." instance=ExtResource("1_rwsgl")]
 unique_name_in_owner = true
-position = Vector2(456, 348)
+position = Vector2(18, 55)
 
 [node name="Enemy" parent="." groups=["Enemy"] instance=ExtResource("2_4ayy0")]
 position = Vector2(-6, 74)
 
 [node name="Enemy2" parent="." groups=["Enemy"] instance=ExtResource("2_4ayy0")]
 position = Vector2(47, 40)
-
-[node name="Enemy3" parent="." groups=["Enemy"] instance=ExtResource("2_4ayy0")]
-position = Vector2(499, 57)
-
-[node name="Enemy4" parent="." groups=["Enemy"] instance=ExtResource("2_4ayy0")]
-position = Vector2(270, 166)
-
-[node name="Enemy5" parent="." groups=["Enemy"] instance=ExtResource("2_4ayy0")]
-position = Vector2(92, 248)
-
-[node name="Enemy6" parent="." groups=["Enemy"] instance=ExtResource("2_4ayy0")]
-position = Vector2(190, 47)
-
-[node name="Enemy7" parent="." groups=["Enemy"] instance=ExtResource("2_4ayy0")]
-position = Vector2(130, 134)
-scale = Vector2(1, 1.0133)

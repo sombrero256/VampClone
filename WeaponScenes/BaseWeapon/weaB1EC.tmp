@@ -6,7 +6,7 @@
 script/source = "extends Sprite2D
 
 var Weapon_Stats: WeaponStats
-# TODO: draw from weapon sts
+var enemies: Array
 var damage = 30
 # if we want to get really advanced we could add an export list here
 # which takes in the weapon effects as a list of scenes(?) and adds them as children
@@ -23,11 +23,11 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func set_start_offset(offset_by) -> void:
-	rotate(deg_to_rad(offset_by))
+	rotate(offset_by)
 
 func _physics_process(delta) -> void:
 	#y = mx + b
-	move_local_x(3)
+	move_local_x(delta)
 	move_local_y(3)
 
 func _on_timer_timeout() -> void:
@@ -53,11 +53,11 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Node2D" type="Area2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D"]
 polygon = PackedVector2Array(-2, -9, 0, -6, 3, -9, 7, -11, 11, -10, 12, -6, 12, -1, 0, 11, -12, -2, -12, -7, -8, -11, -3, -10)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_node_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_node_2d_body_exited"]
+[connection signal="body_entered" from="Node2D" to="." method="_on_node_2d_body_entered"]
+[connection signal="body_exited" from="Node2D" to="." method="_on_node_2d_body_exited"]
