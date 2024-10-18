@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dox0872nky3aj"]
+
+[ext_resource type="Texture2D" uid="uid://b3khslcvf35hm" path="res://UI/HealthBar/health.png" id="1_owu3r"]
+[ext_resource type="Script" path="res://UI/HealthBar/health_bar_display.gd" id="2_jg8no"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_owu3r")
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/TextureRect"]
+layout_mode = 2
+anchor_left = 0.109
+anchor_top = 0.203
+anchor_right = 0.922
+anchor_bottom = 0.203
+offset_left = 0.0239997
+offset_top = -2.496
+offset_right = -0.00800323
+offset_bottom = 2.504
+color = Color(1, 0, 0, 1)
+script = ExtResource("2_jg8no")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qwywgspyv7bu" path="res://PlayerScenes/player_stats_component.tscn" id="1_iqsip"]
 [ext_resource type="Script" path="res://PlayerScenes/player.gd" id="1_iyv2b"]
-[ext_resource type="Script" path="res://WeaponScenes/BaseWeapon/TriggerWeaponEffects.gd" id="4_v25xb"]
+[ext_resource type="Script" path="res://Tileset/WeaponScenes/BaseWeapon/TriggerWeaponEffects.gd" id="4_v25xb"]
 [ext_resource type="Script" path="res://PlayerScenes/boomerang_cd.gd" id="5_enjst"]
 [ext_resource type="Script" path="res://PlayerScenes/heart_cd.gd" id="5_s73jc"]
 
@@ -10,7 +10,7 @@
 radius = 19.2354
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_layer = 0
+collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_iyv2b")
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm0pon12iyhi2"
-path="res://.godot/imported/TileSet.png-b324c6ba96f2806350eadaa131a8d4ec.ctex"
+uid="uid://dkiu2k58ok2mn"
+path="res://.godot/imported/LG-NOTABLE-Main Gate_A_Closed.png-4b41db5eb1704b4d5e87fe7e8bc12430.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StartupScreen/TileSet.png"
-dest_files=["res://.godot/imported/TileSet.png-b324c6ba96f2806350eadaa131a8d4ec.ctex"]
+source_file="res://Tileset/structures/LG-NOTABLE-Main Gate_A_Closed.png"
+dest_files=["res://.godot/imported/LG-NOTABLE-Main Gate_A_Closed.png-4b41db5eb1704b4d5e87fe7e8bc12430.ctex"]
 
 [params]
 
