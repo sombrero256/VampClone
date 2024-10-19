@@ -19,7 +19,6 @@ frame_1/duration = 0.2
 amount = 1
 process_material = ExtResource("1_7cak5")
 texture = ExtResource("1_mcot2")
-lifetime = 0.5
 explosiveness = 1.0
 script = ExtResource("3_igq3p")
 
