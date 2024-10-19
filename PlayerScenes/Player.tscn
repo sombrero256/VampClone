@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv2lth071a2o2"]
+[gd_scene load_steps=8 format=3 uid="uid://bv2lth071a2o2"]
 
 [ext_resource type="PackedScene" uid="uid://qwywgspyv7bu" path="res://PlayerScenes/player_stats_component.tscn" id="1_iqsip"]
 [ext_resource type="Script" path="res://PlayerScenes/player.gd" id="1_iyv2b"]
-[ext_resource type="Script" path="res://Tileset/WeaponScenes/BaseWeapon/TriggerWeaponEffects.gd" id="4_v25xb"]
+[ext_resource type="Script" path="res://WeaponScenes/BaseWeapon/TriggerWeaponEffects.gd" id="4_v25xb"]
 [ext_resource type="Script" path="res://PlayerScenes/boomerang_cd.gd" id="5_enjst"]
 [ext_resource type="Script" path="res://PlayerScenes/heart_cd.gd" id="5_s73jc"]
+[ext_resource type="PackedScene" uid="uid://dox0872nky3aj" path="res://UI/HealthBar/HealthBar.tscn" id="6_ecdu5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ti3m6"]
 radius = 19.2354
@@ -41,6 +42,14 @@ wait_time = 2.277
 one_shot = true
 autostart = true
 script = ExtResource("5_enjst")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HealthBar" parent="." instance=ExtResource("6_ecdu5")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
 
 [connection signal="timeout" from="star_cd" to="star_cd" method="_on_timeout"]
 [connection signal="timeout" from="heart_cd" to="heart_cd" method="_on_timeout"]

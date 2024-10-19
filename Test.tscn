@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bv2lth071a2o2" path="res://PlayerScenes/Player.tscn" id="1_rwsgl"]
 [ext_resource type="PackedScene" uid="uid://crlcgy1tsofs0" path="res://EnemyScenes/enemy.tscn" id="2_4ayy0"]
-[ext_resource type="PackedScene" uid="uid://dox0872nky3aj" path="res://UI/HealthBar/HealthBar.tscn" id="3_m00sd"]
+[ext_resource type="PackedScene" uid="uid://dwwyy88j4wt6l" path="res://World.tscn" id="4_hb6vw"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -32,4 +32,6 @@ position = Vector2(190, 47)
 position = Vector2(130, 134)
 scale = Vector2(1, 1.0133)
 
-[node name="HealthBar" parent="." instance=ExtResource("3_m00sd")]
+[node name="Node2D" parent="." instance=ExtResource("4_hb6vw")]
+z_index = -4096
+position = Vector2(461, 338)
