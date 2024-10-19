@@ -34,4 +34,4 @@ scale = Vector2(1, 1.0133)
 
 [node name="Node2D" parent="." instance=ExtResource("4_hb6vw")]
 z_index = -4096
-position = Vector2(461, 338)
+position = Vector2(459, 790)
