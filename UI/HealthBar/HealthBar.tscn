@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dox0872nky3aj"]
+[gd_scene load_steps=5 format=3 uid="uid://dox0872nky3aj"]
 
 [ext_resource type="Texture2D" uid="uid://b3khslcvf35hm" path="res://UI/HealthBar/health.png" id="1_owu3r"]
+[ext_resource type="Shader" path="res://UI/HealthBar/HealthBar.gdshader" id="2_8v7kl"]
 [ext_resource type="Script" path="res://UI/HealthBar/health_bar_display.gd" id="2_jg8no"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1wadk"]
+shader = ExtResource("2_8v7kl")
+shader_parameter/first_color = Color(0.247059, 0.027451, 0.74902, 1)
+shader_parameter/second_color = Color(0.603922, 0.180392, 0.870588, 1)
+shader_parameter/position = 0.0
+shader_parameter/size = 1.0
+shader_parameter/angle = 0.0
 
 [node name="HealthBar" type="Control"]
 layout_mode = 3
@@ -22,6 +31,7 @@ layout_mode = 2
 texture = ExtResource("1_owu3r")
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/TextureRect"]
+material = SubResource("ShaderMaterial_1wadk")
 layout_mode = 2
 anchor_left = 0.109
 anchor_top = 0.203

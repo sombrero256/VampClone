@@ -1,0 +1,17 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://dcv7iu7ea7207"]
+
+[resource]
+particle_flag_disable_z = true
+direction = Vector3(1, -1, 0)
+spread = 75.336
+initial_velocity_min = 70.43
+initial_velocity_max = 112.68
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 2.0
+turbulence_noise_strength = 12.16
+turbulence_noise_speed = Vector3(0, 1.55, 0)
+sub_emitter_mode = 1
+sub_emitter_frequency = 4.0
