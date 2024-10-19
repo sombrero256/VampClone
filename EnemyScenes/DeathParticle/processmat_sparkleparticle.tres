@@ -1,0 +1,19 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://bcv7a5iwoyr1b"]
+
+[resource]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+direction = Vector3(1, -1, 0)
+spread = 75.336
+initial_velocity_min = 70.43
+initial_velocity_max = 112.68
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, 98, 0)
+scale_min = 4.0
+scale_max = 4.0
+scale_over_velocity_min = 1.0
+scale_over_velocity_max = 1.0
+anim_offset_max = 1.0
+turbulence_noise_strength = 12.16
+turbulence_noise_speed = Vector3(0, 1.55, 0)
