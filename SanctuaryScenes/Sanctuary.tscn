@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp3hc0a5eqsii"]
+
+[ext_resource type="PackedScene" uid="uid://ka6fhdls05bm" path="res://SanctuaryScenes/JustAGuy.tscn" id="1_gguxs"]
+[ext_resource type="PackedScene" uid="uid://dpyu8e5ajbetj" path="res://SanctuaryScenes/Shopkeeper.tscn" id="2_ov6r2"]
+
+[node name="Sanctuary" type="Node2D"]
+
+[node name="JustAGuy" parent="." instance=ExtResource("1_gguxs")]
+
+[node name="Shopkeeper" parent="." instance=ExtResource("2_ov6r2")]
+position = Vector2(-114, -38)
+
+[node name="Shopkeeper2" parent="." instance=ExtResource("2_ov6r2")]
+position = Vector2(266, 100)
