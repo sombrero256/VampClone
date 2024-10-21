@@ -1,6 +1,6 @@
 extends Node2D
 
-var damage_ = 10
+var damage_ = 20
 var is_flashing_ = false
 var enemies_hit_: Dictionary
 

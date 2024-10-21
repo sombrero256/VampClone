@@ -15,4 +15,4 @@ func _process(delta: float) -> void:
 func _on_timeout() -> void:
 	var star_inst = star_.instantiate() as Node2D
 	star_inst.global_position = get_parent().global_position
-	get_node("/root/Main/%GameWorld").add_child(star_inst)
+	get_node("/root").add_child(star_inst)

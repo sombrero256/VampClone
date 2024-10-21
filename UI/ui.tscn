@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dn21h3lg7j1pc"]
+[gd_scene load_steps=9 format=3 uid="uid://dcl4qjrum74jl"]
 
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_5dd5d"]
 [ext_resource type="Script" path="res://UI/night_end.gd" id="2_46sdn"]
@@ -60,6 +60,7 @@ theme = SubResource("Theme_ebrej")
 text = "GO TO SANCTUARY"
 
 [node name="GoToSanctuary2" type="TextureButton" parent="Node2D/NightEnd"]
+layout_mode = 0
 offset_left = 394.0
 offset_top = 422.0
 offset_right = 458.0

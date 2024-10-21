@@ -7,7 +7,7 @@ script/source = "extends Sprite2D
 
 var Weapon_Stats: WeaponStats
 # TODO: draw from weapon sts
-var damage = 30
+var damage = 60
 # if we want to get really advanced we could add an export list here
 # which takes in the weapon effects as a list of scenes(?) and adds them as children
 # of the cooldown component

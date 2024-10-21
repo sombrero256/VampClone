@@ -10,7 +10,7 @@ const Direction = preload("res://PlayerScenes/player.gd").Direction
 const CLOSE_ENOUGH = 5.0
 const DISTANCE = 400
 
-var damage_ = 50
+var damage_ = 100
 var dest_: Vector2
 var status_ = GOING 
 var direction_: Direction
