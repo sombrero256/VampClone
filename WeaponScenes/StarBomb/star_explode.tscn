@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvvxoc2p05u7p"]
 
-[ext_resource type="Texture2D" uid="uid://dubx0qvc5g5p1" path="res://star_xplode.png" id="1_c8ar7"]
+[ext_resource type="Texture2D" uid="uid://djp2sovpkmmeo" path="res://star_xplode.png" id="1_c8ar7"]
 [ext_resource type="Script" path="res://WeaponScenes/StarBomb/boom.gd" id="1_slnld"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vxlhs"]
@@ -22,11 +22,11 @@ position = Vector2(1, -1)
 scale = Vector2(5.88466, 5.88466)
 shape = SubResource("CircleShape2D_vxlhs")
 
-[node name="Timer" type="Timer" parent="boom"]
-wait_time = 2.5
+[node name="flames" type="Timer" parent="boom"]
+wait_time = 1.75
 one_shot = true
 autostart = true
 
 [connection signal="body_entered" from="boom" to="boom" method="_on_body_entered"]
 [connection signal="body_exited" from="boom" to="boom" method="_on_body_exited"]
-[connection signal="timeout" from="boom/Timer" to="boom" method="_on_timer_timeout"]
+[connection signal="timeout" from="boom/flames" to="boom" method="_on_timer_timeout"]

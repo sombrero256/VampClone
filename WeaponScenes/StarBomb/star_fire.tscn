@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://chgwyjiq4gmnq"]
 
-[ext_resource type="Texture2D" uid="uid://p7p78y4nerr4" path="res://star.png" id="1_ka4v0"]
+[ext_resource type="Texture2D" uid="uid://4l3c3vtui01j" path="res://star.png" id="1_ka4v0"]
 [ext_resource type="Script" path="res://WeaponScenes/StarBomb/star.gd" id="3_0f6vt"]
 
 [node name="StarBomb" type="Node2D" groups=["Enemy"]]

@@ -14,7 +14,6 @@ func process_hit(damages) -> void:
 		_inst.global_position = position
 		get_node("/root").add_child(_inst)
 		queue_free()
-	#print(health)
 
 func reset() -> void:
 	rect.color = "fc0000"

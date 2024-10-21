@@ -22,4 +22,4 @@ func _on_timeout() -> void:
 		var heart_inst = heart_.instantiate() as Node2D
 		heart_inst.global_position = get_parent().global_position
 		heart_inst.set_start_offset(degrees * i)
-		get_node("/root").add_child(heart_inst)
+		get_node("/root/Main/%GameWorld").add_child(heart_inst)

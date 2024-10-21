@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn21h3lg7j1pc"]
+
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_f74xj"]
+[ext_resource type="Texture2D" uid="uid://clt5ere2jv3y0" path="res://progressbar - Copy.png" id="2_dtwqu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xu3x"]
+font_size = 24
+
+[node name="Ui" type="Node2D"]
+
+[node name="Time" type="CanvasLayer" parent="."]
+script = ExtResource("1_f74xj")
+
+[node name="TimeLabel" type="Label" parent="Time"]
+unique_name_in_owner = true
+offset_left = 129.0
+offset_top = -6.0
+offset_right = 266.0
+offset_bottom = 28.0
+text = "12:00
+"
+label_settings = SubResource("LabelSettings_5xu3x")
+metadata/_edit_use_anchors_ = true
+
+[node name="TimeBorder" type="Sprite2D" parent="Time"]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(163, 34)
+texture = ExtResource("2_dtwqu")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn21h3lg7j1pc"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_f74xj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xu3x"]
+font_size = 24
+
+[node name="Ui" type="CanvasLayer"]
+script = ExtResource("1_f74xj")
+
+[node name="TimeLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 570.0
+offset_top = 9.0
+offset_right = 707.0
+offset_bottom = 43.0
+text = "Testtesttest"
+label_settings = SubResource("LabelSettings_5xu3x")

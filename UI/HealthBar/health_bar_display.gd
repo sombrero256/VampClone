@@ -11,6 +11,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(stats.Cur_Health)
 	size.x = starting_size * (stats.Cur_Health / stats.Max_Health) 
 	pass

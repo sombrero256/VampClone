@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn21h3lg7j1pc"]
+
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_f74xj"]
+[ext_resource type="Texture2D" uid="uid://b6sl4ny0wnla1" path="res://progressbar.png" id="2_r85bi"]
+[ext_resource type="Texture2D" uid="uid://ch7gkuhusqldd" path="res://timer.png" id="3_6d3t1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xu3x"]
+font_size = 24
+
+[node name="Ui" type="Node2D"]
+script = ExtResource("1_f74xj")
+
+[node name="Time" type="CanvasLayer" parent="."]
+
+[node name="TimeLabel" type="Label" parent="Time"]
+unique_name_in_owner = true
+offset_left = 974.0
+offset_top = 69.0
+offset_right = 1111.0
+offset_bottom = 140.0
+rotation = 0.00126796
+text = "12:00 AM
+
+"
+label_settings = SubResource("LabelSettings_5xu3x")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TimeBorder" type="Sprite2D" parent="Time"]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(1040, 33)
+texture = ExtResource("2_r85bi")
+
+[node name="ColorRect" type="ColorRect" parent="Time"]
+clip_children = 1
+offset_left = 922.0
+offset_top = 2.0
+offset_right = 1147.0
+offset_bottom = 62.0
+
+[node name="Dial" type="Sprite2D" parent="Time/ColorRect"]
+unique_name_in_owner = true
+position = Vector2(117, 91)
+texture = ExtResource("3_6d3t1")

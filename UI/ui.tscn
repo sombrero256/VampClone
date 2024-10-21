@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://dn21h3lg7j1pc"]
+
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_5dd5d"]
+[ext_resource type="Script" path="res://UI/night_end.gd" id="2_46sdn"]
+[ext_resource type="Texture2D" uid="uid://b6sl4ny0wnla1" path="res://progressbar.png" id="2_d8xui"]
+[ext_resource type="Texture2D" uid="uid://ch7gkuhusqldd" path="res://timer.png" id="3_nn23d"]
+[ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="4_kt6el"]
+[ext_resource type="FontFile" uid="uid://cfs4cf06yomkj" path="res://Font/QuinqueFive.otf" id="5_4myye"]
+
+[sub_resource type="Theme" id="Theme_ebrej"]
+default_font = ExtResource("5_4myye")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xu3x"]
+font_size = 24
+
+[node name="Ui" type="Node2D"]
+script = ExtResource("1_5dd5d")
+
+[node name="Node2D" type="CanvasLayer" parent="."]
+
+[node name="NightEnd" type="Panel" parent="Node2D"]
+unique_name_in_owner = true
+process_mode = 3
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("2_46sdn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/NightEnd"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -491.0
+offset_top = -141.0
+offset_right = 309.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.43432, 7.30131)
+theme = SubResource("Theme_ebrej")
+text = "NIGHT SURVIVED!"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Node2D/NightEnd"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = 115.0
+offset_right = 110.0
+offset_bottom = 371.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ebrej")
+text = "GO TO SANCTUARY"
+
+[node name="GoToSanctuary2" type="TextureButton" parent="Node2D/NightEnd"]
+offset_left = 394.0
+offset_top = 422.0
+offset_right = 458.0
+offset_bottom = 438.0
+scale = Vector2(4.88, 4.88)
+texture_normal = ExtResource("4_kt6el")
+
+[node name="Time" type="CanvasLayer" parent="."]
+
+[node name="TimeLabel" type="Label" parent="Time"]
+unique_name_in_owner = true
+offset_left = 975.0
+offset_top = 62.0
+offset_right = 1112.0
+offset_bottom = 133.0
+rotation = 0.00126796
+text = "12:00 AM
+
+"
+label_settings = SubResource("LabelSettings_5xu3x")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TimeBorder" type="Sprite2D" parent="Time"]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(1040, 33)
+texture = ExtResource("2_d8xui")
+
+[node name="ColorRect" type="ColorRect" parent="Time"]
+clip_children = 1
+offset_left = 922.0
+offset_top = 2.0
+offset_right = 1147.0
+offset_bottom = 62.0
+
+[node name="Dial" type="Sprite2D" parent="Time/ColorRect"]
+unique_name_in_owner = true
+position = Vector2(117, 91)
+texture = ExtResource("3_nn23d")
+
+[connection signal="pressed" from="Node2D/NightEnd/GoToSanctuary2" to="Node2D/NightEnd" method="_on_go_to_sanctuary_pressed"]

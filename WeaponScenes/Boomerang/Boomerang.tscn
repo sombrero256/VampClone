@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://n88ukktm8uk8"]
 
 [ext_resource type="Script" path="res://WeaponScenes/Boomerang/boomerang.gd" id="1_1hu3v"]
-[ext_resource type="Texture2D" uid="uid://bnmgnx848ci50" path="res://boomerang.png" id="1_4wavx"]
+[ext_resource type="Texture2D" uid="uid://bilmnhgtkvp5a" path="res://boomerang.png" id="1_4wavx"]
 
 [node name="Boomerang" type="CharacterBody2D"]
 script = ExtResource("1_1hu3v")

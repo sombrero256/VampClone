@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=4 uid="uid://bbty15evbgpnp"]
 
-[ext_resource type="Texture2D" uid="uid://ctnwxdxkiu6g3" path="res://ground_tiles.png" id="1_i0deb"]
-[ext_resource type="Texture2D" uid="uid://bo8emb76yi41v" path="res://path_tiles.png" id="2_v56j2"]
-[ext_resource type="Texture2D" uid="uid://b0k35ookd0vdf" path="res://building_tiles.png" id="3_usyen"]
+[ext_resource type="Texture2D" uid="uid://84n6uplvkryl" path="res://ground_tiles.png" id="1_i0deb"]
+[ext_resource type="Texture2D" uid="uid://fytgj2balqfj" path="res://path_tiles.png" id="2_v56j2"]
+[ext_resource type="Texture2D" uid="uid://d1dpfca355yuw" path="res://building_tiles.png" id="3_usyen"]
 [ext_resource type="Script" path="res://StartupScreen/startup_scroll.gd" id="4_m187g"]
 [ext_resource type="Script" path="res://StartupScreen/destroy_on_press.gd" id="5_dtpj6"]
 [ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="5_j0fok"]
