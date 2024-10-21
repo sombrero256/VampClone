@@ -4,7 +4,7 @@ const MINUTES_PER_DAY = 1440
 const MINUTES_PER_HOUR = 60
 const END_MIN = 7 * MINUTES_PER_HOUR # 7am
 const INGAME_TO_REAL_MINUTE_DURATION = (2 * PI) / MINUTES_PER_DAY
-const INGAME_SPEED = 10.0 # Normal speed 10.0
+const INGAME_SPEED = .84 # Normal speed .84
 
 signal night_ends
 
