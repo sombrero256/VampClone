@@ -41,6 +41,8 @@ func _pretty_close() -> bool:
 	return dist < CLOSE_ENOUGH
 
 func _physics_process(delta: float) -> void:
+	if not is_instance_valid(player):
+		return
 	# Add the gravity.
 	#if direction_ == Direction.LEFT:
 		#velocity.x -= max(x_velocity_, 0)
