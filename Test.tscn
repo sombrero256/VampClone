@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqcaqfagbpmwk"]
+[gd_scene load_steps=7 format=3 uid="uid://bqcaqfagbpmwk"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_fitpt"]
 [ext_resource type="PackedScene" uid="uid://bv2lth071a2o2" path="res://PlayerScenes/Player.tscn" id="1_rwsgl"]
 [ext_resource type="PackedScene" uid="uid://bwuxingjox15e" path="res://World.tscn" id="4_hb6vw"]
 [ext_resource type="PackedScene" uid="uid://dcl4qjrum74jl" path="res://UI/ui.tscn" id="5_6geqr"]
+[ext_resource type="AudioStream" uid="uid://y4y1c1k271o8" path="res://level-theme.wav" id="5_lvr5l"]
 
 [sub_resource type="Curve2D" id="Curve2D_qcrng"]
 _data = {
@@ -35,6 +36,11 @@ position = Vector2(459, 790)
 unique_name_in_owner = true
 wait_time = 2.5
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lvr5l")
+autoplay = true
+stream_paused = true
 
 [connection signal="time_changed" from="Ui" to="." method="_on_ui_time_changed"]
 [connection signal="timeout" from="EnemySpawner" to="." method="_on_timer_timeout"]
