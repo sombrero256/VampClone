@@ -10,7 +10,7 @@ const Direction = preload("res://PlayerScenes/player.gd").Direction
 const CLOSE_ENOUGH = 5.0
 const DISTANCE = 400
 
-var damage_ = 100
+var damage_ = 50
 var dest_: Vector2
 var status_ = GOING 
 var direction_: Direction
@@ -62,9 +62,9 @@ func _process(delta: float) -> void:
 	sprite.rotate(deg_to_rad(3))
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Enemy"):
+	if body is Enemy:
 		body.process_hit(damage_)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Enemy"):
+	if body is Enemy:
 		body.reset()

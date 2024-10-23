@@ -1,16 +1,16 @@
 extends Node2D
 
-var damage_ = 20
+var damage_ = 10
 var is_flashing_ = false
 var enemies_hit_: Dictionary
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Enemy"):
+	if body is Enemy:
 		body.process_hit(damage_)
 		enemies_hit_[body.name] = body
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Enemy"):
+	if body is Enemy:
 		body.reset()
 		enemies_hit_.erase(body.name)
 

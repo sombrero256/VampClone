@@ -22,12 +22,12 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body is Player:
 		touching_player = true
 	pass # Replace with function body.
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body is Player:
 		touching_player = false
 	pass # Replace with function body.

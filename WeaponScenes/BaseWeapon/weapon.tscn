@@ -7,7 +7,7 @@ script/source = "extends Sprite2D
 
 var Weapon_Stats: WeaponStats
 # TODO: draw from weapon sts
-var damage = 60
+var damage = 30
 # if we want to get really advanced we could add an export list here
 # which takes in the weapon effects as a list of scenes(?) and adds them as children
 # of the cooldown component
@@ -34,11 +34,11 @@ func _on_timer_timeout() -> void:
 	queue_free()
 
 func _on_node_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group(\"Enemy\"):
+	if body is Enemy:
 		body.process_hit(damage)
 
 func _on_node_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group(\"Enemy\"):
+	if body is Enemy:
 		body.reset()
 "
 

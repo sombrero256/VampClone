@@ -40,7 +40,6 @@ autostart = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_lvr5l")
 autoplay = true
-stream_paused = true
 
 [connection signal="time_changed" from="Ui" to="." method="_on_ui_time_changed"]
 [connection signal="timeout" from="EnemySpawner" to="." method="_on_timer_timeout"]

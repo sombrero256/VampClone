@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://s40j8ygk02ue"]
+
+[ext_resource type="Script" path="res://EnemyScenes/dog_enemy.gd" id="1_coi0e"]
+[ext_resource type="Texture2D" uid="uid://bc702be44dkhp" path="res://EnemyScenes/Enemy/Dog.png" id="1_ifxgs"]
+[ext_resource type="PackedScene" uid="uid://cgx0tfbvsjcr7" path="res://EnemyScenes/enemy_stats.tscn" id="4_qpmt6"]
+[ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="5_20t85"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4avf3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffx4l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ifxgs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DogEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "stats", "health")]
+script = ExtResource("1_coi0e")
+sprite = NodePath("AnimatedSprite2D")
+stats = NodePath("EnemyStats")
+health = NodePath("ProgressBar")
+
+[node name="HurtBox" parent="." instance=ExtResource("5_20t85")]
+collision_layer = 0
+collision_mask = 136
+
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(1.95531, 1.91519)
+shape = SubResource("CircleShape2D_4avf3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.97299, 1.97299)
+sprite_frames = SubResource("SpriteFrames_ffx4l")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_top = -32.0
+offset_right = 4.0
+offset_bottom = -5.0
+scale = Vector2(0.989018, 0.993286)
+step = 0.1
+value = 99.0
+fill_mode = 1
+
+[node name="EnemyStats" parent="." instance=ExtResource("4_qpmt6")]
+Speed = 50
+DPS = 15
