@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ds7mwp1le2uix"]
 
-[ext_resource type="Script" path="res://SanctuaryScenes/Dialogue/dialogue.gd" id="1_crbvu"]
+[ext_resource type="Script" path="res://SanctuaryScenes/dialogue.gd" id="1_crbvu"]
 [ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="2_8dyff"]
 
 [node name="Dialogue" type="Control"]
