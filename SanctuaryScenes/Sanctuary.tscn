@@ -7,6 +7,7 @@
 [node name="Sanctuary" type="Node2D"]
 
 [node name="JustAGuy" parent="." instance=ExtResource("1_gguxs")]
+unique_name_in_owner = true
 
 [node name="MrDog" parent="." instance=ExtResource("2_ov6r2")]
 position = Vector2(-114, -38)
