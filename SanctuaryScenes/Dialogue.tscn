@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds7mwp1le2uix"]
+
+[ext_resource type="Script" path="res://SanctuaryScenes/dialogue.gd" id="1_crbvu"]
+[ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="2_8dyff"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -274.0
+offset_top = 56.0
+offset_right = -274.0
+offset_bottom = 56.0
+script = ExtResource("1_crbvu")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 568.0
+offset_bottom = 267.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 566.0
+offset_bottom = 265.0
+color = Color(0, 0, 0, 1)
+
+[node name="SpeakerName" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_right = 561.0
+offset_bottom = 48.0
+theme_override_fonts/normal_font = ExtResource("2_8dyff")
+theme_override_font_sizes/normal_font_size = 24
+text = "Name:"
+
+[node name="Text" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 53.0
+offset_right = 510.0
+offset_bottom = 237.0
+theme_override_fonts/normal_font = ExtResource("2_8dyff")
+theme_override_font_sizes/normal_font_size = 20
+text = "Chatting..."
