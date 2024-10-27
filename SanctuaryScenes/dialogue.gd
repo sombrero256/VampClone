@@ -21,18 +21,34 @@ func start(speaker):
 		next_script()
 	
 ##Selects the dialogue file based on the npc speaker name and sets it to a string array for use with the dialog box
+##Also loads relevant audio file for speaker
 func load_dialogue(speaker_select):
 	var file
 	if speaker_select == "MrDog":
 		print ("talking to dog")
+		load_audio("res://SanctuaryScenes/dog1.wav")
 		file = FileAccess.open("res://SanctuaryScenes/MrDog_dialogue.json", FileAccess.READ)
 	elif speaker_select == "MrsCat":
 		print ("talking to cat")
+		load_audio("res://SanctuaryScenes/cat.wav")
 		file = FileAccess.open("res://SanctuaryScenes/MrsCat_dialogue.json", FileAccess.READ)
+	elif speaker_select == "Horsey":
+		print ("talking to horse")
+		load_audio("res://SanctuaryScenes/horse1.wav")
+		file = FileAccess.open("res://SanctuaryScenes/Horsey_dialogue.json", FileAccess.READ)
+	elif speaker_select == "Mouse":
+		print ("talking to mouse")
+		load_audio("res://SanctuaryScenes/mouse.wav")
+		file = FileAccess.open("res://SanctuaryScenes/Mouse_dialogue.json", FileAccess.READ)
 	else:
 		file = FileAccess.open("res://SanctuaryScenes/default_dialogue.json", FileAccess.READ)
 	var content = JSON.parse_string(file.get_as_text())
 	return content
+
+##Simple function to load correct sound fx and play it
+func load_audio(sfx):
+	%ChatSound.stream = load(sfx)
+	%ChatSound.play()
 	
 ##Checks to see if there's an active dialogue box
 ##If no, ignores player input
