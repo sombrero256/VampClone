@@ -9,6 +9,7 @@ func _process(delta):
 		print(self.name)
 		player_chatting = false
 		$Dialogue.start(self.name)
+		$StatUpgrade.start(self.name)
 
 ##Player enters chat zone with an npc
 func _on_chat_zone_body_entered(body):
