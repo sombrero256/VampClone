@@ -1,9 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp3hc0a5eqsii"]
+[gd_scene load_steps=11 format=3 uid="uid://bp3hc0a5eqsii"]
 
 [ext_resource type="PackedScene" uid="uid://ka6fhdls05bm" path="res://SanctuaryScenes/JustAGuy.tscn" id="1_gguxs"]
 [ext_resource type="PackedScene" uid="uid://dpyu8e5ajbetj" path="res://SanctuaryScenes/Shopkeeper.tscn" id="2_ov6r2"]
+[ext_resource type="Texture2D" uid="uid://bbgekusptj2v1" path="res://SanctuaryScenes/art/animals/Dog.png" id="3_6ij3d"]
 [ext_resource type="PackedScene" uid="uid://ds7mwp1le2uix" path="res://SanctuaryScenes/Dialogue.tscn" id="3_qkpqa"]
+[ext_resource type="Texture2D" uid="uid://d1tjdhbdxpe5y" path="res://SanctuaryScenes/art/animals/Dog Walking.png" id="4_64qxl"]
 [ext_resource type="PackedScene" uid="uid://b7w8vx72u7skf" path="res://SanctuaryScenes/StatUpgrade.tscn" id="4_hs3hc"]
+[ext_resource type="Texture2D" uid="uid://ngg56u641uv5" path="res://SanctuaryScenes/art/animals/Cat.png" id="7_sfymu"]
+[ext_resource type="Texture2D" uid="uid://cy3pcs65t45o8" path="res://SanctuaryScenes/art/animals/Cat Walking.png" id="8_uvufd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pefi8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6ij3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_64qxl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xcfw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_sfymu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uvufd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Sanctuary" type="Node2D"]
 
@@ -11,15 +43,31 @@
 unique_name_in_owner = true
 
 [node name="MrDog" parent="." instance=ExtResource("2_ov6r2")]
-position = Vector2(-114, -38)
+position = Vector2(-110, -34)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MrDog"]
+z_index = 1
+position = Vector2(20, 20)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_pefi8")
+autoplay = "default"
 
 [node name="Dialogue" parent="MrDog" instance=ExtResource("3_qkpqa")]
 
 [node name="StatUpgrade" parent="MrDog" instance=ExtResource("4_hs3hc")]
+visible = false
 
 [node name="MrsCat" parent="." instance=ExtResource("2_ov6r2")]
 position = Vector2(266, 100)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MrsCat"]
+z_index = 1
+position = Vector2(20, 20)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_0xcfw")
+autoplay = "default"
+
 [node name="Dialogue" parent="MrsCat" instance=ExtResource("3_qkpqa")]
 
 [node name="StatUpgrade" parent="MrsCat" instance=ExtResource("4_hs3hc")]
+visible = false
