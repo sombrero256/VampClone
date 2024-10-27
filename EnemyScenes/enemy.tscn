@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d360ei6wuvftf"]
+[gd_scene load_steps=4 format=3 uid="uid://brdrssb8otlk2"]
 
 [ext_resource type="Script" path="res://EnemyScenes/enemy.gd" id="1_sicq4"]
 [ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="2_hy0ws"]

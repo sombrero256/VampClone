@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6sl4ny0wnla1"
-path="res://.godot/imported/progressbar.png-cdefc67490ffef08c1802cf49f8f7b1a.ctex"
+uid="uid://d24shtyi5h0sg"
+path="res://.godot/imported/Bubble 3.png-0ddd41bc07197b336a16704de1df101e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://progressbar.png"
-dest_files=["res://.godot/imported/progressbar.png-cdefc67490ffef08c1802cf49f8f7b1a.ctex"]
+source_file="res://WeaponScenes/StarBomb/assets/Bubble 3.png"
+dest_files=["res://.godot/imported/Bubble 3.png-0ddd41bc07197b336a16704de1df101e.ctex"]
 
 [params]
 

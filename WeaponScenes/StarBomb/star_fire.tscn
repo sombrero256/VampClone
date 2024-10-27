@@ -1,21 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://chgwyjiq4gmnq"]
 
-[ext_resource type="Texture2D" uid="uid://4l3c3vtui01j" path="res://star.png" id="1_ka4v0"]
+[ext_resource type="Texture2D" uid="uid://10srtwhhpn6p" path="res://WeaponScenes/StarBomb/assets/Bubble 1.png" id="2_uahxb"]
 [ext_resource type="Script" path="res://WeaponScenes/StarBomb/star.gd" id="3_0f6vt"]
 
-[node name="StarBomb" type="Node2D" groups=["Enemy"]]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-collision_layer = 0
-collision_mask = 0
+[node name="StarBomb" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("3_0f6vt")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_ka4v0")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uahxb")
 
-[node name="explode" type="Timer" parent="CharacterBody2D"]
+[node name="explode" type="Timer" parent="."]
 wait_time = 0.85
 one_shot = true
 autostart = true
 
-[connection signal="timeout" from="CharacterBody2D/explode" to="CharacterBody2D" method="_on_explode_timeout"]
+[connection signal="timeout" from="explode" to="." method="_on_explode_timeout"]

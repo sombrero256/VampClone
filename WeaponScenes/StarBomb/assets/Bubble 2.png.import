@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c71ao32wgqpjo"
-path="res://.godot/imported/heart2.png-a03d7f5b5db3b5212e806d688c7a6622.ctex"
+uid="uid://b7vnlmuc8oom1"
+path="res://.godot/imported/Bubble 2.png-bf90714d0f13609b19536a63b1ec4f66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heart2.png"
-dest_files=["res://.godot/imported/heart2.png-a03d7f5b5db3b5212e806d688c7a6622.ctex"]
+source_file="res://WeaponScenes/StarBomb/assets/Bubble 2.png"
+dest_files=["res://.godot/imported/Bubble 2.png-bf90714d0f13609b19536a63b1ec4f66.ctex"]
 
 [params]
 

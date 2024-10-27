@@ -1,18 +1,16 @@
-extends Timer
+extends WeaponTimer
 
-@onready var boomerang_ = preload("res://WeaponScenes/Boomerang/Boomerang.tscn")
-
+var boomerang_: Boomerang
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	resource_ = preload("res://WeaponScenes/Boomerang/Boomerang.tscn")
+	base_stats_ = WeaponStats.new(25, 250)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+func lvl_up(dmg_up: float,
+			speed_up: float,
+			area_up: float,
+			modifiers: Array) -> void:
+	boomerang_.lvl_up(dmg_up, speed_up, area_up, modifiers)
 
 func _on_timeout() -> void:
-	var b_inst = boomerang_.instantiate() as Node2D
-	b_inst.global_position = get_parent().global_position
-	get_node("/root").add_child(b_inst)
+	boomerang_ = create_weapon()

@@ -1,19 +1,25 @@
 extends Node2D
 
 enum {DOG, CAT, RAT}
+const Modifier = preload("res://WeaponScenes/Base/weapon_stats_component.gd").Modifier
 
 @export var enabled_: bool = true
 @export var num_enemies_ = {DOG: 1, CAT: 1, RAT: 1}
-@export var spawn_rate_inc_ = {DOG: 3, CAT: 2, RAT: 0} 
+@export var spawn_rate_inc_ = {DOG: 3, CAT: 2, RAT: 1} 
 # Timer speeds up by this amount each hour
 @export var speed_up_rate_: float = .95
 
-@onready var dog_enemy = preload("res://EnemyScenes/dog_enemy.tscn")
-@onready var cat_enemy = preload("res://EnemyScenes/cat_enemy.tscn")
-@onready var rat_swarm = preload("res://EnemyScenes/rat_swarm.tscn")
+@onready var player_ = get_tree().get_first_node_in_group("Player")
+@onready var dog_enemy_ = preload("res://EnemyScenes/dog_enemy.tscn")
+@onready var cat_enemy_ = preload("res://EnemyScenes/cat_enemy.tscn")
+@onready var rat_swarm_ = preload("res://EnemyScenes/rat_swarm.tscn")
 
 var prev_hour_: int = 0
 @onready var EnemySpawner = get_node("%EnemySpawner") as Timer
+var weapons_: Array[WeaponTimer]
+
+func _ready() -> void:
+	weapons_.assign(player_.find_children("*_cd", "WeaponTimer", true))
 
 ##Creates new enemy object along the MonsterSpawnPath outside the camera position
 ##If we make new enemy types, we'll have to duplicate this for each type, or randomize it
@@ -23,11 +29,11 @@ func spawn_enemy(type, amount: int):
 	var new_enemy: Node
 	for i in amount:
 		if type == DOG:
-			new_enemy = dog_enemy.instantiate()
+			new_enemy = dog_enemy_.instantiate()
 		elif type == CAT:
-			new_enemy = cat_enemy.instantiate()
+			new_enemy = cat_enemy_.instantiate()
 		elif type == RAT:
-			new_enemy = rat_swarm.instantiate()
+			new_enemy = rat_swarm_.instantiate()
 		%MonsterSpawnPath.progress_ratio = randf()
 		new_enemy.global_position = %MonsterSpawnPath.global_position
 		add_child(new_enemy)
@@ -40,6 +46,11 @@ func _increaseSpawnRate(hour: int, minute: int) -> void:
 		EnemySpawner.wait_time *= speed_up_rate_
 		print("HOUR CHANGING, MORE ENEMIES ARE COMING!")
 		print(num_enemies_)
+		
+		print("REMOVE ME, POWERING UP")
+		for weapon in weapons_:
+			weapon.lvl_up(1.05, 1.05, 1.05, 
+			[Modifier.FIRE, Modifier.ICE, Modifier.CRIT])
 
 ##Spawns enemies on timer.  Can adjust how many enemies.  Might be best to change to a loop at some point.
 func _on_timer_timeout():

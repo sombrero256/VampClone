@@ -1,7 +1,5 @@
 [gd_scene load_steps=3 format=3 uid="uid://vll810c08d2l"]
 
-[ext_resource type="Texture2D" uid="uid://p7p78y4nerr4" path="res://star.png" id="1_3vqry"]
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5fis5"]
 particle_flag_disable_z = true
 emission_shape_offset = Vector3(0, 100, 0)
@@ -13,9 +11,12 @@ gravity = Vector3(0, 0, 0)
 radial_accel_min = -2.23517e-06
 radial_accel_max = -2.23517e-06
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b3ecn"]
+load_path = "res://.godot/imported/star.png-19e2a8935edef1994254d9cf64a4c2d9.ctex"
+
 [node name="GPUParticles2D" type="GPUParticles2D"]
 amount = 16
 process_material = SubResource("ParticleProcessMaterial_5fis5")
-texture = ExtResource("1_3vqry")
+texture = SubResource("CompressedTexture2D_b3ecn")
 lifetime = 4.0
 preprocess = 4.0

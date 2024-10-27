@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends BaseWeapon
 
 @onready var star_explode_ = preload("res://WeaponScenes/StarBomb/star_explode.tscn")
 const Direction = preload("res://PlayerScenes/player.gd").Direction
@@ -31,7 +31,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_explode_timeout() -> void:
-	var explode_inst = star_explode_.instantiate() as Node2D
+	var explode_inst = star_explode_.instantiate() as StarExplode
+	explode_inst.stats_ = stats_
+	explode_inst.scale *= stats_.area_
 	explode_inst.global_position = global_position
 	get_node("/root").add_child(explode_inst)	
-	get_parent().queue_free()
+	queue_free()

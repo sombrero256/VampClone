@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://k8vhrjbrcm6u"]
+
+[ext_resource type="Script" path="res://EnemyScenes/fire.gd" id="1_c0ekd"]
+[ext_resource type="Texture2D" uid="uid://ckool1dwx6s6" path="res://EnemyScenes/fire1.png" id="2_lwpqi"]
+[ext_resource type="Texture2D" uid="uid://bqyxuxrdwo5t" path="res://EnemyScenes/fire2.png" id="3_uefku"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vlkll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lwpqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uefku")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fire" type="Node2D"]
+script = ExtResource("1_c0ekd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.76, 0.76)
+sprite_frames = SubResource("SpriteFrames_vlkll")
+frame_progress = 0.0833575
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

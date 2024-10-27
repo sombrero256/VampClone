@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr42wcypjhkji"]
+
+[ext_resource type="Texture2D" uid="uid://bvnr5vbg1yta6" path="res://WeaponScenes/Heart/heart.png" id="1_1m54y"]
+
+[sub_resource type="GDScript" id="GDScript_850l2"]
+script/source = "extends BaseWeapon
+
+func _ready() -> void:
+	pass # Replace with function body.
+
+func set_start_offset(offset_by) -> void:
+	rotate(deg_to_rad(offset_by))
+
+func _physics_process(delta) -> void:
+	#y = mx + b
+	move_local_x(stats_.speed_)
+	move_local_y(stats_.speed_)
+
+func _on_timer_timeout() -> void:
+	queue_free()
+
+func _on_node_2d_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		body.process_hit(stats_.damage_)
+		stats_.try_apply_modifiers(body)
+
+func _on_node_2d_body_exited(body: Node2D) -> void:
+	if body is Enemy:
+		body.reset()
+"
+
+[node name="Weapon" type="CharacterBody2D" groups=["Enemy"]]
+script = SubResource("GDScript_850l2")
+
+[node name="Heart" type="Sprite2D" parent="."]
+texture = ExtResource("1_1m54y")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-2, -9, 0, -6, 3, -9, 7, -11, 11, -10, 12, -6, 12, -1, 0, 11, -12, -2, -12, -7, -8, -11, -3, -10)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_node_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_node_2d_body_exited"]

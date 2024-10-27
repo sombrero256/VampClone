@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0qsi1rlijq6v"]
+
+[ext_resource type="Script" path="res://EnemyScenes/rat_swarm.gd" id="1_nth8y"]
+[ext_resource type="PackedScene" uid="uid://duqlbhjmxdxac" path="res://EnemyScenes/rat_enemy.tscn" id="1_t5ymc"]
+
+[sub_resource type="Curve2D" id="Curve2D_0k01h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3, 2, 9.51366, 35.6762, -9.51366, -35.6762, 76, -65, -4.75683, 88.0013, 4.75683, -88.0013, -23, -145, 21.4057, 140.326, -21.4057, -140.326, 116, -308, 30.9194, 142.705, -30.9194, -142.705, -90, -392, 4.75683, 104.65, -4.75683, -104.65, 147, -594, -40.433, 104.65, 40.433, -104.65, -86, -732, 0, 64.2172, 0, -64.2172, 139, -829, 168.179, -73.9989, -168.179, 73.9989, -30, -1062, 0, 0, 0, 0, -85, -919, 10.5946, -95.3517, -10.5946, 95.3517, 150, -667, -5.00565, -140.826, 5.00565, 140.826, -116, -539, -6.73477, -94.2868, 6.73477, 94.2868, 140, -331, -5.61231, -83.0622, 5.61231, 83.0622, -112, -196, 1.5874, -52.3842, -1.5874, 52.3842, 143, -88, 0, 0, 0, 0, -5, 2)
+}
+point_count = 16
+
+[node name="RatSwarm" type="Node2D"]
+script = ExtResource("1_nth8y")
+
+[node name="Path2D" type="Path2D" parent="."]
+rotation = 0.733368
+curve = SubResource("Curve2D_0k01h")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(-3, 2)
+rotation = -0.703391
+rotates = false
+
+[node name="RatEnemy" parent="Path2D/PathFollow2D" instance=ExtResource("1_t5ymc")]
+
+[node name="Path2D2" type="Path2D" parent="."]
+position = Vector2(106, -39)
+rotation = 0.733368
+curve = SubResource("Curve2D_0k01h")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(-3, 2)
+rotation = -0.703391
+rotates = false
+
+[node name="RatEnemy" parent="Path2D2/PathFollow2D" instance=ExtResource("1_t5ymc")]
+
+[node name="Path2D4" type="Path2D" parent="."]
+position = Vector2(58, 52)
+rotation = 0.733368
+curve = SubResource("Curve2D_0k01h")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
+position = Vector2(-3, 2)
+rotation = -0.703391
+rotates = false
+
+[node name="RatEnemy" parent="Path2D4/PathFollow2D" instance=ExtResource("1_t5ymc")]

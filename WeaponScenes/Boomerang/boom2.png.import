@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djp2sovpkmmeo"
-path="res://.godot/imported/star_xplode.png-5033a7049fbe2b3d0048b4fdc9908b30.ctex"
+uid="uid://dwn2w3rajg0a2"
+path="res://.godot/imported/boom2.png-88c399a64caa75fecd46761eb7608f80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://star_xplode.png"
-dest_files=["res://.godot/imported/star_xplode.png-5033a7049fbe2b3d0048b4fdc9908b30.ctex"]
+source_file="res://WeaponScenes/Boomerang/boom2.png"
+dest_files=["res://.godot/imported/boom2.png-88c399a64caa75fecd46761eb7608f80.ctex"]
 
 [params]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://duqlbhjmxdxac"]
+[gd_scene load_steps=8 format=3 uid="uid://duqlbhjmxdxac"]
 
 [ext_resource type="Script" path="res://EnemyScenes/rat_enemy.gd" id="1_mvq5p"]
 [ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="2_8feg5"]
 [ext_resource type="Texture2D" uid="uid://bqwsw1an5m4k6" path="res://EnemyScenes/Enemy/Rat.png" id="3_nlsi3"]
 [ext_resource type="PackedScene" uid="uid://cgx0tfbvsjcr7" path="res://EnemyScenes/enemy_stats.tscn" id="4_j8il8"]
+[ext_resource type="PackedScene" uid="uid://k8vhrjbrcm6u" path="res://EnemyScenes/Fire.tscn" id="5_q2371"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yjgof"]
 
@@ -18,11 +19,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="RatEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "stats", "health")]
+[node name="RatEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "Fire")]
 script = ExtResource("1_mvq5p")
-sprite = NodePath("AnimatedSprite2D")
-stats = NodePath("EnemyStats")
-health = NodePath("ProgressBar")
+sprite_ = NodePath("AnimatedSprite2D")
+stats_ = NodePath("EnemyStats")
+health_ = NodePath("ProgressBar")
+status_ = NodePath("Status")
+Fire = NodePath("Fire")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_8feg5")]
 position = Vector2(1, 4)
@@ -53,3 +56,11 @@ sprite_frames = SubResource("SpriteFrames_yb3kd")
 Speed = 150
 Max_Health = 5
 DPS = 5
+
+[node name="Fire" parent="." instance=ExtResource("5_q2371")]
+
+[node name="Status" type="RichTextLabel" parent="."]
+offset_left = -20.0
+offset_top = 18.0
+offset_right = 20.0
+offset_bottom = 41.0

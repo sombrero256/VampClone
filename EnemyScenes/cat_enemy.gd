@@ -1,6 +1,5 @@
 extends Enemy
 
-@onready var stats_ = get_node("EnemyStats") as EnemyStats
 const CLOSE_ENOUGH = 5.0
 
 var state_ : State
@@ -12,6 +11,7 @@ func _ready():
 	state_ = State.SLEEPING
 
 func _physics_process(delta: float) -> void:
+	if frozen_: return
 	if state_ == State.SLEEPING:
 		return
 	if position.distance_to(dest_) < CLOSE_ENOUGH:

@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dr42wcypjhkji"]
 
-[ext_resource type="Texture2D" uid="uid://bvnr5vbg1yta6" path="res://heart.png" id="5_0hi1r"]
+[ext_resource type="Texture2D" uid="uid://bvnr5vbg1yta6" path="res://heart.png" id="1_1m54y"]
 
 [sub_resource type="GDScript" id="GDScript_850l2"]
 script/source = "extends Sprite2D
 
-var Weapon_Stats: WeaponStats
 # TODO: draw from weapon sts
 var damage = 30
 # if we want to get really advanced we could add an export list here
@@ -46,7 +45,7 @@ func _on_node_2d_body_exited(body: Node2D) -> void:
 script = SubResource("GDScript_850l2")
 
 [node name="Heart" type="Sprite2D" parent="."]
-texture = ExtResource("5_0hi1r")
+texture = ExtResource("1_1m54y")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
