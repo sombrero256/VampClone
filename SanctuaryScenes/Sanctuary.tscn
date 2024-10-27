@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bp3hc0a5eqsii"]
+[gd_scene load_steps=18 format=3 uid="uid://bp3hc0a5eqsii"]
 
 [ext_resource type="PackedScene" uid="uid://ka6fhdls05bm" path="res://SanctuaryScenes/JustAGuy.tscn" id="1_gguxs"]
 [ext_resource type="PackedScene" uid="uid://dpyu8e5ajbetj" path="res://SanctuaryScenes/Shopkeeper.tscn" id="2_ov6r2"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://ngg56u641uv5" path="res://SanctuaryScenes/art/animals/Cat.png" id="7_sfymu"]
 [ext_resource type="Texture2D" uid="uid://cy3pcs65t45o8" path="res://SanctuaryScenes/art/animals/Cat Walking.png" id="8_uvufd"]
 [ext_resource type="AudioStream" uid="uid://cu6g6cyxnxwqy" path="res://SanctuaryScenes/sanctuary theme.wav" id="9_7b38s"]
+[ext_resource type="Texture2D" uid="uid://cucnbpdlsxhfv" path="res://SanctuaryScenes/art/animals/Horse.png" id="9_qxsw5"]
+[ext_resource type="Texture2D" uid="uid://djbiiaj4pqxvv" path="res://SanctuaryScenes/art/animals/Horse Walking.png" id="10_2tb61"]
+[ext_resource type="Texture2D" uid="uid://cbh4ckjbdnefl" path="res://SanctuaryScenes/art/animals/Rat.png" id="11_3pnrq"]
+[ext_resource type="Texture2D" uid="uid://c7bhul3kdfnb0" path="res://SanctuaryScenes/art/animals/Rat Walking.png" id="12_qn4lo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pefi8"]
 animations = [{
@@ -38,6 +42,34 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_nbbbw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qxsw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2tb61")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ru1t8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3pnrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qn4lo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
 [node name="Sanctuary" type="Node2D"]
 
 [node name="JustAGuy" parent="." instance=ExtResource("1_gguxs")]
@@ -54,6 +86,7 @@ sprite_frames = SubResource("SpriteFrames_pefi8")
 autoplay = "default"
 
 [node name="Dialogue" parent="MrDog" instance=ExtResource("3_qkpqa")]
+metadata/_edit_use_anchors_ = true
 
 [node name="StatUpgrade" parent="MrDog" instance=ExtResource("4_hs3hc")]
 visible = false
@@ -71,6 +104,34 @@ autoplay = "default"
 [node name="Dialogue" parent="MrsCat" instance=ExtResource("3_qkpqa")]
 
 [node name="StatUpgrade" parent="MrsCat" instance=ExtResource("4_hs3hc")]
+visible = false
+
+[node name="Horsey" parent="." instance=ExtResource("2_ov6r2")]
+position = Vector2(-215.054, 533.431)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Horsey"]
+position = Vector2(20, 20)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nbbbw")
+autoplay = "default"
+
+[node name="Dialogue" parent="Horsey" instance=ExtResource("3_qkpqa")]
+
+[node name="StatUpgrade" parent="Horsey" instance=ExtResource("4_hs3hc")]
+visible = false
+
+[node name="Mouse" parent="." instance=ExtResource("2_ov6r2")]
+position = Vector2(406, 487)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mouse"]
+position = Vector2(20, 20)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ru1t8")
+autoplay = "default"
+
+[node name="Dialogue" parent="Mouse" instance=ExtResource("3_qkpqa")]
+
+[node name="StatUpgrade" parent="Mouse" instance=ExtResource("4_hs3hc")]
 visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
