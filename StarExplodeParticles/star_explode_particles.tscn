@@ -12,7 +12,6 @@ radial_accel_min = -2.23517e-06
 radial_accel_max = -2.23517e-06
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b3ecn"]
-load_path = "res://.godot/imported/star.png-19e2a8935edef1994254d9cf64a4c2d9.ctex"
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
 amount = 16

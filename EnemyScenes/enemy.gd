@@ -1,5 +1,8 @@
 class_name Enemy extends CharacterBody2D
 
+enum EnemyType {RAT, CAT, DOG}
+
+@export var type_: EnemyType
 @export var sprite_: AnimatedSprite2D
 @export var stats_: EnemyStats
 @export var health_: ProgressBar
@@ -15,15 +18,19 @@ const CRIT_AMOUNT = 50
 func process_hit(damages, color: Color = Color("a356ff")) -> void:
 	health_.value -= damages
 	sprite_.modulate = color
+	sprite_.frame = 1
 	if health_.value == 0:
 		var _inst = death_particle.instantiate() as Node2D
 		_inst.global_position = position
 		get_node("/root").add_child(_inst)
+		print("Saved %s" % str(EnemyType.keys()[type_]))
+		Globalstats.SavedEnemy(type_)
 		queue_free()
 
 func reset() -> void:
 	if frozen_:
 		return
+	sprite_.frame = 0
 	sprite_.modulate = Color(1, 1, 1, 1)
 	status_.text = ""
 

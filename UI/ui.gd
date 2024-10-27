@@ -21,7 +21,7 @@ func _ready() -> void:
 	time_ = 0 # MIDNIGHT
 	
 func set_time(hour: int, minute: int):
-	time_label_.text = _amfm_hour(hour) + ":" + _minute(minute) + " " + _am_pm(hour)
+	time_label_.text = _amfm_hour(hour) + ":" + _minute(minute) + " am"
 
 func _amfm_hour(hour:int) -> String:
 	if hour == 0:
@@ -34,12 +34,6 @@ func _minute(minute:int) -> String:
 	if minute < 10:
 		return "0" + str(minute)
 	return str(minute)
-
-func _am_pm(hour:int) -> String:
-	if hour < 12:
-		return "am"
-	else:
-		return "pm"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

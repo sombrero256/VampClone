@@ -8,6 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func OnNightEnd() -> void:
+	var saved = Globalstats.GetSavedEnemies()
 	get_tree().paused = true
 	visible = true
 
