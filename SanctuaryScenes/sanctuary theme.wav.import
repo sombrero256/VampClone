@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cu6g6cyxnxwqy"
+path="res://.godot/imported/sanctuary theme.wav-b4000c0045a7eef47faef1e08784bc95.sample"
+
+[deps]
+
+source_file="res://SanctuaryScenes/sanctuary theme.wav"
+dest_files=["res://.godot/imported/sanctuary theme.wav-b4000c0045a7eef47faef1e08784bc95.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

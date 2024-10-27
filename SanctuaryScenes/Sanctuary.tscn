@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp3hc0a5eqsii"]
+[gd_scene load_steps=12 format=3 uid="uid://bp3hc0a5eqsii"]
 
 [ext_resource type="PackedScene" uid="uid://ka6fhdls05bm" path="res://SanctuaryScenes/JustAGuy.tscn" id="1_gguxs"]
 [ext_resource type="PackedScene" uid="uid://dpyu8e5ajbetj" path="res://SanctuaryScenes/Shopkeeper.tscn" id="2_ov6r2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b7w8vx72u7skf" path="res://SanctuaryScenes/StatUpgrade.tscn" id="4_hs3hc"]
 [ext_resource type="Texture2D" uid="uid://ngg56u641uv5" path="res://SanctuaryScenes/art/animals/Cat.png" id="7_sfymu"]
 [ext_resource type="Texture2D" uid="uid://cy3pcs65t45o8" path="res://SanctuaryScenes/art/animals/Cat Walking.png" id="8_uvufd"]
+[ext_resource type="AudioStream" uid="uid://cu6g6cyxnxwqy" path="res://SanctuaryScenes/sanctuary theme.wav" id="9_7b38s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pefi8"]
 animations = [{
@@ -71,3 +72,9 @@ autoplay = "default"
 
 [node name="StatUpgrade" parent="MrsCat" instance=ExtResource("4_hs3hc")]
 visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_7b38s")
+volume_db = -10.0
+autoplay = true
+playback_type = 1
