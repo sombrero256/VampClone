@@ -1,11 +1,23 @@
-class_name PlayerUnlocks extends Node
+extends Node
 
 ##This is a player stat tracker for all stats we want to track across scenes
 ##Please do not try to reset or destroy this, or it will crash the game!
 
 const EnemyType = preload("res://EnemyScenes/enemy.gd").EnemyType
+const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
+
+static var player_stats: PlayerStats
 
 static var _enemy_saved: Dictionary = {}
+static var _weapon_stats: Dictionary = {}
+
+func _ready() -> void:
+	player_stats = PlayerStats.new()
+	_weapon_stats = {
+		WeaponType.HEART: WeaponStats.new(20, 1),
+		WeaponType.BOOMERANG: WeaponStats.new(25, 250),
+		WeaponType.BUBBLE: WeaponStats.new(2, 1)
+	}
 
 static func SavedEnemy(type: EnemyType):
 	if !_enemy_saved.has(type):
@@ -16,3 +28,6 @@ static func GetSavedEnemies() -> Dictionary:
 	for type in _enemy_saved.keys():
 		print("Saved: %d amount of %ss" % [_enemy_saved[type], str(EnemyType.keys()[type])])
 	return _enemy_saved
+
+static func GetWeaponStats(type_: WeaponType) -> WeaponStats:
+	return _weapon_stats[type_]

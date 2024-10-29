@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv2lth071a2o2"]
+[gd_scene load_steps=8 format=3 uid="uid://bv2lth071a2o2"]
 
-[ext_resource type="PackedScene" uid="uid://qwywgspyv7bu" path="res://PlayerScenes/player_stats_component.tscn" id="1_iqsip"]
 [ext_resource type="Script" path="res://PlayerScenes/player.gd" id="1_iyv2b"]
 [ext_resource type="Texture2D" uid="uid://cbqkulfbx1kd8" path="res://PlayerScenes/assets/Character 1.png" id="3_h5au2"]
 [ext_resource type="Script" path="res://PlayerScenes/star_cd.gd" id="4_v25xb"]
@@ -24,9 +23,6 @@ collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_iyv2b")
 
-[node name="Stats" parent="." instance=ExtResource("1_iqsip")]
-Speed = 100
-
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.91799, 1.91799)
 sprite_frames = SubResource("SpriteFrames_vwcfc")
@@ -35,20 +31,25 @@ sprite_frames = SubResource("SpriteFrames_vwcfc")
 polygon = PackedVector2Array(-12, 1, -6, -5, -6, -16, 8, -16, 8, 1, 16, 4, 15, 8, 10, 8, 10, 16, 2, 16, 2, 14, -8, 14, -12, 12, -16, 6, -16, 4)
 one_way_collision_margin = 0.0
 
-[node name="star_cd" type="Timer" parent="."]
+[node name="bubble_cd" type="Timer" parent="."]
 wait_time = 2.5
 autostart = true
 script = ExtResource("4_v25xb")
+base_wait_ = 2.5
+type_ = 2
 
 [node name="heart_cd" type="Timer" parent="."]
 autostart = true
 script = ExtResource("5_s73jc")
+base_wait_ = 1.0
 
 [node name="boomerang_cd" type="Timer" parent="."]
-wait_time = 2.277
+wait_time = 2.25
 one_shot = true
 autostart = true
 script = ExtResource("5_enjst")
+base_wait_ = 2.25
+type_ = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -58,6 +59,6 @@ offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
 
-[connection signal="timeout" from="star_cd" to="star_cd" method="_on_timeout"]
+[connection signal="timeout" from="bubble_cd" to="bubble_cd" method="_on_timeout"]
 [connection signal="timeout" from="heart_cd" to="heart_cd" method="_on_timeout"]
 [connection signal="timeout" from="boomerang_cd" to="boomerang_cd" method="_on_timeout"]

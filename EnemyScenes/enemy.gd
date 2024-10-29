@@ -23,7 +23,6 @@ func process_hit(damages, color: Color = Color("a356ff")) -> void:
 		var _inst = death_particle.instantiate() as Node2D
 		_inst.global_position = position
 		get_node("/root").add_child(_inst)
-		print("Saved %s" % str(EnemyType.keys()[type_]))
 		Globalstats.SavedEnemy(type_)
 		queue_free()
 

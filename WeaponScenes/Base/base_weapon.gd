@@ -1,7 +1,11 @@
 class_name BaseWeapon extends CharacterBody2D
 
-var stats_: WeaponStats
+enum WeaponType {HEART, BOOMERANG, BUBBLE}
 
-func create_weapon(weapon_stats):
-	stats_ = weapon_stats
-	scale *= stats_.area_
+@export var type_: WeaponType
+
+func stats() -> WeaponStats:
+	return Globalstats.GetWeaponStats(type_)
+
+func _ready() -> void:
+	scale *= stats().area_

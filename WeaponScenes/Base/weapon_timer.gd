@@ -1,17 +1,21 @@
 class_name WeaponTimer extends Timer
 
-var resource_: Resource
-var base_stats_: WeaponStats
+@export var base_wait_: float
+const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
 
-func lvl_up(dmg_up: float, speed_up: float, area_up: float, modifiers: Array):
-	base_stats_.damage_ *= dmg_up
-	base_stats_.speed_ *= speed_up
-	base_stats_.area_ *= area_up
-	base_stats_.modifiers_ += modifiers
+@export var type_: WeaponType
+var resource_: Resource
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	wait_time = base_wait_
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	wait_time = base_wait_ / Globalstats.GetWeaponStats(type_).speed_
 
 func create_weapon() -> Node2D:
 	var w_inst = resource_.instantiate() as BaseWeapon
-	w_inst.create_weapon(base_stats_)
 	w_inst.global_position = get_parent().global_position
 	get_node("/root").add_child(w_inst)
 	return w_inst

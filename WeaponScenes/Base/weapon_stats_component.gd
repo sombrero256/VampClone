@@ -1,7 +1,7 @@
 class_name WeaponStats
 
-enum Modifier {FIRE, ICE, CRIT, EXPLODE}
-# How likely 
+enum Modifier {FIRE, ICE, CRIT}
+# How likely a modifier will proc
 const ModifierChance = {
 	Modifier.FIRE: .1,
 	Modifier.ICE: .1,
@@ -16,6 +16,12 @@ var speed_: float
 var area_: float = 1.0
 @export
 var modifiers_: Array = []
+
+func lvl_up(dmg_up: float, speed_up: float, area_up: float, modifiers: Array):
+	damage_ *= dmg_up
+	speed_ *= speed_up
+	area_ *= area_up
+	modifiers_ += modifiers
 
 # Get whether or not to activate the given modifier
 func try_apply_modifiers(enemy: Enemy) -> void:

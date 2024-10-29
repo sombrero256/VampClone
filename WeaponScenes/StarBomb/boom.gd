@@ -1,12 +1,19 @@
 class_name StarExplode extends Area2D
 
+const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
+
 var is_flashing_ = false
 var enemies_hit_: Dictionary
-var stats_: WeaponStats
+
+func _ready() -> void:
+	scale  *= _stats().area_
+
+func _stats() -> WeaponStats:
+	return Globalstats.GetWeaponStats(WeaponType.BUBBLE)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Enemy:
-		body.process_hit(stats_.damage_)
+		body.process_hit(_stats().damage_)
 		enemies_hit_[body.name] = body
 
 func _on_body_exited(body: Node2D) -> void:
@@ -22,8 +29,8 @@ func _process(delta: float) -> void:
 		if not is_flashing_:
 			is_flashing_ = true
 			for enemy in enemies_hit_.values():
-				enemy.process_hit(stats_.damage_)
-				stats_.try_apply_modifiers(enemy)
+				enemy.process_hit(_stats().damage_)
+				_stats().try_apply_modifiers(enemy)
 		else:
 			is_flashing_ = false
 
