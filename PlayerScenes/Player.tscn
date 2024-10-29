@@ -1,21 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv2lth071a2o2"]
+[gd_scene load_steps=9 format=3 uid="uid://bv2lth071a2o2"]
 
 [ext_resource type="Script" path="res://PlayerScenes/player.gd" id="1_iyv2b"]
 [ext_resource type="Texture2D" uid="uid://cbqkulfbx1kd8" path="res://PlayerScenes/assets/Character 1.png" id="3_h5au2"]
+[ext_resource type="Texture2D" uid="uid://c07hx3wfbbi1q" path="res://PlayerScenes/assets/Character 1 Walking.png" id="3_rqq0p"]
 [ext_resource type="Script" path="res://PlayerScenes/star_cd.gd" id="4_v25xb"]
 [ext_resource type="Script" path="res://PlayerScenes/boomerang_cd.gd" id="5_enjst"]
 [ext_resource type="Script" path="res://PlayerScenes/heart_cd.gd" id="5_s73jc"]
 [ext_resource type="PackedScene" uid="uid://dox0872nky3aj" path="res://UI/HealthBar/HealthBar.tscn" id="6_ecdu5"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vwcfc"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_c822p"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rqq0p")
+}, {
 "duration": 1.0,
 "texture": ExtResource("3_h5au2")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
@@ -23,9 +27,9 @@ collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_iyv2b")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.91799, 1.91799)
-sprite_frames = SubResource("SpriteFrames_vwcfc")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_c822p")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-12, 1, -6, -5, -6, -16, 8, -16, 8, 1, 16, 4, 15, 8, 10, 8, 10, 16, 2, 16, 2, 14, -8, 14, -12, 12, -16, 6, -16, 4)
