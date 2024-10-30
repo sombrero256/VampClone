@@ -34,7 +34,7 @@ position = Vector2(459, 790)
 
 [node name="EnemySpawner" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 2.5
+wait_time = 3.0
 autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

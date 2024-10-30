@@ -1,20 +1,19 @@
 extends Enemy
 
-const CLOSE_ENOUGH = 5.0
-
 var state_ : State
 var initial_collision_mask_
 var dest_: Vector2
 enum State {SLEEPING, AWAKE}
 
 func _ready():
+	super._ready()
 	state_ = State.SLEEPING
 
 func _physics_process(delta: float) -> void:
 	if frozen_: return
 	if state_ == State.SLEEPING:
 		return
-	if position.distance_to(dest_) < CLOSE_ENOUGH:
+	if Globalstats.CloseEnough(position, dest_):
 		state_ = State.SLEEPING
 	var dir = position.direction_to(dest_)
 	velocity = dir * stats_.Speed

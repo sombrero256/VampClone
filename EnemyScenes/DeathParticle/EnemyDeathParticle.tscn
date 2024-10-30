@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://dolkglgvee7r7"]
 
 [ext_resource type="Material" uid="uid://dcv7iu7ea7207" path="res://EnemyScenes/DeathParticle/processmat_EnemyDeathParticle.tres" id="1_7cak5"]
-[ext_resource type="Texture2D" uid="uid://u2l3plun2mww" path="res://EnemyScenes/DeathParticle/crank_particle.png" id="1_mcot2"]
-[ext_resource type="Texture2D" uid="uid://cug20d0i3vsmt" path="res://EnemyScenes/DeathParticle/gear_particle.png" id="3_cytde"]
+[ext_resource type="Texture2D" uid="uid://c3tltaejb0ve2" path="res://EnemyScenes/DeathParticle/crank_particle.png" id="1_mcot2"]
+[ext_resource type="Texture2D" uid="uid://bdhsnwvwt4tkh" path="res://EnemyScenes/DeathParticle/gear_particle.png" id="3_cytde"]
 [ext_resource type="Script" path="res://EnemyScenes/DeathParticle/set_oneshot.gd" id="3_igq3p"]
-[ext_resource type="Texture2D" uid="uid://d0g4lhx32bq67" path="res://EnemyScenes/DeathParticle/sparkle_particle.png" id="4_1qm7l"]
+[ext_resource type="Texture2D" uid="uid://cj77dtg605qln" path="res://EnemyScenes/DeathParticle/sparkle_particle.png" id="4_1qm7l"]
 [ext_resource type="Material" uid="uid://bcv7a5iwoyr1b" path="res://EnemyScenes/DeathParticle/processmat_sparkleparticle.tres" id="4_tl8km"]
-[ext_resource type="Texture2D" uid="uid://bpc808pyxc17n" path="res://EnemyScenes/DeathParticle/sparkle2_particle.png" id="6_cjbkd"]
+[ext_resource type="Texture2D" uid="uid://hsyvs6lx6nig" path="res://EnemyScenes/DeathParticle/sparkle2_particle.png" id="6_cjbkd"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_q2frh"]
 frames = 2
@@ -40,3 +40,8 @@ explosiveness = 1.0
 randomness = 1.0
 trail_sections = 3
 script = ExtResource("3_igq3p")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

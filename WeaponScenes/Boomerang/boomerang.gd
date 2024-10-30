@@ -6,7 +6,6 @@ const Direction = preload("res://PlayerScenes/player.gd").Direction
 
 @onready var RETURN_TIME = Engine.get_frames_per_second() * 2
 
-const CLOSE_ENOUGH = 5.0
 const DISTANCE = 400
 
 var dest_: Vector2
@@ -36,18 +35,14 @@ func _reset() -> void:
 		dest_.y += DISTANCE 
 	status_ =  GOING
 
-func _pretty_close() -> bool:
-	var dist = position.distance_to(dest_)
-	return dist < CLOSE_ENOUGH
-
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(player):
 		return
-	if status_ == GOING and _pretty_close():
+	if status_ == GOING and Globalstats.CloseEnough(position, dest_):
 		status_ = RETURN
 	if status_ == RETURN:
 		dest_ = player.position
-		if _pretty_close():
+		if Globalstats.CloseEnough(position, dest_):
 			_reset()
 	var dir = position.direction_to(dest_)
 	velocity = dir * stats().speed_

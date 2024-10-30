@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk4yxtuvk07rk"]
+[gd_scene load_steps=3 format=3 uid="uid://dsawxtwun5cc5"]
 
 [ext_resource type="Script" path="res://Global/globalstats.gd" id="1_q81nm"]
 [ext_resource type="PackedScene" uid="uid://clh4fylns42ke" path="res://WeaponScenes/Base/weapon_stats_component.tscn" id="2_al5ln"]

@@ -1,6 +1,7 @@
 class_name Enemy extends CharacterBody2D
 
-enum EnemyType {RAT, CAT, DOG}
+const ELITE_CHANCE:float = 0.03
+enum EnemyType {RAT, CAT, DOG, HORSE, BOSS}
 
 @export var type_: EnemyType
 @export var sprite_: AnimatedSprite2D
@@ -12,7 +13,19 @@ enum EnemyType {RAT, CAT, DOG}
 
 @onready var death_particle = preload("res://EnemyScenes/DeathParticle/EnemyDeathParticle.tscn")
 var frozen_: bool = false
+var is_elite_: bool = false 
 const CRIT_AMOUNT = 50
+
+func _ready() -> void:
+	# Determine if they are an elite
+	if type_ != EnemyType.BOSS and randf() <= ELITE_CHANCE * Globalstats.night:
+		is_elite_ = true
+		scale *= 1.5
+		stats_.Max_Health *= 3
+		stats_.DPS *= 2
+
+	health_.max_value = stats_.Max_Health
+	health_.value = stats_.Max_Health
 
 # Eventually this returns rewards if killed
 func process_hit(damages, color: Color = Color("a356ff")) -> void:
@@ -23,7 +36,9 @@ func process_hit(damages, color: Color = Color("a356ff")) -> void:
 		var _inst = death_particle.instantiate() as Node2D
 		_inst.global_position = position
 		get_node("/root").add_child(_inst)
-		Globalstats.SavedEnemy(type_)
+		# Elites are worth more!
+		var saved_amt = 5 if is_elite_ else 1
+		Globalstats.SavedEnemy(type_, saved_amt)
 		queue_free()
 
 func reset() -> void:
@@ -32,10 +47,6 @@ func reset() -> void:
 	sprite_.frame = 0
 	sprite_.modulate = Color(1, 1, 1, 1)
 	status_.text = ""
-
-func _ready() -> void:
-	health_.max_value = stats_.Max_Health
-	health_.value = stats_.Max_Health
 	
 func SetOnFire() -> void:
 	Fire.Start()

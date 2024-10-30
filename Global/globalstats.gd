@@ -7,6 +7,7 @@ const EnemyType = preload("res://EnemyScenes/enemy.gd").EnemyType
 const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
 
 static var player_stats: PlayerStats
+static var night: int = 0
 
 static var _enemy_saved: Dictionary = {}
 static var _weapon_stats: Dictionary = {}
@@ -14,15 +15,18 @@ static var _weapon_stats: Dictionary = {}
 func _ready() -> void:
 	player_stats = PlayerStats.new()
 	_weapon_stats = {
-		WeaponType.HEART: WeaponStats.new(20, 1),
-		WeaponType.BOOMERANG: WeaponStats.new(25, 250),
-		WeaponType.BUBBLE: WeaponStats.new(2, 1)
+		WeaponType.HEART: WeaponStats.new(40, 1),
+		WeaponType.BOOMERANG: WeaponStats.new(50, 250),
+		WeaponType.BUBBLE: WeaponStats.new(3, 1)
 	}
 
-static func SavedEnemy(type: EnemyType):
+static func CloseEnough(pos1: Vector2 , pos2: Vector2) -> bool:
+	return pos1.distance_to(pos2) < 5.0
+
+static func SavedEnemy(type: EnemyType, amt: int) -> void:
 	if !_enemy_saved.has(type):
 		_enemy_saved[type] = 0
-	_enemy_saved[type] += 1
+	_enemy_saved[type] += amt
 
 static func GetSavedEnemies() -> Dictionary:
 	for type in _enemy_saved.keys():
