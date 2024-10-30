@@ -28,7 +28,7 @@ position = Vector2(-612, -365)
 
 [node name="Node2D" parent="." instance=ExtResource("3_51hou")]
 z_index = -4096
-position = Vector2(459, 790)
+position = Vector2(459, -306)
 
 [node name="Ui" parent="." instance=ExtResource("4_tswyn")]
 
