@@ -21,7 +21,7 @@ func _ready() -> void:
 	time_ = 0 # MIDNIGHT
 	
 func set_time(hour: int, minute: int):
-	time_label_.text = "Night: " + str(Globalstats.night) + "\n" \
+	time_label_.text = "Night " + str(Globalstats.night + 1) + "\n" \
 						+  _amfm_hour(hour) + ":" + _minute(minute) + " am"
 
 func _amfm_hour(hour:int) -> String:

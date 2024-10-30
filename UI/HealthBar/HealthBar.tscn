@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dox0872nky3aj"]
+[gd_scene load_steps=10 format=3 uid="uid://dox0872nky3aj"]
 
-[ext_resource type="Texture2D" uid="uid://b3khslcvf35hm" path="res://UI/HealthBar/health.png" id="1_owu3r"]
+[ext_resource type="Texture2D" uid="uid://dgxrpp0m22afq" path="res://UI/HealthBar/health.png" id="1_owu3r"]
 [ext_resource type="Shader" path="res://UI/HealthBar/HealthBar.gdshader" id="2_8v7kl"]
 [ext_resource type="Script" path="res://UI/HealthBar/health_bar_display.gd" id="2_jg8no"]
+[ext_resource type="Texture2D" uid="uid://cg83r0npea2tj" path="res://EnemyScenes/Enemy/Cat.png" id="3_2whc0"]
+[ext_resource type="PackedScene" uid="uid://ckax8rjgtbwjt" path="res://PlayerScenes/saved_animal.tscn" id="4_5x4kw"]
+[ext_resource type="Texture2D" uid="uid://bc702be44dkhp" path="res://EnemyScenes/Enemy/Dog.png" id="4_l8rr6"]
+[ext_resource type="Texture2D" uid="uid://bqwsw1an5m4k6" path="res://EnemyScenes/Enemy/Rat.png" id="5_oy283"]
+[ext_resource type="Texture2D" uid="uid://cvthgcvoua4lm" path="res://EnemyScenes/Enemy/Robot/Robot Horse.png" id="5_skjm3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1wadk"]
 shader = ExtResource("2_8v7kl")
@@ -20,10 +25,64 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 61.0
+offset_right = 46.0
+offset_bottom = 84.0
+text = "Saved"
+
+[node name="SavedAnimal4" parent="." instance=ExtResource("4_5x4kw")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 9.0
+offset_top = 82.0
+offset_right = 73.0
+offset_bottom = 82.0
+animal_type = 2
+animal_texture = ExtResource("4_l8rr6")
+
+[node name="SavedAnimal3" parent="." instance=ExtResource("4_5x4kw")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 9.0
+offset_top = 98.0
+offset_right = 73.0
+offset_bottom = 98.0
+animal_type = 1
+animal_texture = ExtResource("3_2whc0")
+
+[node name="SavedAnimal2" parent="." instance=ExtResource("4_5x4kw")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 9.0
+offset_top = 114.0
+offset_right = 73.0
+offset_bottom = 114.0
+animal_texture = ExtResource("5_oy283")
+
+[node name="SavedAnimal" parent="." instance=ExtResource("4_5x4kw")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 9.0
+offset_top = 131.0
+offset_right = 73.0
+offset_bottom = 131.0
+animal_type = 3
+animal_texture = ExtResource("5_skjm3")
+
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 64.0
+offset_bottom = 100.0
 scale = Vector2(2, 2)
 
 [node name="TextureRect" type="TextureRect" parent="GridContainer"]

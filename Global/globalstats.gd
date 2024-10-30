@@ -9,7 +9,13 @@ const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
 static var player_stats: PlayerStats
 static var night: int = 0
 
-static var _enemy_saved: Dictionary = {}
+static var _enemy_saved: Dictionary = {
+	EnemyType.DOG: 0,
+	EnemyType.CAT: 0,
+	EnemyType.RAT: 0,
+	EnemyType.HORSE: 0,
+	EnemyType.BOSS: 0,
+}
 static var _weapon_stats: Dictionary = {}
 
 func _ready() -> void:
@@ -24,13 +30,9 @@ static func CloseEnough(pos1: Vector2 , pos2: Vector2) -> bool:
 	return pos1.distance_to(pos2) < 5.0
 
 static func SavedEnemy(type: EnemyType, amt: int) -> void:
-	if !_enemy_saved.has(type):
-		_enemy_saved[type] = 0
 	_enemy_saved[type] += amt
 
 static func GetSavedEnemies() -> Dictionary:
-	for type in _enemy_saved.keys():
-		print("Saved: %d amount of %ss" % [_enemy_saved[type], str(EnemyType.keys()[type])])
 	return _enemy_saved
 
 static func GetWeaponStats(type_: WeaponType) -> WeaponStats:

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckax8rjgtbwjt"]
+
+[ext_resource type="Texture2D" uid="uid://bc702be44dkhp" path="res://EnemyScenes/Enemy/Dog.png" id="1_duciv"]
+[ext_resource type="Script" path="res://PlayerScenes/saved_animal.gd" id="1_tyqu6"]
+
+[node name="SavedAnimal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tyqu6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_duciv")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 20.0
+offset_top = -2.0
+offset_right = 152.0
+offset_bottom = 21.0
+text = "10000"
+vertical_alignment = 2
