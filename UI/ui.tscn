@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcl4qjrum74jl"]
+[gd_scene load_steps=10 format=3 uid="uid://dcl4qjrum74jl"]
 
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_5dd5d"]
 [ext_resource type="Script" path="res://UI/night_end.gd" id="2_46sdn"]
 [ext_resource type="Texture2D" uid="uid://b6sl4ny0wnla1" path="res://UI/progressbar.png" id="2_d8xui"]
 [ext_resource type="Texture2D" uid="uid://ch7gkuhusqldd" path="res://timer.png" id="3_nn23d"]
 [ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="4_kt6el"]
+[ext_resource type="FontFile" uid="uid://cn3lytj1xsukt" path="res://UI/Font/QuinqueFive.woff2" id="5_4gr8p"]
 [ext_resource type="FontFile" uid="uid://cfs4cf06yomkj" path="res://Font/QuinqueFive.otf" id="5_4myye"]
 
 [sub_resource type="Theme" id="Theme_ebrej"]
@@ -72,12 +73,16 @@ texture_normal = ExtResource("4_kt6el")
 
 [node name="TimeLabel" type="Label" parent="Time"]
 unique_name_in_owner = true
-offset_left = 975.0
+offset_left = 949.0
 offset_top = 62.0
-offset_right = 1112.0
-offset_bottom = 133.0
+offset_right = 1179.0
+offset_bottom = 152.0
 rotation = 0.00126796
-text = "12:00 AM
+scale = Vector2(0.85, 0.85)
+theme_override_fonts/font = ExtResource("5_4gr8p")
+theme_override_font_sizes/font_size = 1
+text = "Night 0
+12:00 AM
 
 "
 label_settings = SubResource("LabelSettings_5xu3x")

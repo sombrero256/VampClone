@@ -21,10 +21,12 @@ func _physics_process(delta: float) -> void:
 		play_sprite = true
 	if Input.is_action_pressed("right"):
 		dir.x += 1
+		sprite_.flip_h = false
 		play_sprite = true
 		direction_ = Direction.RIGHT
 	if Input.is_action_pressed("left"):
 		dir.x -= 1
+		sprite_.flip_h = true
 		play_sprite = true
 		direction_ = Direction.LEFT
 	if play_sprite:

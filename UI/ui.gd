@@ -4,7 +4,7 @@ const MINUTES_PER_DAY = 1440
 const MINUTES_PER_HOUR = 60
 const END_MIN = 7 * MINUTES_PER_HOUR # 7am
 const INGAME_TO_REAL_MINUTE_DURATION = (2 * PI) / MINUTES_PER_DAY
-@export var INGAME_SPEED = 10 # Normal speed 4.5
+@export var INGAME_SPEED = 5 # Normal speed 5
 
 signal time_changed(hour: int, minute: int)
 
@@ -21,7 +21,8 @@ func _ready() -> void:
 	time_ = 0 # MIDNIGHT
 	
 func set_time(hour: int, minute: int):
-	time_label_.text = _amfm_hour(hour) + ":" + _minute(minute) + " am"
+	time_label_.text = "Night: " + str(Globalstats.night) + "\n" \
+						+  _amfm_hour(hour) + ":" + _minute(minute) + " am"
 
 func _amfm_hour(hour:int) -> String:
 	if hour == 0:

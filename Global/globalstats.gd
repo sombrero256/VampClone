@@ -15,8 +15,8 @@ static var _weapon_stats: Dictionary = {}
 func _ready() -> void:
 	player_stats = PlayerStats.new()
 	_weapon_stats = {
-		WeaponType.HEART: WeaponStats.new(40, 1),
-		WeaponType.BOOMERANG: WeaponStats.new(50, 250),
+		WeaponType.HEART: WeaponStats.new(30, 1),
+		WeaponType.BOOMERANG: WeaponStats.new(40, 250),
 		WeaponType.BUBBLE: WeaponStats.new(3, 1)
 	}
 
