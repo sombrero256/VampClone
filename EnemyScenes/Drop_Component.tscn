@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dshsllyaa4bm5"]
+
+[ext_resource type="Script" path="res://EnemyScenes/drop_component.gd" id="1_4w0to"]
+[ext_resource type="PackedScene" uid="uid://n88ukktm8uk8" path="res://WeaponScenes/Boomerang/Boomerang.tscn" id="2_6s2lp"]
+
+[node name="DropComponent" type="Node2D"]
+script = ExtResource("1_4w0to")
+drop = ExtResource("2_6s2lp")

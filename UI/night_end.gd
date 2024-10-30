@@ -35,4 +35,4 @@ func _on_go_to_sanctuary_pressed() -> void:
 	get_tree().paused = false
 	visible = false
 	# TEMPORARY, REPLACE WITH SCENE TRANSITION
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://SanctuaryScenes/Sanctuary.tscn")
