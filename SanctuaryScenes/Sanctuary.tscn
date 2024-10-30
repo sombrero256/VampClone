@@ -244,13 +244,11 @@ tile_set = SubResource("TileSet_2um17")
 
 [node name="JustAGuy" parent="." instance=ExtResource("1_gguxs")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(0, 609)
 collision_layer = 9
 collision_mask = 8
 
 [node name="MrDog" parent="." instance=ExtResource("2_ov6r2")]
-visible = false
 position = Vector2(-110, -34)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MrDog"]
@@ -267,7 +265,6 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="MrsCat" parent="." instance=ExtResource("2_ov6r2")]
-visible = false
 position = Vector2(759, -130)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MrsCat"]
@@ -283,7 +280,6 @@ autoplay = "default"
 visible = false
 
 [node name="Horsey" parent="." instance=ExtResource("2_ov6r2")]
-visible = false
 position = Vector2(-317, -244)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Horsey"]
@@ -295,10 +291,8 @@ autoplay = "default"
 [node name="Dialogue" parent="Horsey" instance=ExtResource("3_qkpqa")]
 
 [node name="StatUpgrade" parent="Horsey" instance=ExtResource("4_hs3hc")]
-visible = false
 
 [node name="Mouse" parent="." instance=ExtResource("2_ov6r2")]
-visible = false
 position = Vector2(262, 377)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mouse"]
