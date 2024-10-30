@@ -55,7 +55,7 @@ func _on_texture_button_pressed() -> void:
 	$SpawnTimer.stop()
 	$FullScroll.start()
 	scroll_speed = scroll_speed * 8
-	var pattern = tile_set.get_pattern(0)
+	var pattern = tile_set.get_pattern(1)
 	for i in range(get_used_rect().size.x):
 		if i in range(0, 17) or i in range(19, get_used_rect().size.x):
 			# draw blank / grass
@@ -74,4 +74,4 @@ func _on_texture_button_pressed() -> void:
 				# add normal path
 				set_cell(Vector2(i, -offset), 1, Vector2(7, 0))
 
-	set_pattern(Vector2i(0, -offset - pattern.get_size().y), pattern)
+	set_pattern(Vector2i(-1, -offset - pattern.get_size().y), pattern)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnhe5b8gjqjje"]
+
+[ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="1_st4ys"]
+[ext_resource type="Texture2D" uid="uid://qlv4sh1wn0uc" path="res://UI/button-64x16-rectangle-on.png" id="2_wlxoi"]
+[ext_resource type="Texture2D" uid="uid://bmqpsou78xnap" path="res://EnemyScenes/EnemySprites/Chicken.png" id="3_vvcrs"]
+
+[node name="ShopButton" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture_normal = ExtResource("1_st4ys")
+texture_pressed = ExtResource("2_wlxoi")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 16.0
+
+[node name="WeaponSprite" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(8.25, 6.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_vvcrs")
+
+[node name="WeaponSprite2" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(17, 6.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_vvcrs")
