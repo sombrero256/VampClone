@@ -40,6 +40,7 @@ autostart = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_iws8w")
 autoplay = true
+max_distance = 8990.0
 
 [connection signal="time_changed" from="Ui" to="." method="_on_ui_time_changed"]
 [connection signal="timeout" from="EnemySpawner" to="." method="_on_timer_timeout"]
