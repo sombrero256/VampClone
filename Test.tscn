@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqcaqfagbpmwk"]
+[gd_scene load_steps=8 format=3 uid="uid://bqcaqfagbpmwk"]
 
 [ext_resource type="Script" path="res://enemy_spawn.gd" id="1_fitpt"]
 [ext_resource type="PackedScene" uid="uid://bv2lth071a2o2" path="res://PlayerScenes/Player.tscn" id="1_rwsgl"]
 [ext_resource type="PackedScene" uid="uid://bwuxingjox15e" path="res://World.tscn" id="4_hb6vw"]
 [ext_resource type="PackedScene" uid="uid://dcl4qjrum74jl" path="res://UI/ui.tscn" id="5_6geqr"]
 [ext_resource type="AudioStream" uid="uid://y4y1c1k271o8" path="res://level-theme.wav" id="5_lvr5l"]
+[ext_resource type="PackedScene" uid="uid://cj68loky1haky" path="res://UI/ShopUI/UpgradeButton.tscn" id="6_s1n5u"]
 
 [sub_resource type="Curve2D" id="Curve2D_qcrng"]
 _data = {
@@ -17,7 +18,7 @@ script = ExtResource("1_fitpt")
 
 [node name="Player" parent="." instance=ExtResource("1_rwsgl")]
 unique_name_in_owner = true
-position = Vector2(456, 348)
+position = Vector2(458, 1458)
 
 [node name="Path2D" type="Path2D" parent="Player"]
 curve = SubResource("Curve2D_qcrng")
@@ -25,6 +26,11 @@ curve = SubResource("Curve2D_qcrng")
 [node name="MonsterSpawnPath" type="PathFollow2D" parent="Player/Path2D"]
 unique_name_in_owner = true
 position = Vector2(-612, -365)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2(-458, -1458)
+stream = ExtResource("5_lvr5l")
+autoplay = true
 
 [node name="Node2D" parent="." instance=ExtResource("4_hb6vw")]
 z_index = -4096
@@ -37,9 +43,12 @@ unique_name_in_owner = true
 wait_time = 3.0
 autostart = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_lvr5l")
-autoplay = true
+[node name="ShopButton" parent="." instance=ExtResource("6_s1n5u")]
+offset_left = 361.128
+offset_top = 1514.92
+offset_right = 425.128
+offset_bottom = 1530.92
+CorrespondingWeapon = 2
 
 [connection signal="time_changed" from="Ui" to="." method="_on_ui_time_changed"]
 [connection signal="timeout" from="EnemySpawner" to="." method="_on_timer_timeout"]

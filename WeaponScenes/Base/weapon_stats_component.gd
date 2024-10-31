@@ -17,6 +17,10 @@ var area_: float = 1.0
 @export
 var modifiers_: Array = []
 
+var damage_levels = 0
+var speed_levels = 0
+var area_levels = 0
+
 func lvl_up(dmg_up: float, speed_up: float, area_up: float, modifiers: Array):
 	damage_ *= dmg_up
 	speed_ *= speed_up
