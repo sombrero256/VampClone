@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://StartupScreen/destroy_on_press.gd" id="5_dtpj6"]
 [ext_resource type="Texture2D" uid="uid://boi7eu87r4ug0" path="res://Tileset/structures/LG-NOTABLE-Shed_A.png" id="5_gvmtb"]
 [ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="5_j0fok"]
-[ext_resource type="PackedScene" uid="uid://bqcaqfagbpmwk" path="res://Game.tscn" id="6_dhrxv"]
+[ext_resource type="PackedScene" uid="uid://bqcaqfagbpmwk" path="res://Test.tscn" id="6_dhrxv"]
 [ext_resource type="Texture2D" uid="uid://dwomo7fj5jwiy" path="res://Tileset/decor/gravestone.png" id="6_vs4r8"]
 [ext_resource type="FontFile" uid="uid://cfs4cf06yomkj" path="res://Font/QuinqueFive.otf" id="7_d082t"]
 [ext_resource type="Texture2D" uid="uid://kgp1m7sgdaqs" path="res://StartupScreen/Sanctuary-Logo.png" id="9_wocnq"]
