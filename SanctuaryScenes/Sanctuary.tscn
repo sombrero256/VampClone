@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bp3hc0a5eqsii"]
+[gd_scene load_steps=46 format=4 uid="uid://bp3hc0a5eqsii"]
 
 [ext_resource type="Texture2D" uid="uid://fytgj2balqfj" path="res://path_tiles.png" id="1_ai0i1"]
 [ext_resource type="PackedScene" uid="uid://ka6fhdls05bm" path="res://SanctuaryScenes/JustAGuy.tscn" id="1_gguxs"]
@@ -19,8 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://b8xqbnhdftxx0" path="res://Tileset/plants/PLANT-Shrub_A.png" id="17_xylpu"]
 [ext_resource type="Texture2D" uid="uid://dwomo7fj5jwiy" path="res://Tileset/decor/gravestone.png" id="20_rk7vt"]
 [ext_resource type="Texture2D" uid="uid://bmrpxrok6ry1f" path="res://Tileset/structures/LG-NOTABLE-Main Gate_A_Open.png" id="22_x5i8j"]
+[ext_resource type="Script" path="res://SanctuaryScenes/instructions.gd" id="23_1l3j3"]
 [ext_resource type="Texture2D" uid="uid://bptnl10mybgvt" path="res://Tileset/structures/LG-NOTABLE-Pavilion_B.png" id="23_ksfpq"]
+[ext_resource type="FontFile" uid="uid://cfs4cf06yomkj" path="res://Font/QuinqueFive.otf" id="24_73sd2"]
 [ext_resource type="Texture2D" uid="uid://boi7eu87r4ug0" path="res://Tileset/structures/LG-NOTABLE-Shed_A.png" id="24_vcb2o"]
+[ext_resource type="Script" path="res://SanctuaryScenes/leave.gd" id="25_gvs1c"]
 [ext_resource type="Texture2D" uid="uid://bpq6y8njt6ffu" path="res://Tileset/plants/LG-PLANT-Tree_A.png" id="25_x7hwn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eeek8"]
@@ -255,6 +258,13 @@ sources/0 = SubResource("TileSetAtlasSource_4m1oh")
 sources/1 = SubResource("TileSetAtlasSource_n7g3q")
 sources/2 = SubResource("TileSetAtlasSource_3xouj")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e32ft"]
+size = Vector2(184, 97)
+
+[sub_resource type="Theme" id="Theme_t0v7y"]
+default_font = ExtResource("24_73sd2")
+default_font_size = 5
+
 [node name="Sanctuary" type="Node2D"]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
@@ -280,6 +290,7 @@ sprite_frames = SubResource("SpriteFrames_pefi8")
 autoplay = "default"
 
 [node name="Dialogue" parent="MrDog" instance=ExtResource("3_qkpqa")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="StatUpgrade" parent="MrDog" instance=ExtResource("4_hs3hc")]
@@ -296,6 +307,7 @@ sprite_frames = SubResource("SpriteFrames_0xcfw")
 autoplay = "default"
 
 [node name="Dialogue" parent="MrsCat" instance=ExtResource("3_qkpqa")]
+visible = false
 
 [node name="StatUpgrade" parent="MrsCat" instance=ExtResource("4_hs3hc")]
 visible = false
@@ -310,9 +322,11 @@ sprite_frames = SubResource("SpriteFrames_nbbbw")
 autoplay = "default"
 
 [node name="Dialogue" parent="Horsey" instance=ExtResource("3_qkpqa")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="StatUpgrade" parent="Horsey" instance=ExtResource("4_hs3hc")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Mouse" parent="." instance=ExtResource("2_ov6r2")]
@@ -325,6 +339,7 @@ sprite_frames = SubResource("SpriteFrames_ru1t8")
 autoplay = "default"
 
 [node name="Dialogue" parent="Mouse" instance=ExtResource("3_qkpqa")]
+visible = false
 
 [node name="StatUpgrade" parent="Mouse" instance=ExtResource("4_hs3hc")]
 visible = false
@@ -346,3 +361,45 @@ z_index = 1
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD//xIAAgABAAIAAAAAABIAAgACAAIAAAAHAAgAAQAAAAAAAAAHAAkAAQAAAAEAAAAHAAoAAQAAAAIAAAAHAAsAAQAAAAMAAAAIAAgAAQABAAAAAAAIAAkAAQABAAEAAAAIAAoAAQABAAIAAAAIAAsAAQABAAMAAAAJAAgAAQACAAAAAAAJAAkAAQACAAEAAAAJAAoAAQACAAIAAAAJAAsAAQACAAMAAAAKAAgAAQADAAAAAAAKAAkAAQADAAEAAAAKAAoAAQADAAIAAAAKAAsAAQADAAMAAAD+/xAAAgAAAAAAAAD+/xEAAgAAAAEAAAD+/xIAAgAAAAIAAAD+/xMAAgAAAAMAAAD//xAAAgABAAAAAAD//xEAAgABAAEAAAD//xMAAgABAAMAAAAAABAAAgACAAAAAAAAABEAAgACAAEAAAAAABMAAgACAAMAAAABABAAAgADAAAAAAABABEAAgADAAEAAAABABIAAgADAAIAAAABABMAAgADAAMAAAA=")
 tile_set = SubResource("TileSet_peohe")
+
+[node name="Gravestone" type="Sprite2D" parent="."]
+position = Vector2(-47, 496)
+scale = Vector2(2, 2)
+texture = ExtResource("20_rk7vt")
+
+[node name="Instructions" type="Area2D" parent="."]
+position = Vector2(-1, 634)
+script = ExtResource("23_1l3j3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions"]
+position = Vector2(1, -45)
+shape = SubResource("RectangleShape2D_e32ft")
+
+[node name="ColorRect" type="ColorRect" parent="Instructions"]
+visible = false
+offset_left = 93.0
+offset_top = -93.0
+offset_right = 232.0
+offset_bottom = -26.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Instructions/ColorRect"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 47.0
+theme = SubResource("Theme_t0v7y")
+text = "speak to animals: upgrade
+Leave Sanctuary: battle!"
+
+[node name="Leave" type="Area2D" parent="."]
+position = Vector2(-1, 634)
+script = ExtResource("25_gvs1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leave"]
+position = Vector2(0, 71)
+shape = SubResource("RectangleShape2D_e32ft")
+
+[connection signal="body_entered" from="Instructions" to="Instructions" method="_on_body_entered"]
+[connection signal="body_exited" from="Instructions" to="Instructions" method="_on_body_exited"]
+[connection signal="body_entered" from="Leave" to="Leave" method="_on_body_entered"]
+[connection signal="body_exited" from="Leave" to="Leave" method="_on_body_exited"]
