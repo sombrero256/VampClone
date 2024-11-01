@@ -6,7 +6,7 @@ extends Node
 const EnemyType = preload("res://EnemyScenes/enemy.gd").EnemyType
 const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
 
-static var player_stats: PlayerStats
+static var player_stats: PlayerStats = PlayerStats.new()
 static var night: int = 0
 
 static var _enemy_saved: Dictionary = {
@@ -16,11 +16,7 @@ static var _enemy_saved: Dictionary = {
 	EnemyType.HORSE: 0,
 	EnemyType.BOSS: 0,
 }
-static var _weapon_stats: Dictionary = {}
-
-func _ready() -> void:
-	player_stats = PlayerStats.new()
-	_weapon_stats = {
+static var _weapon_stats: Dictionary = {
 		WeaponType.HEART: WeaponStats.new(30, 1),
 		WeaponType.BOOMERANG: WeaponStats.new(40, 250),
 		WeaponType.BUBBLE: WeaponStats.new(3, 1)

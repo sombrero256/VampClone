@@ -4,7 +4,7 @@ const EnemyType = preload("res://EnemyScenes/enemy.gd").EnemyType
 const Modifier = preload("res://WeaponScenes/Base/weapon_stats_component.gd").Modifier
 const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
 
-@export var enabled_: bool = true
+@export var enabled_: bool = false
 # Timer speeds up by this amount each hour
 @export var speed_up_rate_: float = .95
 

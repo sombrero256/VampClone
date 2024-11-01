@@ -18,20 +18,21 @@ const CRIT_AMOUNT = 50
 
 func _ready() -> void:
 	# Determine if they are an elite
+	sprite_.play("default")
+	health_.max_value = stats_.Max_Health
+	health_.value = stats_.Max_Health
+	
 	if type_ != EnemyType.BOSS and randf() <= ELITE_CHANCE * Globalstats.night:
 		is_elite_ = true
 		scale *= 1.5
 		stats_.Max_Health *= 3
 		stats_.DPS *= 2
 
-	health_.max_value = stats_.Max_Health
-	health_.value = stats_.Max_Health
-
 # Eventually this returns rewards if killed
 func process_hit(damages, color: Color = Color("a356ff")) -> void:
 	health_.value -= damages
 	sprite_.modulate = color
-	sprite_.frame = 1
+	sprite_.animation = "hurt"
 	if health_.value == 0:
 		var _inst = death_particle.instantiate() as Node2D
 		_inst.global_position = position
@@ -44,7 +45,7 @@ func process_hit(damages, color: Color = Color("a356ff")) -> void:
 func reset() -> void:
 	if frozen_:
 		return
-	sprite_.frame = 0
+	sprite_.play("default")
 	sprite_.modulate = Color(1, 1, 1, 1)
 	status_.text = ""
 	

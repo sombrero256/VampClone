@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqcaqfagbpmwk"]
+[gd_scene load_steps=10 format=3 uid="uid://bqcaqfagbpmwk"]
 
 [ext_resource type="Script" path="res://enemy_spawn.gd" id="1_fitpt"]
 [ext_resource type="PackedScene" uid="uid://bv2lth071a2o2" path="res://PlayerScenes/Player.tscn" id="1_rwsgl"]
 [ext_resource type="PackedScene" uid="uid://bwuxingjox15e" path="res://World.tscn" id="4_hb6vw"]
 [ext_resource type="PackedScene" uid="uid://dcl4qjrum74jl" path="res://UI/ui.tscn" id="5_6geqr"]
 [ext_resource type="AudioStream" uid="uid://y4y1c1k271o8" path="res://level-theme.wav" id="5_lvr5l"]
-[ext_resource type="PackedScene" uid="uid://cj68loky1haky" path="res://UI/ShopUI/UpgradeButton.tscn" id="6_s1n5u"]
+[ext_resource type="PackedScene" uid="uid://3vlc2ryokbjr" path="res://EnemyScenes/Boss/boss.tscn" id="6_lcabt"]
+[ext_resource type="PackedScene" path="res://UI/ShopUI/UpgradeButton.tscn" id="6_s1n5u"]
+[ext_resource type="PackedScene" uid="uid://b5q5omkvulq62" path="res://EnemyScenes/Boss/boss_bullet.tscn" id="8_4psdy"]
 
 [sub_resource type="Curve2D" id="Curve2D_qcrng"]
 _data = {
@@ -15,6 +17,9 @@ point_count = 5
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_fitpt")
+
+[node name="BossGun" parent="." instance=ExtResource("8_4psdy")]
+position = Vector2(518, 1454)
 
 [node name="Player" parent="." instance=ExtResource("1_rwsgl")]
 unique_name_in_owner = true
@@ -33,10 +38,14 @@ stream = ExtResource("5_lvr5l")
 autoplay = true
 
 [node name="Node2D" parent="." instance=ExtResource("4_hb6vw")]
+visible = false
 z_index = -4096
 position = Vector2(459, 790)
 
 [node name="Ui" parent="." instance=ExtResource("5_6geqr")]
+
+[node name="Boss" parent="." instance=ExtResource("6_lcabt")]
+position = Vector2(202, 1585)
 
 [node name="EnemySpawner" type="Timer" parent="."]
 unique_name_in_owner = true

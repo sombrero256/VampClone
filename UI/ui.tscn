@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcl4qjrum74jl"]
+[gd_scene load_steps=11 format=3 uid="uid://dcl4qjrum74jl"]
 
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_5dd5d"]
 [ext_resource type="Script" path="res://UI/night_end.gd" id="2_46sdn"]
 [ext_resource type="Texture2D" uid="uid://b6sl4ny0wnla1" path="res://UI/progressbar.png" id="2_d8xui"]
+[ext_resource type="Texture2D" uid="uid://dyl0csg22lwek" path="res://UI/Night_Survived.png" id="3_57073"]
 [ext_resource type="Texture2D" uid="uid://ch7gkuhusqldd" path="res://timer.png" id="3_nn23d"]
 [ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="4_kt6el"]
 [ext_resource type="FontFile" uid="uid://cn3lytj1xsukt" path="res://UI/Font/QuinqueFive.woff2" id="5_4gr8p"]
@@ -26,22 +27,9 @@ offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("2_46sdn")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/NightEnd"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -491.0
-offset_top = -141.0
-offset_right = 309.0
-offset_bottom = 115.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3.43432, 7.30131)
-theme = SubResource("Theme_ebrej")
-text = "NIGHT SURVIVED!"
+[node name="RichTextLabel" type="Sprite2D" parent="Node2D/NightEnd"]
+position = Vector2(590, 183)
+texture = ExtResource("3_57073")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Node2D/NightEnd"]
 z_index = 1
@@ -51,10 +39,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = 115.0
-offset_right = 110.0
-offset_bottom = 371.0
+offset_left = -115.0
+offset_top = 50.0
+offset_right = 141.0
+offset_bottom = 306.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_ebrej")
@@ -62,10 +50,10 @@ text = "GO TO SANCTUARY"
 
 [node name="GoToSanctuary2" type="TextureButton" parent="Node2D/NightEnd"]
 layout_mode = 0
-offset_left = 394.0
-offset_top = 422.0
-offset_right = 458.0
-offset_bottom = 438.0
+offset_left = 425.0
+offset_top = 357.0
+offset_right = 489.0
+offset_bottom = 373.0
 scale = Vector2(4.88, 4.88)
 texture_normal = ExtResource("4_kt6el")
 

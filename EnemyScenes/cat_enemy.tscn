@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b68n83udyxgqj"]
+[gd_scene load_steps=12 format=3 uid="uid://b68n83udyxgqj"]
 
 [ext_resource type="Script" path="res://EnemyScenes/cat_enemy.gd" id="1_iikar"]
 [ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="2_jhojc"]
 [ext_resource type="Texture2D" uid="uid://m13me7tdsi1v" path="res://EnemyScenes/Enemy/Robot/Robot Cat.png" id="3_6t34p"]
+[ext_resource type="Texture2D" uid="uid://sr73thnc8n7q" path="res://EnemyScenes/Enemy/Robot/Sleeping_Cat.png" id="3_q7yjo"]
 [ext_resource type="Texture2D" uid="uid://dfulaiyu5g7r6" path="res://EnemyScenes/Enemy/Robot/Damaged Robot Cat.png" id="4_6wlaq"]
+[ext_resource type="Texture2D" uid="uid://23ulj1ip7mnb" path="res://EnemyScenes/Enemy/Robot/Robot Cat Walking.png" id="4_qg0nj"]
 [ext_resource type="PackedScene" uid="uid://cgx0tfbvsjcr7" path="res://EnemyScenes/enemy_stats.tscn" id="4_y0ue1"]
 [ext_resource type="PackedScene" uid="uid://k8vhrjbrcm6u" path="res://EnemyScenes/Fire.tscn" id="5_lnenj"]
 
@@ -13,13 +15,29 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_6t34p")
+"texture": ExtResource("3_q7yjo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_6wlaq")
 }],
 "loop": true,
-"name": &"default",
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6t34p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qg0nj")
+}],
+"loop": true,
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -56,6 +74,7 @@ fill_mode = 1
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.973, 1.973)
 sprite_frames = SubResource("SpriteFrames_xwi7y")
+animation = &"run"
 
 [node name="WakeArea" type="Area2D" parent="."]
 scale = Vector2(1, 1.073)

@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsdcsjyrkinex"]
+[gd_scene load_steps=15 format=3 uid="uid://dsdcsjyrkinex"]
 
 [ext_resource type="Script" path="res://EnemyScenes/horse_enemy.gd" id="1_uxybf"]
 [ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="2_l0r24"]
 [ext_resource type="Texture2D" uid="uid://cvthgcvoua4lm" path="res://EnemyScenes/Enemy/Robot/Robot Horse.png" id="3_qbhdg"]
 [ext_resource type="Texture2D" uid="uid://cqbkr0qgy7kla" path="res://EnemyScenes/Enemy/Robot/Damaged Robot Horse Walking.png" id="4_ey02g"]
+[ext_resource type="Texture2D" uid="uid://c3mmqh5lm5tj" path="res://EnemyScenes/Enemy/Robot/Robot Horse Walking.png" id="4_v7yv1"]
 [ext_resource type="Texture2D" uid="uid://d2rrxqambnm5e" path="res://EnemyScenes/Enemy/Robot/Robot Horse-angry.png" id="5_23wu3"]
 [ext_resource type="PackedScene" uid="uid://cgx0tfbvsjcr7" path="res://EnemyScenes/enemy_stats.tscn" id="5_eck2n"]
 [ext_resource type="PackedScene" uid="uid://k8vhrjbrcm6u" path="res://EnemyScenes/Fire.tscn" id="6_qie87"]
+[ext_resource type="Texture2D" uid="uid://huckcuv7vxp8" path="res://EnemyScenes/Enemy/Robot/Robot Horse Walking-angry.png" id="7_5kjo7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6xelj"]
 
@@ -17,13 +19,29 @@ animations = [{
 "texture": ExtResource("3_qbhdg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ey02g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_23wu3")
+"texture": ExtResource("4_v7yv1")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ey02g")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_23wu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5kjo7")
+}],
+"loop": true,
+"name": &"mad",
 "speed": 5.0
 }]
 
@@ -88,7 +106,7 @@ shape = SubResource("CircleShape2D_6xelj")
 position = Vector2(0.818272, -0.81827)
 scale = Vector2(2.8146, 2.8146)
 sprite_frames = SubResource("SpriteFrames_2l3h5")
-frame_progress = 0.509452
+animation = &"mad"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_top = -40.9135

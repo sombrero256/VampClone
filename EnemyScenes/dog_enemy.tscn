@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://s40j8ygk02ue"]
+[gd_scene load_steps=10 format=3 uid="uid://s40j8ygk02ue"]
 
 [ext_resource type="Script" path="res://EnemyScenes/dog_enemy.gd" id="1_coi0e"]
 [ext_resource type="Texture2D" uid="uid://cmnilfqvb605b" path="res://EnemyScenes/Enemy/Robot/Robot Dog.png" id="3_qfqcq"]
+[ext_resource type="Texture2D" uid="uid://ba2gsd27ah67v" path="res://EnemyScenes/Enemy/Robot/Robot Dog Walking.png" id="4_od5gb"]
 [ext_resource type="PackedScene" uid="uid://cgx0tfbvsjcr7" path="res://EnemyScenes/enemy_stats.tscn" id="4_qpmt6"]
 [ext_resource type="Texture2D" uid="uid://clx7jbiqcw6la" path="res://EnemyScenes/Enemy/Robot/Damaged Robot Dog Walking.png" id="4_vuh45"]
 [ext_resource type="PackedScene" uid="uid://k8vhrjbrcm6u" path="res://EnemyScenes/Fire.tscn" id="5_2b6vx"]
@@ -16,10 +17,18 @@ animations = [{
 "texture": ExtResource("3_qfqcq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_vuh45")
+"texture": ExtResource("4_od5gb")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vuh45")
+}],
+"loop": true,
+"name": &"hurt",
 "speed": 5.0
 }]
 
@@ -46,7 +55,6 @@ shape = SubResource("CircleShape2D_4avf3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.0657822, 0.0657822)
 sprite_frames = SubResource("SpriteFrames_ffx4l")
-frame_progress = 0.611111
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -1.0

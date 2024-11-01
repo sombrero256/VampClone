@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if state_ != WALKING:
-		sprite_.frame = 2
+		sprite_.play("mad")
 		if !rage_ani_.is_playing():
 			state_ = CHARGING
 	elif health_.value/float(health_.max_value) < RAGE_THRESHOLD:

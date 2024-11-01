@@ -25,7 +25,8 @@ script = ExtResource("1_c0ekd")
 visible = false
 scale = Vector2(0.76, 0.76)
 sprite_frames = SubResource("SpriteFrames_vlkll")
-frame_progress = 0.0833575
+frame = 1
+frame_progress = 0.872164
 
 [node name="FireTimer" type="Timer" parent="."]
 
