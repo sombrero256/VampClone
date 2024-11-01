@@ -14,11 +14,13 @@ func _process(delta):
 ##Player enters chat zone with an npc
 func _on_chat_zone_body_entered(body):
 	if body.name == "JustAGuy":
+		body.show_space_prompt()
 		print("guy is near")
 		player_chatting = true
 
 ##Player leaves chat zone with an npc
 func _on_chat_zone_body_exited(body):
 	if body.name == "JustAGuy":
+		body.hide_space_prompt()
 		print("guy left")
 		player_chatting = false
