@@ -3,14 +3,14 @@ class_name EnemyWaves extends Node
 const EnemyType = preload("res://EnemyScenes/enemy.gd").EnemyType
 # how much to adjust each hour
 const hour_adjust_val: Array = [0, 0, 1, 1, 2, 2, 3]
-# Which night has bosses
-const boss_nights = [3, 7]
 # how much to adjust each night
 const night_adjust_val: Array = [0, 1, 2, 1, 4, 7, 10, 5]
 
 var waves_: Array
+var boss_summoned_: bool
 
 func _init() -> void:
+	boss_summoned_ = false
 	# Normal 1
 	_create_wave(3, 2, 2, 0)
 	# Normal 2

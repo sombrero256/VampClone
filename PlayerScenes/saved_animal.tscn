@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckax8rjgtbwjt"]
+[gd_scene load_steps=4 format=3 uid="uid://ckax8rjgtbwjt"]
 
-[ext_resource type="Texture2D" uid="uid://bc702be44dkhp" path="res://EnemyScenes/Enemy/Dog.png" id="1_duciv"]
+[ext_resource type="Texture2D" uid="uid://bc702be44dkhp" path="res://EnemyScenes/EnemySprites/Dog.png" id="1_duciv"]
 [ext_resource type="Script" path="res://PlayerScenes/saved_animal.gd" id="1_tyqu6"]
+[ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="3_ybt0e"]
 
 [node name="SavedAnimal" type="Control"]
 layout_mode = 3
@@ -22,5 +23,7 @@ offset_left = 20.0
 offset_top = -2.0
 offset_right = 152.0
 offset_bottom = 21.0
-text = "10000"
+scale = Vector2(0.837427, 0.837427)
+theme_override_fonts/font = ExtResource("3_ybt0e")
+text = "10000 Saved"
 vertical_alignment = 2

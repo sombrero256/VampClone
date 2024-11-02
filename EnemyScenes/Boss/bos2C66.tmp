@@ -1,0 +1,182 @@
+[gd_scene load_steps=15 format=3 uid="uid://3vlc2ryokbjr"]
+
+[ext_resource type="Script" path="res://EnemyScenes/Boss/boss.gd" id="1_t34o8"]
+[ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="2_kw0ul"]
+[ext_resource type="Texture2D" uid="uid://dguo02v6pjrc7" path="res://EnemyScenes/Boss/BossSprites/Boss Attack Flash.png" id="3_b16h7"]
+[ext_resource type="Texture2D" uid="uid://0d3ix4lhrgu" path="res://EnemyScenes/Boss/BossSprites/Boss Attack.png" id="4_kffw6"]
+[ext_resource type="PackedScene" uid="uid://cgx0tfbvsjcr7" path="res://EnemyScenes/enemy_stats.tscn" id="5_gjvt5"]
+[ext_resource type="Texture2D" uid="uid://8qtqcmv4kxmj" path="res://EnemyScenes/Boss/BossSprites/Boss Walking.png" id="5_m4udd"]
+[ext_resource type="Texture2D" uid="uid://dr06e3ubp4bho" path="res://EnemyScenes/Boss/BossSprites/Boss.png" id="6_shn10"]
+[ext_resource type="PackedScene" uid="uid://k8vhrjbrcm6u" path="res://EnemyScenes/Fire.tscn" id="6_v3ong"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sousp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdfy1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kffw6")
+}],
+"loop": true,
+"name": &"Charge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b16h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kffw6")
+}],
+"loop": true,
+"name": &"Fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_m4udd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_shn10")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b16h7")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_3671h"]
+resource_name = "Boss"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-5, 0), Vector2(5, 0), Vector2(-5, 0), Vector2(5, 0), Vector2(-5, 0), Vector2(5, 0), Vector2(-5, 0), Vector2(5, 0), Vector2(0, 0), Vector2(-5, 0), Vector2(5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_amqvl"]
+resource_name = "Gun"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.06667, 1.13333, 1.2, 1.26667, 1.33333, 1.36667, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6lhdo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q3mbo"]
+_data = {
+"Charge": SubResource("Animation_3671h"),
+"Gun": SubResource("Animation_amqvl"),
+"RESET": SubResource("Animation_6lhdo")
+}
+
+[node name="Boss" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "Fire")]
+script = ExtResource("1_t34o8")
+type_ = 4
+sprite_ = NodePath("AnimatedSprite2D")
+stats_ = NodePath("EnemyStats")
+health_ = NodePath("ProgressBar")
+status_ = NodePath("Status")
+Fire = NodePath("Fire")
+
+[node name="HurtBox" parent="." instance=ExtResource("2_kw0ul")]
+position = Vector2(1, 1)
+scale = Vector2(6.79682, 6.79682)
+collision_layer = 0
+collision_mask = 136
+
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(6.78878, 6.64948)
+shape = SubResource("CircleShape2D_sousp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pdfy1")
+autoplay = "default"
+
+[node name="ChargeUp" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q3mbo")
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -1.0
+offset_top = -87.0
+offset_right = 3.0
+offset_bottom = -60.0
+scale = Vector2(0.989018, 0.993286)
+step = 0.1
+value = 100.0
+fill_mode = 1
+
+[node name="EnemyStats" parent="." instance=ExtResource("5_gjvt5")]
+Speed = 95
+Max_Health = 7500
+DPS = 30
+
+[node name="Fire" parent="." instance=ExtResource("6_v3ong")]
+
+[node name="Status" type="RichTextLabel" parent="."]
+offset_left = -20.0
+offset_top = 72.0
+offset_right = 20.0
+offset_bottom = 95.0

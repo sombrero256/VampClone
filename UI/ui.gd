@@ -52,4 +52,7 @@ func _recalculate_time() -> void:
 		time_changed.emit(hour, minute)
 		set_time(hour, minute)
 	if total_min >= END_MIN:
-		night_end_.OnNightEnd()
+		if Globalstats.NeedToDefeatBoss():
+			time_label_.text = "DEFEAT BOSS\nTO RETURN\nTO SANCTUARY"
+		else:
+			night_end_.OnNightEnd()

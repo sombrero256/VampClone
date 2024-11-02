@@ -23,5 +23,5 @@ func _on_wake_area_body_entered(body: Node2D) -> void:
 	if body is not Player:
 		return
 	state_ = State.AWAKE
+	sprite_.play("run")
 	dest_ = body.position
-	pass # Replace with function body.
