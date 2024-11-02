@@ -391,6 +391,12 @@ script = ExtResource("25_gvs1c")
 position = Vector2(0, 71)
 shape = SubResource("RectangleShape2D_e32ft")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 9
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-97, 642, -97, 756, 95, 756, 95, 642, 111, 642, 111, 769, -113, 769, -113, 642)
+
 [connection signal="body_entered" from="Instructions" to="Instructions" method="_on_body_entered"]
 [connection signal="body_exited" from="Instructions" to="Instructions" method="_on_body_exited"]
 [connection signal="body_entered" from="Leave" to="Leave" method="_on_body_entered"]
