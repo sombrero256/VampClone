@@ -49,7 +49,6 @@ func _on_speed_upgrade_button_button_up() -> void:
 
 func _on_visibility_changed() -> void:
 	update_labels()
-	
 	pass # Replace with function body.
 
 func update_labels() -> void:
