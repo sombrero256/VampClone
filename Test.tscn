@@ -48,7 +48,14 @@ offset_left = 361.128
 offset_top = 1514.92
 offset_right = 425.128
 offset_bottom = 1530.92
-CorrespondingWeapon = 2
+AreaLvlUpAmt = 1.1
+SpeedLvlUpAmt = 1.5
+DamageLvlUpAmt = 1.3
+SpeedCostScaling = 1.1
+AreaCostScaling = 1.1
+DamageCostScaling = 1.1
+SpeedBaseCost = 5
+DamageBaseCost = 2
 
 [connection signal="time_changed" from="Ui" to="." method="_on_ui_time_changed"]
 [connection signal="timeout" from="EnemySpawner" to="." method="_on_timer_timeout"]
