@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://bp3hc0a5eqsii"]
+[gd_scene load_steps=46 format=4 uid="uid://bp3hc0a5eqsii"]
 
 [ext_resource type="Texture2D" uid="uid://fytgj2balqfj" path="res://path_tiles.png" id="1_ai0i1"]
 [ext_resource type="PackedScene" uid="uid://ka6fhdls05bm" path="res://SanctuaryScenes/JustAGuy.tscn" id="1_gguxs"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ds7mwp1le2uix" path="res://SanctuaryScenes/Dialogue.tscn" id="3_qkpqa"]
 [ext_resource type="Texture2D" uid="uid://d1tjdhbdxpe5y" path="res://SanctuaryScenes/art/animals/Dog Walking.png" id="4_64qxl"]
 [ext_resource type="Texture2D" uid="uid://ngg56u641uv5" path="res://SanctuaryScenes/art/animals/Cat.png" id="7_sfymu"]
+[ext_resource type="PackedScene" uid="uid://b7w8vx72u7skf" path="res://SanctuaryScenes/StatUpgrade.tscn" id="7_tjlyv"]
 [ext_resource type="Texture2D" uid="uid://cy3pcs65t45o8" path="res://SanctuaryScenes/art/animals/Cat Walking.png" id="8_uvufd"]
 [ext_resource type="AudioStream" uid="uid://cu6g6cyxnxwqy" path="res://SanctuaryScenes/sanctuary theme.wav" id="9_7b38s"]
 [ext_resource type="Texture2D" uid="uid://cucnbpdlsxhfv" path="res://SanctuaryScenes/art/animals/Horse.png" id="9_qxsw5"]
@@ -292,6 +293,8 @@ autoplay = "default"
 [node name="Dialogue" parent="MrDog" instance=ExtResource("3_qkpqa")]
 metadata/_edit_use_anchors_ = true
 
+[node name="StatUpgrade" parent="MrDog" instance=ExtResource("7_tjlyv")]
+
 [node name="MrsCat" parent="." instance=ExtResource("2_ov6r2")]
 position = Vector2(759, -130)
 
@@ -303,6 +306,8 @@ sprite_frames = SubResource("SpriteFrames_0xcfw")
 autoplay = "default"
 
 [node name="Dialogue" parent="MrsCat" instance=ExtResource("3_qkpqa")]
+
+[node name="StatUpgrade" parent="MrsCat" instance=ExtResource("7_tjlyv")]
 
 [node name="Horsey" parent="." instance=ExtResource("2_ov6r2")]
 position = Vector2(-317, -244)
@@ -316,6 +321,8 @@ autoplay = "default"
 [node name="Dialogue" parent="Horsey" instance=ExtResource("3_qkpqa")]
 metadata/_edit_use_anchors_ = true
 
+[node name="StatUpgrade" parent="Horsey" instance=ExtResource("7_tjlyv")]
+
 [node name="Mouse" parent="." instance=ExtResource("2_ov6r2")]
 position = Vector2(262, 377)
 
@@ -326,6 +333,8 @@ sprite_frames = SubResource("SpriteFrames_ru1t8")
 autoplay = "default"
 
 [node name="Dialogue" parent="Mouse" instance=ExtResource("3_qkpqa")]
+
+[node name="StatUpgrade" parent="Mouse" instance=ExtResource("7_tjlyv")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
