@@ -8,6 +8,7 @@ const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
 
 static var player_stats: PlayerStats
 static var night: int = 0
+static var times_healed: int = 0
 
 static var _enemy_saved: Dictionary = {
 	EnemyType.DOG: 0,

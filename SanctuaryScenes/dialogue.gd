@@ -59,7 +59,7 @@ func _input(event: InputEvent):
 	if event.is_action_pressed("chat"):
 		next_script()
 		if dialogue_active == false:
-			#show upgrade panel
+			$ShopButton.visible = true
 			pass
 
 ##Updates the dialogue array position, then checks to see if there's more dialogue to post

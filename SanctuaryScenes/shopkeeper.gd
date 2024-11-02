@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var player_chatting = false
 
-func _process(delta):	
+func _process(delta):
 	##Chatting works baby!  Turning player_chatting to false is so chat doesn't loop endlessly
 	if Input.is_action_just_pressed("chat")  && player_chatting == true:
 		print("chatting is working with")
@@ -23,3 +23,4 @@ func _on_chat_zone_body_exited(body):
 		body.hide_space_prompt()
 		print("guy left")
 		player_chatting = false
+		$Dialogue/ShopButton.visible = false
