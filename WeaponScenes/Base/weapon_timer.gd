@@ -17,5 +17,5 @@ func _process(delta: float) -> void:
 func create_weapon() -> Node2D:
 	var w_inst = resource_.instantiate() as BaseWeapon
 	w_inst.global_position = get_parent().global_position
-	get_node("/root/Base").add_child(w_inst)
+	get_node("/root").add_child(w_inst)
 	return w_inst
