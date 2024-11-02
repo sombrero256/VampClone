@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://sej1axseiba0"
+path="res://.godot/imported/stage theme 1.wav-b97804788dbd6feb8a235b9db7e7366b.sample"
+
+[deps]
+
+source_file="res://Music/stage theme 1.wav"
+dest_files=["res://.godot/imported/stage theme 1.wav-b97804788dbd6feb8a235b9db7e7366b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

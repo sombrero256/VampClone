@@ -1,5 +1,9 @@
 extends Node2D
 
+const stage_music_1_ = preload("res://Music/stage theme 1.wav")
+const stage_music_2_ = preload("res://Music/stage theme 2.wav")
+const boss_music_ = preload("res://Music/boss theme.wav")
+
 const EnemyType = preload("res://EnemyScenes/enemy.gd").EnemyType
 const Modifier = preload("res://WeaponScenes/Base/weapon_stats_component.gd").Modifier
 const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
@@ -8,6 +12,7 @@ const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
 # Timer speeds up by this amount each hour
 @export var speed_up_rate_: float = .95
 
+@onready var audio_player_ = $Player/AudioPlayer as AudioStreamPlayer
 @onready var player_ = get_tree().get_first_node_in_group("Player")
 @onready var dog_enemy_ = preload("res://EnemyScenes/dog_enemy.tscn")
 @onready var cat_enemy_ = preload("res://EnemyScenes/cat_enemy.tscn")
@@ -26,6 +31,16 @@ func _ready() -> void:
 	enemyWaves_ = EnemyWaves.new()
 	boss_summoned_ = false
 	wave_ = enemyWaves_.get_enemy_wave(prev_hour_)
+	if Globalstats.IsBossNight():
+		audio_player_.stream = boss_music_
+	else:
+		audio_player_.stream = [stage_music_1_, stage_music_2_].pick_random()
+	audio_player_.play()
+
+func _process(delta: float) -> void:
+	if not audio_player_.playing:
+		print("Audio player finished")
+		audio_player_.play()
 
 ##Creates new enemy object along the MonsterSpawnPath outside the camera position
 ##If we make new enemy types, we'll have to duplicate this for each type, or randomize it

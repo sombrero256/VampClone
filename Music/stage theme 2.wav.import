@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c28wnykabynta"
+path="res://.godot/imported/stage theme 2.wav-98bf8029be9bc0b6a1f90a5024632c13.sample"
+
+[deps]
+
+source_file="res://Music/stage theme 2.wav"
+dest_files=["res://.godot/imported/stage theme 2.wav-98bf8029be9bc0b6a1f90a5024632c13.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

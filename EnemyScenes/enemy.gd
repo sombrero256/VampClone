@@ -56,7 +56,7 @@ func Freeze() -> void:
 	var original_speed = stats_.Speed
 	sprite_.modulate = Color.DEEP_SKY_BLUE
 	frozen_ = true 
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	frozen_ = false
 	stats_.Speed = original_speed
 	reset()
