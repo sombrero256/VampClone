@@ -405,6 +405,7 @@ texture = ExtResource("20_rk7vt")
 
 [node name="Instructions" type="Area2D" parent="."]
 position = Vector2(-1, 634)
+scale = Vector2(2, 2)
 script = ExtResource("23_1l3j3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions"]
