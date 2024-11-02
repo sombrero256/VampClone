@@ -10,7 +10,7 @@ var ticks_ = 0
 func Start() -> void:
 	ticks_ = 0
 	timer_.start(1)
-	anim.modulate = Color.DARK_RED
+	anim.modulate = Color.LIGHT_PINK
 	anim.play()
 	anim.visible = true
 
@@ -20,7 +20,7 @@ func Stop() -> void:
 	anim.visible = false
 
 func _on_fire_timer_timeout() -> void:
-	enemy_.process_hit(DAMAGE, Color.DARK_RED)
+	enemy_.process_hit(DAMAGE, Color.LIGHT_PINK)
 	ticks_ += 1
 	if ticks_ >= MAX_TICKS:
 		Stop()

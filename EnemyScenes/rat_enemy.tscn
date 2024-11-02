@@ -32,13 +32,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="RatEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "Fire")]
+[node name="RatEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "HealAura")]
 script = ExtResource("1_mvq5p")
 sprite_ = NodePath("AnimatedSprite2D")
 stats_ = NodePath("EnemyStats")
 health_ = NodePath("ProgressBar")
 status_ = NodePath("Status")
-Fire = NodePath("Fire")
+HealAura = NodePath("Fire")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_8feg5")]
 position = Vector2(1, 4)
@@ -67,7 +67,7 @@ sprite_frames = SubResource("SpriteFrames_yb3kd")
 
 [node name="EnemyStats" parent="." instance=ExtResource("4_j8il8")]
 Speed = 150
-Max_Health = 5
+Max_Health = 5.0
 DPS = 5
 
 [node name="Fire" parent="." instance=ExtResource("5_q2371")]

@@ -81,7 +81,7 @@ _data = {
 "RESET": SubResource("Animation_rf0kh")
 }
 
-[node name="Horse" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "Fire")]
+[node name="Horse" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "HealAura")]
 scale = Vector2(1.22209, 1.22209)
 script = ExtResource("1_uxybf")
 type_ = 3
@@ -89,7 +89,7 @@ sprite_ = NodePath("AnimatedSprite2D")
 stats_ = NodePath("EnemyStats")
 health_ = NodePath("ProgressBar")
 status_ = NodePath("Status")
-Fire = NodePath("Fire")
+HealAura = NodePath("Fire")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_l0r24")]
 position = Vector2(1, 1)
@@ -119,7 +119,7 @@ fill_mode = 1
 
 [node name="EnemyStats" parent="." instance=ExtResource("5_eck2n")]
 Speed = 25
-Max_Health = 450
+Max_Health = 450.0
 DPS = 25
 
 [node name="Fire" parent="." instance=ExtResource("6_qie87")]

@@ -1,6 +1,7 @@
 class_name Enemy extends CharacterBody2D
 
 const ELITE_CHANCE:float = 0.03
+
 enum EnemyType {RAT, CAT, DOG, HORSE, BOSS}
 
 @export var type_: EnemyType
@@ -9,7 +10,7 @@ enum EnemyType {RAT, CAT, DOG, HORSE, BOSS}
 @export var health_: ProgressBar
 @export var status_: RichTextLabel
 
-@export var Fire: Fire
+@export var HealAura: Fire
 
 @onready var death_particle = preload("res://EnemyScenes/DeathParticle/EnemyDeathParticle.tscn")
 var frozen_: bool = false
@@ -19,15 +20,14 @@ const CRIT_AMOUNT = 50
 func _ready() -> void:
 	# Determine if they are an elite
 	sprite_.play("default")
-	health_.max_value = stats_.Max_Health
-	health_.value = stats_.Max_Health
-	
 	if type_ != EnemyType.BOSS and randf() <= ELITE_CHANCE * Globalstats.night:
 		is_elite_ = true
 		scale *= 1.5
 		stats_.Max_Health *= 3
 		stats_.DPS *= 2
-
+	health_.max_value = stats_.Max_Health
+	health_.value = stats_.Max_Health
+	
 # Eventually this returns rewards if killed
 func process_hit(damages, color: Color = Color("a356ff")) -> void:
 	health_.value -= damages
@@ -50,7 +50,7 @@ func reset() -> void:
 	status_.text = ""
 	
 func SetOnFire() -> void:
-	Fire.Start()
+	HealAura.Start()
 
 func Freeze() -> void:
 	var original_speed = stats_.Speed

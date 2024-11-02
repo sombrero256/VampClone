@@ -4,7 +4,7 @@ enum Modifier {FIRE, ICE, CRIT}
 # How likely a modifier will proc
 const ModifierChance = {
 	Modifier.FIRE: .1,
-	Modifier.ICE: .1,
+	Modifier.ICE: .05,
 	Modifier.CRIT: .1
 }
 

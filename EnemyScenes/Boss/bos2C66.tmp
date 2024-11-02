@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://3vlc2ryokbjr"]
+[gd_scene load_steps=15 format=3 uid="uid://3vlc2ryokbjr"]
 
 [ext_resource type="Script" path="res://EnemyScenes/Boss/boss.gd" id="1_t34o8"]
 [ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="2_kw0ul"]
@@ -89,42 +89,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.00208336, 0.302083, 0.502083, 0.602083, 0.702083, 0.8, 0.9, 1, 1.06667, 1.13333, 1.2, 1.26667, 1.33333, 1.36667, 1.4),
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.06667, 1.13333, 1.2, 1.26667, 1.33333, 1.36667, 1.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.457304, 0.108758, 0.11741, 1), Color(1, 1, 1, 1), Color(0.457304, 0.108758, 0.11741, 1), Color(1, 1, 1, 1), Color(0.457304, 0.108758, 0.11741, 1), Color(1, 1, 1, 1), Color(0.457304, 0.108758, 0.11741, 1), Color(1, 1, 1, 1), Color(0.457304, 0.108758, 0.11741, 1), Color(1, 1, 1, 1), Color(0.457304, 0.108758, 0.11741, 1), Color(1, 1, 1, 1), Color(0.457304, 0.108758, 0.11741, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_l5aix"]
-resource_name = "Gun2"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 0.7, 0.797917, 0.897917, 0.997917, 1.06459, 1.13125, 1.19792, 1.26459, 1.33125, 1.36459, 1.39792),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0.552941, 0.227451, 1), Color(1, 1, 1, 1), Color(0, 0.552941, 0.227451, 1), Color(1, 1, 1, 1), Color(0, 0.552941, 0.227451, 1), Color(1, 1, 1, 1), Color(0, 0.552941, 0.227451, 1), Color(1, 1, 1, 1), Color(0, 0.552941, 0.227451, 1), Color(1, 1, 1, 1), Color(0, 0.552941, 0.227451, 1), Color(1, 1, 1, 1), Color(0, 0.552941, 0.227451, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_l7mbu"]
-resource_name = "Phase_Two"
-length = 1.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.7, 0.8, 0.9, 0.966667, 1.03333, 1.06667, 1.13333, 1.2, 1.23333, 1.26667, 1.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1), Color(0.28485, 0.28485, 0.28485, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_6lhdo"]
@@ -153,36 +121,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q3mbo"]
 _data = {
 "Charge": SubResource("Animation_3671h"),
 "Gun": SubResource("Animation_amqvl"),
-"Gun2": SubResource("Animation_l5aix"),
-"Phase_Two": SubResource("Animation_l7mbu"),
 "RESET": SubResource("Animation_6lhdo")
 }
 
-[node name="Boss" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "HealAura")]
+[node name="Boss" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "Fire")]
 script = ExtResource("1_t34o8")
 type_ = 4
 sprite_ = NodePath("AnimatedSprite2D")
 stats_ = NodePath("EnemyStats")
 health_ = NodePath("ProgressBar")
 status_ = NodePath("Status")
-HealAura = NodePath("Fire")
+Fire = NodePath("Fire")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_kw0ul")]
 position = Vector2(1, 1)
@@ -203,7 +157,6 @@ autoplay = "default"
 libraries = {
 "": SubResource("AnimationLibrary_q3mbo")
 }
-speed_scale = 0.67
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -1.0
@@ -216,8 +169,8 @@ value = 100.0
 fill_mode = 1
 
 [node name="EnemyStats" parent="." instance=ExtResource("5_gjvt5")]
-Speed = 110
-Max_Health = 7500.0
+Speed = 95
+Max_Health = 7500
 DPS = 30
 
 [node name="Fire" parent="." instance=ExtResource("6_v3ong")]

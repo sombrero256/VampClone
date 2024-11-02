@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dgxrpp0m22afq" path="res://UI/HealthBar/health.png" id="1_owu3r"]
 [ext_resource type="Shader" path="res://UI/HealthBar/HealthBar.gdshader" id="2_8v7kl"]
 [ext_resource type="Script" path="res://UI/HealthBar/health_bar_display.gd" id="2_jg8no"]
-[ext_resource type="Texture2D" uid="uid://cg83r0npea2tj" path="res://EnemyScenes/Enemy/Cat.png" id="3_2whc0"]
+[ext_resource type="Texture2D" uid="uid://cg83r0npea2tj" path="res://EnemyScenes/EnemySprites/Cat.png" id="3_2whc0"]
 [ext_resource type="PackedScene" uid="uid://ckax8rjgtbwjt" path="res://PlayerScenes/saved_animal.tscn" id="4_5x4kw"]
-[ext_resource type="Texture2D" uid="uid://bc702be44dkhp" path="res://EnemyScenes/Enemy/Dog.png" id="4_l8rr6"]
-[ext_resource type="Texture2D" uid="uid://bqwsw1an5m4k6" path="res://EnemyScenes/Enemy/Rat.png" id="5_oy283"]
+[ext_resource type="Texture2D" uid="uid://bc702be44dkhp" path="res://EnemyScenes/EnemySprites/Dog.png" id="4_l8rr6"]
+[ext_resource type="Texture2D" uid="uid://bqwsw1an5m4k6" path="res://EnemyScenes/EnemySprites/Rat.png" id="5_oy283"]
 [ext_resource type="Texture2D" uid="uid://cvthgcvoua4lm" path="res://EnemyScenes/Enemy/Robot/Robot Horse.png" id="5_skjm3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1wadk"]

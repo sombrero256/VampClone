@@ -43,14 +43,14 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rim32"]
 
-[node name="CatEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "Fire")]
+[node name="CatEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "HealAura")]
 script = ExtResource("1_iikar")
 type_ = 1
 sprite_ = NodePath("AnimatedSprite2D")
 stats_ = NodePath("EnemyStats")
 health_ = NodePath("ProgressBar")
 status_ = NodePath("Status")
-Fire = NodePath("Fire")
+HealAura = NodePath("Fire")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_jhojc")]
 collision_layer = 0
@@ -89,7 +89,7 @@ shape = SubResource("CircleShape2D_rim32")
 
 [node name="EnemyStats" parent="." instance=ExtResource("4_y0ue1")]
 Speed = 250
-Max_Health = 50
+Max_Health = 50.0
 DPS = 50
 
 [node name="Fire" parent="." instance=ExtResource("5_lnenj")]
