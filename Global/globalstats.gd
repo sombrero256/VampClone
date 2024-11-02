@@ -9,6 +9,7 @@ const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
 static var need_to_defeat_boss: bool = false
 static var player_stats: PlayerStats = PlayerStats.new()
 static var night: int = 0
+static var times_healed: int = 0
 
 # Which night has bosses
 const boss_nights = [2, 6]

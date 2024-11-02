@@ -12,7 +12,7 @@ const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
 # Timer speeds up by this amount each hour
 @export var speed_up_rate_: float = .95
 
-@onready var audio_player_ = $Player/AudioPlayer as AudioStreamPlayer
+var audio_player_ 
 @onready var player_ = get_tree().get_first_node_in_group("Player")
 @onready var dog_enemy_ = preload("res://EnemyScenes/dog_enemy.tscn")
 @onready var cat_enemy_ = preload("res://EnemyScenes/cat_enemy.tscn")
@@ -28,6 +28,7 @@ var weapons_: Array[WeaponType]
 var enemyWaves_: EnemyWaves
 
 func _ready() -> void:
+	audio_player_ = $Player/AudioPlayer as AudioStreamPlayer
 	enemyWaves_ = EnemyWaves.new()
 	boss_summoned_ = false
 	wave_ = enemyWaves_.get_enemy_wave(prev_hour_)

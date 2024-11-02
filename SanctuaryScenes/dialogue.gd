@@ -58,6 +58,9 @@ func _input(event: InputEvent):
 		return
 	if event.is_action_pressed("chat"):
 		next_script()
+		if dialogue_active == false:
+			$ShopButton.visible = true
+			pass
 
 ##Updates the dialogue array position, then checks to see if there's more dialogue to post
 ##If no, it hides the dialogue box and allows the player to move again
