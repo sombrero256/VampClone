@@ -28,7 +28,7 @@ var weapons_: Array[WeaponType]
 var enemyWaves_: EnemyWaves
 
 func _ready() -> void:
-	audio_player_ = $Player/AudioStreamPlayer2D as AudioStreamPlayer2D
+	audio_player_ = $Player/AudioPlayer as AudioStreamPlayer
 	enemyWaves_ = EnemyWaves.new()
 	boss_summoned_ = false
 	wave_ = enemyWaves_.get_enemy_wave(prev_hour_)
