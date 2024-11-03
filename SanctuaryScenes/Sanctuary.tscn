@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://bp3hc0a5eqsii"]
+[gd_scene load_steps=52 format=4 uid="uid://bp3hc0a5eqsii"]
 
 [ext_resource type="Texture2D" uid="uid://fytgj2balqfj" path="res://path_tiles.png" id="1_ai0i1"]
 [ext_resource type="PackedScene" uid="uid://ka6fhdls05bm" path="res://SanctuaryScenes/JustAGuy.tscn" id="1_gguxs"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bc6332cefnqhn" path="res://UI/ShopUI/UpgradeButton.tscn" id="14_5hiac"]
 [ext_resource type="PackedScene" uid="uid://cwmkf4dy3au1s" path="res://UI/ShopUI/ModifierUpgradeButton.tscn" id="15_88f23"]
 [ext_resource type="Texture2D" uid="uid://84n6uplvkryl" path="res://ground_tiles.png" id="15_xbxve"]
+[ext_resource type="PackedScene" uid="uid://d3s5pg24dtqkm" path="res://UI/ShopUI/StatUpgradeButton.tscn" id="16_10dfo"]
 [ext_resource type="Texture2D" uid="uid://d1dpfca355yuw" path="res://building_tiles.png" id="16_cfkgu"]
 [ext_resource type="Texture2D" uid="uid://b8xqbnhdftxx0" path="res://Tileset/plants/PLANT-Shrub_A.png" id="17_xylpu"]
 [ext_resource type="Texture2D" uid="uid://dwomo7fj5jwiy" path="res://Tileset/decor/gravestone.png" id="20_rk7vt"]
@@ -419,6 +420,15 @@ offset_left = 168.0
 offset_top = -11.0
 offset_right = 232.0
 offset_bottom = 5.0
+
+[node name="ShopButton2" parent="Mouse/Dialogue/ShopButton" instance=ExtResource("16_10dfo")]
+layout_mode = 0
+offset_left = -0.5
+offset_top = 16.5
+offset_right = 63.5
+offset_bottom = 32.5
+scale = Vector2(1, 1)
+SpeedUpAmt = 10.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_7b38s")

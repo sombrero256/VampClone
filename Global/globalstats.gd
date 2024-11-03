@@ -11,6 +11,8 @@ static var player_stats: PlayerStats = PlayerStats.new()
 static var night: int = 0
 static var times_healed: int = 0
 
+static var health_levels: int = 0
+static var speed_levels: int = 0
 static var _enemy_saved: Dictionary = {
 	EnemyType.DOG: 0,
 	EnemyType.CAT: 0,

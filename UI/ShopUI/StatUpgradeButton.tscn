@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3s5pg24dtqkm"]
+
+[ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="1_2bs58"]
+[ext_resource type="Script" path="res://UI/ShopUI/stat_upgrade_button.gd" id="2_1skq6"]
+[ext_resource type="Texture2D" uid="uid://cbqkulfbx1kd8" path="res://PlayerScenes/assets/Character 1.png" id="3_64w1r"]
+[ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="5_f081q"]
+[ext_resource type="Texture2D" uid="uid://dx8isxv0hyfku" path="res://UI/ShopUI/speed.png" id="6_uqd1v"]
+[ext_resource type="Texture2D" uid="uid://dq22582ockkry" path="res://WeaponScenes/Heart/health_icon.png" id="7_fvsa2"]
+
+[sub_resource type="Theme" id="Theme_pvwff"]
+default_font = ExtResource("5_f081q")
+default_font_size = 5
+
+[node name="ShopButton" type="TextureRect"]
+offset_right = 64.0
+offset_bottom = 16.0
+scale = Vector2(4, 6)
+texture = ExtResource("1_2bs58")
+stretch_mode = 2
+script = ExtResource("2_1skq6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 116.0
+offset_bottom = 51.0
+scale = Vector2(0.5, 0.33)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayerIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_64w1r")
+expand_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="SpeedUpgradeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_uqd1v")
+
+[node name="SpeedUpgradeCostLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_pvwff")
+text = "12"
+horizontal_alignment = 1
+
+[node name="SpeedUpgradeLevelLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_pvwff")
+text = "12"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="HealthUpgradeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_fvsa2")
+
+[node name="HealthUpgradeCostLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_pvwff")
+text = "12"
+horizontal_alignment = 1
+
+[node name="HealthUpgradeLevelLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_pvwff")
+text = "12"
+horizontal_alignment = 1
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer3/SpeedUpgradeButton" to="." method="_on_speed_upgrade_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/HealthUpgradeButton" to="." method="_on_health_upgrade_button_button_up"]
