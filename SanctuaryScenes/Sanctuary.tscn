@@ -316,9 +316,9 @@ grow_vertical = 1
 AreaLvlUpAmt = 1.1
 SpeedLvlUpAmt = 1.1
 DamageLvlUpAmt = 1.1
-SpeedCostScaling = 1.2
-AreaCostScaling = 1.2
-DamageCostScaling = 1.2
+SpeedCostScaling = 1.5
+AreaCostScaling = 1.5
+DamageCostScaling = 1.5
 SpeedBaseCost = 20
 AreaBaseCost = 20
 DamageBaseCost = 20
@@ -351,9 +351,9 @@ CorrespondingWeapon = 1
 AreaLvlUpAmt = 1.1
 SpeedLvlUpAmt = 1.1
 DamageLvlUpAmt = 1.1
-SpeedCostScaling = 1.2
-AreaCostScaling = 1.2
-DamageCostScaling = 1.2
+SpeedCostScaling = 1.5
+AreaCostScaling = 1.5
+DamageCostScaling = 1.5
 SpeedBaseCost = 10
 AreaBaseCost = 10
 DamageBaseCost = 10
@@ -417,6 +417,9 @@ offset_right = 236.0
 offset_bottom = 3.0
 grow_horizontal = 1
 grow_vertical = 1
+AreaLvlUpAmt = 0.0
+SpeedLvlUpAmt = 0.0
+DamageLvlUpAmt = 0.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_7b38s")
@@ -491,6 +494,12 @@ heal_base_cost = 20
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Heart/Area2D"]
 position = Vector2(0.75, 20.5)
 shape = SubResource("RectangleShape2D_6vkpc")
+
+[node name="Invisible Wall" type="StaticBody2D" parent="."]
+collision_layer = 9
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Invisible Wall"]
+polygon = PackedVector2Array(-102, 644, -102, 761, 98, 761, 98, 646, 113, 646, 113, 779, -120, 779, -120, 644)
 
 [connection signal="body_entered" from="Instructions" to="Instructions" method="_on_body_entered"]
 [connection signal="body_exited" from="Instructions" to="Instructions" method="_on_body_exited"]

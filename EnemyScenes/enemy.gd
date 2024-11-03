@@ -25,7 +25,7 @@ func _ready() -> void:
 	and randf() <= ELITE_CHANCE * Globalstats.night:
 		is_elite_ = true
 		scale *= 1.5
-		stats_.speed *= 1.2
+		stats_.Speed *= 1.2
 		stats_.Max_Health *= 5
 		stats_.DPS *= 2
 	health_.max_value = stats_.Max_Health
