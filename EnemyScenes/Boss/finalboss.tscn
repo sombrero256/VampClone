@@ -1,13 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://3vlc2ryokbjr"]
+[gd_scene load_steps=19 format=3 uid="uid://b4c7fik3nnods"]
 
-[ext_resource type="Script" path="res://EnemyScenes/Boss/boss.gd" id="1_t34o8"]
-[ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="2_kw0ul"]
-[ext_resource type="Texture2D" uid="uid://dguo02v6pjrc7" path="res://EnemyScenes/Boss/BossSprites/Boss Attack Flash.png" id="3_b16h7"]
-[ext_resource type="Texture2D" uid="uid://0d3ix4lhrgu" path="res://EnemyScenes/Boss/BossSprites/Boss Attack.png" id="4_kffw6"]
-[ext_resource type="PackedScene" uid="uid://cgx0tfbvsjcr7" path="res://EnemyScenes/enemy_stats.tscn" id="5_gjvt5"]
-[ext_resource type="Texture2D" uid="uid://8qtqcmv4kxmj" path="res://EnemyScenes/Boss/BossSprites/Boss Walking.png" id="5_m4udd"]
-[ext_resource type="Texture2D" uid="uid://dr06e3ubp4bho" path="res://EnemyScenes/Boss/BossSprites/Boss.png" id="6_shn10"]
-[ext_resource type="PackedScene" uid="uid://k8vhrjbrcm6u" path="res://EnemyScenes/Fire.tscn" id="6_v3ong"]
+[ext_resource type="Script" path="res://EnemyScenes/Boss/finalboss.gd" id="1_y6m7c"]
+[ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="2_1ktyt"]
+[ext_resource type="Texture2D" uid="uid://0d3ix4lhrgu" path="res://EnemyScenes/Boss/BossSprites/Boss Attack.png" id="3_wxw67"]
+[ext_resource type="Texture2D" uid="uid://dguo02v6pjrc7" path="res://EnemyScenes/Boss/BossSprites/Boss Attack Flash.png" id="4_mfyki"]
+[ext_resource type="Texture2D" uid="uid://cih5kjigtq1w5" path="res://EnemyScenes/Boss/BossSprites/Souped Up Boss Attack.png" id="7_oqt8f"]
+[ext_resource type="Texture2D" uid="uid://s2rw3mncyt75" path="res://EnemyScenes/Boss/BossSprites/Souped Up Boss.png" id="8_3l3y0"]
+[ext_resource type="Texture2D" uid="uid://c1g4oyj71phm" path="res://EnemyScenes/Boss/BossSprites/Souped Up Boss Walking.png" id="9_0ieue"]
+[ext_resource type="Texture2D" uid="uid://df8p6iajxeb0a" path="res://EnemyScenes/Boss/BossSprites/Souped Up Boss Attack Flash.png" id="10_jg0xf"]
+[ext_resource type="PackedScene" uid="uid://cgx0tfbvsjcr7" path="res://EnemyScenes/enemy_stats.tscn" id="11_6owjj"]
+[ext_resource type="PackedScene" uid="uid://k8vhrjbrcm6u" path="res://EnemyScenes/Fire.tscn" id="12_mvy3f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sousp"]
 
@@ -15,7 +17,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_kffw6")
+"texture": ExtResource("7_oqt8f")
 }],
 "loop": true,
 "name": &"Charge",
@@ -23,10 +25,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_b16h7")
+"texture": ExtResource("4_mfyki")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_kffw6")
+"texture": ExtResource("3_wxw67")
 }],
 "loop": true,
 "name": &"Fire",
@@ -34,10 +36,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_m4udd")
+"texture": ExtResource("8_3l3y0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_shn10")
+"texture": ExtResource("9_0ieue")
 }],
 "loop": true,
 "name": &"default",
@@ -45,7 +47,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_b16h7")
+"texture": ExtResource("10_jg0xf")
 }],
 "loop": true,
 "name": &"hurt",
@@ -175,8 +177,8 @@ _data = {
 "RESET": SubResource("Animation_6lhdo")
 }
 
-[node name="Boss" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "HealAura")]
-script = ExtResource("1_t34o8")
+[node name="finalboss" type="CharacterBody2D" node_paths=PackedStringArray("sprite_", "stats_", "health_", "status_", "HealAura")]
+script = ExtResource("1_y6m7c")
 type_ = 4
 sprite_ = NodePath("AnimatedSprite2D")
 stats_ = NodePath("EnemyStats")
@@ -184,7 +186,7 @@ health_ = NodePath("ProgressBar")
 status_ = NodePath("Status")
 HealAura = NodePath("Fire")
 
-[node name="HurtBox" parent="." instance=ExtResource("2_kw0ul")]
+[node name="HurtBox" parent="." instance=ExtResource("2_1ktyt")]
 position = Vector2(1, 1)
 scale = Vector2(6.79682, 6.79682)
 collision_layer = 0
@@ -197,8 +199,7 @@ shape = SubResource("CircleShape2D_sousp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pdfy1")
-animation = &"Charge"
-autoplay = "default"
+animation = &"hurt"
 
 [node name="ChargeUp" type="AnimationPlayer" parent="."]
 libraries = {
@@ -216,12 +217,12 @@ step = 0.1
 value = 100.0
 fill_mode = 1
 
-[node name="EnemyStats" parent="." instance=ExtResource("5_gjvt5")]
+[node name="EnemyStats" parent="." instance=ExtResource("11_6owjj")]
 Speed = 110
-Max_Health = 5000.0
+Max_Health = 7000.0
 DPS = 30
 
-[node name="Fire" parent="." instance=ExtResource("6_v3ong")]
+[node name="Fire" parent="." instance=ExtResource("12_mvy3f")]
 
 [node name="Status" type="RichTextLabel" parent="."]
 offset_left = -20.0

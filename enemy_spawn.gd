@@ -19,6 +19,7 @@ var audio_player_
 @onready var rat_swarm_ = preload("res://EnemyScenes/rat_swarm.tscn")
 @onready var horse_enemy_ = preload("res://EnemyScenes/horse_enemy.tscn")
 @onready var boss_one_ = preload("res://EnemyScenes/Boss/boss.tscn")
+@onready var final_boss_ = preload("res://EnemyScenes/Boss/finalboss.tscn")
 
 var prev_hour_: int = 0
 var boss_summoned_: bool
@@ -59,7 +60,10 @@ func spawn_enemy(type, amount: int):
 		elif type == EnemyType.HORSE:
 			new_enemy = horse_enemy_.instantiate()
 		elif type == EnemyType.BOSS:
-			new_enemy = boss_one_.instantiate()
+			if Globalstats.night == 6:
+				new_enemy = final_boss_.instantiate()
+			else:
+				new_enemy = boss_one_.instantiate()
 		%MonsterSpawnPath.progress_ratio = randf()
 		new_enemy.global_position = %MonsterSpawnPath.global_position
 		add_child(new_enemy)

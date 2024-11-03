@@ -27,6 +27,7 @@ process_mode = 3
 offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("2_46sdn")
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="Sprite2D" parent="Node2D/NightEnd"]
 position = Vector2(590, 183)
@@ -48,6 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_ebrej")
 text = "GO TO SANCTUARY"
+metadata/_edit_use_anchors_ = true
 
 [node name="GoToSanctuary2" type="TextureButton" parent="Node2D/NightEnd"]
 layout_mode = 0
@@ -57,6 +59,7 @@ offset_right = 489.0
 offset_bottom = 453.0
 scale = Vector2(4.88, 4.88)
 texture_normal = ExtResource("4_kt6el")
+metadata/_edit_use_anchors_ = true
 
 [node name="NightsRemain" type="RichTextLabel" parent="Node2D/NightEnd"]
 custom_minimum_size = Vector2(500, 0)
@@ -67,6 +70,7 @@ offset_right = 925.0
 offset_bottom = 321.0
 theme_override_fonts/normal_font = ExtResource("6_k0iet")
 text = "X Nights Remain"
+metadata/_edit_use_anchors_ = true
 
 [node name="UpperRight" type="CanvasLayer" parent="."]
 

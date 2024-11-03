@@ -4,11 +4,12 @@ const MAX_BULLETS = 75
 const MAX_CONSEC_CHARGES = 2
 const PHASE_TWO_RATIO = .4
 
-enum State {CHARGE, GUN1, GUN2, WALKIN}
+enum State {CHARGE_AND_GUN, HOMING, GUN1, GUN2, WALKIN}
 
 enum Phase {ONE, TWO}
 
 @onready var bullet_ = preload("res://EnemyScenes/Boss/boss_bullet.tscn")
+@onready var homing_ = preload("res://EnemyScenes/Boss/boss_homing.tscn")
 @onready var player_ = get_tree().get_first_node_in_group("Player")
 @onready var charge_ani_ = $ChargeUp
 
@@ -70,8 +71,8 @@ func _play_charge_ani(ani_name: String) -> void:
 func _charge() -> void:
 	if dest_ == Vector2.ZERO:
 		# Aim for a little past the opponent to increase chance of hit.
-		var x_over = 30
-		var y_over = 30
+		var x_over = 40
+		var y_over = 40
 		if position.x >= player_.position.x:
 			x_over *= -1
 		if position.y >= player_.position.y:
@@ -83,14 +84,29 @@ func _charge() -> void:
 	if charge_ani_.is_playing(): return
 	sprite_.play("Charge")
 	_walk_towards(500)
+	if Engine.get_process_frames() % 8 == 0:
+		for angle in 6:
+			var w_inst = bullet_.instantiate() as BossBullet
+			w_inst.global_position = position
+			w_inst.set_start_offset(60*angle)
+			get_node("/root/Base").add_child(w_inst)
 	if Globalstats.CloseEnough(position, dest_):
 		if phase_ == Phase.TWO \
 		&& consec_charge_count < MAX_CONSEC_CHARGES:
 			consec_charge_count += 1
-			await _reset_with_state(State.CHARGE)
+			await _reset_with_state(State.CHARGE_AND_GUN)
 		else:
 			consec_charge_count = 0
 			await _reset_with_random_state()
+
+func _homing() -> void:
+	# Change to homing
+	_play_charge_ani("Gun")
+	for i in range(3):
+		var w_inst = homing_.instantiate() as BossHoming
+		w_inst.global_position = position
+		get_node("/root/Base").add_child(w_inst)
+	await _reset_with_random_state()
 
 func _gun() -> void:
 	if state_ == State.GUN1 or phase_ == Phase.TWO:
@@ -102,10 +118,11 @@ func _gun() -> void:
 			await _reset_with_random_state()
 		else:
 			if state_ == State.GUN1 or phase_ == Phase.TWO:
-				var w_inst = bullet_.instantiate() as BossBullet
-				w_inst.global_position = position
-				w_inst.set_start_offset(10 * bullet_count_)
-				get_node("/root/Base").add_child(w_inst)
+				for i in [-10, 10]:
+					var w_inst = bullet_.instantiate() as BossBullet
+					w_inst.global_position = position
+					w_inst.set_start_offset(i * bullet_count_)
+					get_node("/root/Base").add_child(w_inst)
 			if state_ ==  State.GUN2 or phase_ == Phase.TWO:
 				var w_inst = bullet_.instantiate() as BossBullet
 				w_inst.global_position = position
@@ -145,7 +162,9 @@ func _physics_process(delta: float) -> void:
 		_walk_towards(stats_.Speed)
 		if Globalstats.CloseEnough(position, dest_):
 			await _reset_with_random_state()
-	elif state_ == State.CHARGE:
+	elif state_ == State.CHARGE_AND_GUN:
 		_charge()
+	elif state_ == State.HOMING:
+		_homing()
 	elif state_ == State.GUN1 || state_== State.GUN2:
 		_gun()

@@ -2,11 +2,14 @@ class_name Player extends CharacterBody2D
 
 enum Direction {LEFT, RIGHT}
 var direction_: Direction
+
 @onready var sprite_: = $AnimatedSprite2D
 
 @onready var bubble_cd_ = $bubble_cd
 @onready var heart_cd_ = $heart_cd
 @onready var boomerang_cd_ = $boomerang_cd
+
+var game_over_ = preload("res://UI/gameover.tscn")
 
 func _ready() -> void:
 	heart_cd_.start()
@@ -48,11 +51,10 @@ func _physics_process(delta: float) -> void:
 	velocity = dir * stats().Speed
 	move_and_slide()
 
-func _process(delta: float) -> void:
-	pass
 
 func _on_dealt_damage(dmg):
 	stats().Cur_Health = stats().Cur_Health - dmg
-	if stats().Cur_Health <= 0: 
-		print('death')
-	pass
+	if stats().Cur_Health <= 0:
+		print("ded") 
+		get_tree().change_scene_to_packed(game_over_)
+	

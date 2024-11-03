@@ -11,10 +11,6 @@ static var player_stats: PlayerStats = PlayerStats.new()
 static var night: int = 0
 static var times_healed: int = 0
 
-# Which night has bosses
-const first_elite_night = 3
-const boss_nights = [2, 6]
-
 static var _enemy_saved: Dictionary = {
 	EnemyType.DOG: 0,
 	EnemyType.CAT: 0,
@@ -27,6 +23,30 @@ static var _weapon_stats: Dictionary = {
 		WeaponType.BOOMERANG: WeaponStats.new(50, 250),
 		WeaponType.BUBBLE: WeaponStats.new(2.5, 1)
 	}
+
+# Which night has bosses
+const first_elite_night = 3
+# Key is what night the boss spawn, night is amount spawned
+const boss_nights = [2, 6]
+
+# Should've done a singleton, sigh
+static func ResetGlobalState() -> void:
+	_enemy_saved = {
+		EnemyType.DOG: 0,
+		EnemyType.CAT: 0,
+		EnemyType.RAT: 0,
+		EnemyType.HORSE: 0,
+		EnemyType.BOSS: 0,
+	}
+	_weapon_stats = {
+		WeaponType.HEART: WeaponStats.new(30, 1),
+		WeaponType.BOOMERANG: WeaponStats.new(50, 250),
+		WeaponType.BUBBLE: WeaponStats.new(2.5, 1)
+	}
+	need_to_defeat_boss = false
+	player_stats= PlayerStats.new()
+	night = 0
+	times_healed = 0
 
 static func IsBossNight() -> bool:
 	return night in boss_nights

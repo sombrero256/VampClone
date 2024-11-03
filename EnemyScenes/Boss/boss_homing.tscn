@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://h30os6l8n0jj"]
+
+[ext_resource type="PackedScene" uid="uid://qplfvjdtapgc" path="res://EnemyScenes/EnemyHurtBox.tscn" id="1_hrwkt"]
+[ext_resource type="Script" path="res://EnemyScenes/Boss/boss_homing.gd" id="1_wgx0b"]
+[ext_resource type="Texture2D" uid="uid://d2wshfduxyev3" path="res://EnemyScenes/Boss/BossSprites/heart_homing.png" id="3_3ckkm"]
+[ext_resource type="PackedScene" uid="uid://cgx0tfbvsjcr7" path="res://EnemyScenes/enemy_stats.tscn" id="3_l8rt7"]
+
+[node name="BossHoming" type="CharacterBody2D"]
+script = ExtResource("1_wgx0b")
+
+[node name="HurtBox" parent="." instance=ExtResource("1_hrwkt")]
+scale = Vector2(1.19015, 1.19015)
+collision_layer = 0
+collision_mask = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="HurtBox"]
+modulate = Color(1, 0.97, 0.97, 1)
+rotation = 6.28318
+scale = Vector2(1.15403, 1.15403)
+texture = ExtResource("3_3ckkm")
+
+[node name="EnemyStats" parent="." instance=ExtResource("3_l8rt7")]
+DPS = 15
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
