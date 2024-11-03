@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqcaqfagbpmwk"]
+[gd_scene load_steps=7 format=3 uid="uid://bqcaqfagbpmwk"]
 
 [ext_resource type="Script" path="res://enemy_spawn.gd" id="1_fitpt"]
 [ext_resource type="PackedScene" uid="uid://bv2lth071a2o2" path="res://PlayerScenes/Player.tscn" id="1_rwsgl"]
 [ext_resource type="AudioStream" uid="uid://sej1axseiba0" path="res://Music/stage theme 1.wav" id="3_nkh07"]
 [ext_resource type="PackedScene" uid="uid://bwuxingjox15e" path="res://World.tscn" id="4_hb6vw"]
 [ext_resource type="PackedScene" uid="uid://dcl4qjrum74jl" path="res://UI/ui.tscn" id="5_6geqr"]
-[ext_resource type="PackedScene" uid="uid://bc6332cefnqhn" path="res://UI/ShopUI/UpgradeButton.tscn" id="6_s1n5u"]
 
 [sub_resource type="Curve2D" id="Curve2D_qcrng"]
 _data = {
@@ -42,14 +41,6 @@ position = Vector2(459, 790)
 unique_name_in_owner = true
 wait_time = 3.0
 autostart = true
-
-[node name="ShopButton" parent="." instance=ExtResource("6_s1n5u")]
-visible = false
-offset_left = 351.0
-offset_top = 1429.0
-offset_right = 415.0
-offset_bottom = 1445.0
-CorrespondingWeapon = 2
 
 [connection signal="time_changed" from="Ui" to="." method="_on_ui_time_changed"]
 [connection signal="timeout" from="EnemySpawner" to="." method="_on_timer_timeout"]
