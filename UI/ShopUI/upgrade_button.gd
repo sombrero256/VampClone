@@ -60,28 +60,31 @@ func _on_visibility_changed() -> void:
 	pass # Replace with function body.
 
 func update_labels() -> void:
-	%AreaUpgradeLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].area_levels, AreaCostScaling, AreaBaseCost))
-	%DamageUpgradeLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].damage_levels, DamageCostScaling, DamageBaseCost))
-	%SpeedUpgradeLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].speed_levels, SpeedCostScaling, SpeedBaseCost))
-	%FireUpgradeLabel.text = str(FireCost)
-	%CritUpgradeLabel.text = str(CritCost)
-	%FreezeUpgradeLabel.text = str(FreezeCost)
+	%AreaUpgradeLabel.text = str(Globalstats._weapon_stats[CorrespondingWeapon].area_levels)
+	%DamageUpgradeLabel.text = str(Globalstats._weapon_stats[CorrespondingWeapon].damage_levels)
+	%SpeedUpgradeLabel.text = str(Globalstats._weapon_stats[CorrespondingWeapon].speed_levels)
+	%AreaCostLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].area_levels, AreaCostScaling, AreaBaseCost))
+	%DamageCostLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].damage_levels, DamageCostScaling, DamageBaseCost))
+	%SpeedCostLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].speed_levels, SpeedCostScaling, SpeedBaseCost))
+	##%FireUpgradeLabel.text = str(FireCost)
+	##%CritUpgradeLabel.text = str(CritCost)
+	##%FreezeUpgradeLabel.text = str(FreezeCost)
 	
-	for modifier in Globalstats._weapon_stats[CorrespondingWeapon].modifiers_:
-		match modifier:
-			WeaponStats.Modifier.ICE:
-				%FreezeContainer.visible = false
-			WeaponStats.Modifier.FIRE:
-				%FireContainer.visible = false
-			WeaponStats.Modifier.CRIT:
-				%CritContainer.visible = false
-			_: pass
+	##for modifier in Globalstats._weapon_stats[CorrespondingWeapon].modifiers_:
+	##	match modifier:
+	##		WeaponStats.Modifier.ICE:
+	##			%FreezeContainer.visible = false
+	##		WeaponStats.Modifier.FIRE:
+	##			%FireContainer.visible = false
+	##		WeaponStats.Modifier.CRIT:
+	##			%CritContainer.visible = false
+	##		_: pass
 	pass
 
 func update_weapon_icon() -> void:
 	var weapon_icon_dict = {}
 	weapon_icon_dict[BaseWeapon.WeaponType.HEART] = "res://WeaponScenes/Heart/heart.png"
-	weapon_icon_dict[BaseWeapon.WeaponType.BOOMERANG] = "res://WeaponScenes/Boomerang/boomerang_icon.png"
+	weapon_icon_dict[BaseWeapon.WeaponType.BOOMERANG] = "res://WeaponScenes/Boomerang/boom2icon.png"
 	weapon_icon_dict[BaseWeapon.WeaponType.BUBBLE] = "res://WeaponScenes/StarBomb/assets/Bubble 1.png"
 	%WeaponIcon.texture = load(weapon_icon_dict[CorrespondingWeapon])
 	pass
