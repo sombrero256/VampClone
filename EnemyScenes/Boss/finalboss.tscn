@@ -219,8 +219,8 @@ fill_mode = 1
 
 [node name="EnemyStats" parent="." instance=ExtResource("11_6owjj")]
 Speed = 110
-Max_Health = 7000.0
-DPS = 30
+Max_Health = 20000.0
+DPS = 50
 
 [node name="Fire" parent="." instance=ExtResource("12_mvy3f")]
 

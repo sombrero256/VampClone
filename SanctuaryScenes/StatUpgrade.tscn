@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7w8vx72u7skf"]
-
-[ext_resource type="Script" path="res://SanctuaryScenes/stat_upgrade.gd" id="1_cswqj"]
-
-[node name="StatUpgrade" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_cswqj")

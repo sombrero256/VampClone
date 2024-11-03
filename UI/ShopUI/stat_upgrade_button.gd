@@ -33,7 +33,7 @@ func _on_visibility_changed() -> void:
 
 func update_labels() -> void:
 	%HealthUpgradeCostLabel.text = str(calc_upgrade_cost(Globalstats.health_levels, HealthCostScaling, HealthBaseCost))
-	%HealthUpgradeCostLabel.text = str(calc_upgrade_cost(Globalstats.speed_levels, SpeedCostScaling, SpeedBaseCost))
+	%SpeedUpgradeCostLabel.text = str(calc_upgrade_cost(Globalstats.speed_levels, SpeedCostScaling, SpeedBaseCost))
 	
 	%HealthUpgradeLevelLabel.text = str(Globalstats.health_levels)
 	%SpeedUpgradeLevelLabel.text = str(Globalstats.speed_levels)
