@@ -12,52 +12,41 @@ default_font = ExtResource("3_s6uax")
 default_font_size = 5
 
 [node name="ShopButton" type="TextureRect"]
-anchors_preset = -1
-anchor_right = 0.222
-anchor_bottom = 0.099
-offset_right = -191.744
-offset_bottom = -48.152
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(4, 4)
+offset_right = 64.0
+offset_bottom = 16.0
+scale = Vector2(4, 8)
 texture = ExtResource("1_ra1uo")
 stretch_mode = 2
 script = ExtResource("2_nexer")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 2.0
+offset_top = 1.0
 offset_right = 116.0
-offset_bottom = 26.0
-scale = Vector2(0.5, 0.5)
-columns = 4
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.25)
 
-[node name="MarginContainer4" type="MarginContainer" parent="GridContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="WeaponIcon" type="TextureRect" parent="GridContainer/MarginContainer4"]
+[node name="WeaponIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="MarginContainer2" type="MarginContainer" parent="GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/MarginContainer2"]
-layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="AreaUpgradeButton" type="TextureButton" parent="GridContainer/MarginContainer2/VBoxContainer"]
+[node name="AreaUpgradeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("2_ewnnd")
 
-[node name="AreaUpgradeLabel" type="Label" parent="GridContainer/MarginContainer2/VBoxContainer"]
+[node name="AreaUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -66,46 +55,104 @@ theme = SubResource("Theme_pvwff")
 text = "12"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/MarginContainer"]
-layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="DamageUpgradeButton" type="TextureButton" parent="GridContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("3_erj85")
-
-[node name="DamageUpgradeLabel" type="Label" parent="GridContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme = SubResource("Theme_pvwff")
-text = "12"
-horizontal_alignment = 1
-
-[node name="MarginContainer3" type="MarginContainer" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/MarginContainer3"]
-layout_mode = 2
-theme_override_constants/separation = 1
-
-[node name="SpeedUpgradeButton" type="TextureButton" parent="GridContainer/MarginContainer3/VBoxContainer"]
+[node name="SpeedUpgradeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("4_xwkbe")
 
-[node name="SpeedUpgradeLabel" type="Label" parent="GridContainer/MarginContainer3/VBoxContainer"]
+[node name="SpeedUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_pvwff")
+text = "12"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="DamageUpgradeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_erj85")
+
+[node name="DamageUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_pvwff")
+text = "12"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="FreezeContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="FreezeUpgradeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2/FreezeContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_ewnnd")
+
+[node name="FreezeUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/FreezeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_pvwff")
+text = "12"
+horizontal_alignment = 1
+
+[node name="CritContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="CritUpgradeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2/CritContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_ewnnd")
+
+[node name="CritUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/CritContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_pvwff")
+text = "12"
+horizontal_alignment = 1
+
+[node name="FireContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="FireUpgradeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2/FireContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_ewnnd")
+
+[node name="FireUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/FireContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -115,6 +162,9 @@ text = "12"
 horizontal_alignment = 1
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="button_up" from="GridContainer/MarginContainer2/VBoxContainer/AreaUpgradeButton" to="." method="_on_area_upgrade_button_button_up"]
-[connection signal="button_up" from="GridContainer/MarginContainer/VBoxContainer/DamageUpgradeButton" to="." method="_on_damage_upgrade_button_button_up"]
-[connection signal="button_up" from="GridContainer/MarginContainer3/VBoxContainer/SpeedUpgradeButton" to="." method="_on_speed_upgrade_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/AreaUpgradeButton" to="." method="_on_area_upgrade_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer3/SpeedUpgradeButton" to="." method="_on_speed_upgrade_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/DamageUpgradeButton" to="." method="_on_damage_upgrade_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer2/FreezeContainer/FreezeUpgradeButton" to="." method="_on_freeze_upgrade_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer2/CritContainer/CritUpgradeButton" to="." method="_on_crit_upgrade_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer2/FireContainer/FireUpgradeButton" to="." method="_on_fire_upgrade_button_button_up"]
