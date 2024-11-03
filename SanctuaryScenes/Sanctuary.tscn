@@ -313,9 +313,6 @@ offset_right = 231.0
 offset_bottom = 3.0
 grow_horizontal = 1
 grow_vertical = 1
-<<<<<<< HEAD
-CorrespondingWeapon = 1
-=======
 AreaLvlUpAmt = 1.1
 SpeedLvlUpAmt = 1.1
 DamageLvlUpAmt = 1.1
@@ -328,7 +325,6 @@ DamageBaseCost = 20
 SpeedUpgradeAnimal = 2
 AreaUpgradeAnimal = 2
 DamageUpgradeAnimal = 2
->>>>>>> 6db615bd263904a66ffca91c6ddfbb64030d3cd6
 
 [node name="MrsCat" parent="." instance=ExtResource("2_ov6r2")]
 position = Vector2(759, -130)
@@ -351,9 +347,6 @@ offset_right = 235.0
 offset_bottom = 5.0
 grow_horizontal = 1
 grow_vertical = 1
-<<<<<<< HEAD
-CorrespondingWeapon = 2
-=======
 CorrespondingWeapon = 1
 AreaLvlUpAmt = 1.1
 SpeedLvlUpAmt = 1.1
@@ -367,7 +360,6 @@ DamageBaseCost = 10
 SpeedUpgradeAnimal = 1
 AreaUpgradeAnimal = 1
 DamageUpgradeAnimal = 1
->>>>>>> 6db615bd263904a66ffca91c6ddfbb64030d3cd6
 
 [node name="Horsey" parent="." instance=ExtResource("2_ov6r2")]
 position = Vector2(-317, -244)

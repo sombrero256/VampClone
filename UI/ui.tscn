@@ -60,6 +60,7 @@ texture_normal = ExtResource("4_kt6el")
 
 [node name="NightsRemain" type="RichTextLabel" parent="Node2D/NightEnd"]
 custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
 offset_left = 425.0
 offset_top = 281.0
 offset_right = 925.0
