@@ -1,6 +1,8 @@
 [
-	{"name": "Mrs Cat", "text":"Thank you for saving me!"},
-	{"name": "Mrs Cat", "text":"I can power up your water bomb if you free more of my friends."},
-	{"name": "Minnister Maxwell", "text":"I've brought you some animals"},
-	{"name": "Mrs Cat", "text":"Yay! Thank you!"}
+	{"name": "Mrs Cat", "text":"..."},
+	{"name": "Minnister Maxwell", "text":"Hello!"},
+	{"name": "Mrs Cat", "text":"*lifts head then goes back to sleep*"},
+	{"name": "Minnister Maxwell", "text":"I've brought some kitties with me!"},
+	{"name": "Mrs Cat", "text":"*purrs contentedly*"},
+	{"name": "Minnister Maxwell", "text":"I think she can power up my boomerang."}
 ]

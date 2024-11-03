@@ -1,6 +1,8 @@
 [
-	{"name": "Greg", "text":"What, you want a reward or something?"},
-	{"name": "Minnister Maxwell", "text":"I've brought you some animals"},
-	{"name": "Greg", "text":"You know we spread disease, right?"},
-	{"name": "Greg", "text":"But uh... Thanks, I guess."}
+	{"name": "Gus", "text":"What, you want a reward or something?"},
+	{"name": "Minnister Maxwell", "text":"I've brought you some furry friends!"},
+	{"name": "Gus", "text":"You know we spread disease, right?"},
+	{"name": "Gus", "text":"But uh... Thanks, I guess."},
+	{"name": "Gus", "text":"I'll upgrade your stats, if you like."},
+	{"name": "Gus", "text":"Don't ask me how this works. I'm just a rat."}
 ]

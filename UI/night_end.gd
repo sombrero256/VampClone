@@ -18,14 +18,14 @@ func OnNightEnd() -> void:
 	Globalstats.night += 1
 
 	print("REMOVE ME! POWERING UP EXAMPLE")
-	var player_stats = Globalstats.player_stats
-	player_stats.heal(25)
-	player_stats.speed_up(15)
-	for type in WeaponType.values():
+	##var player_stats = Globalstats.player_stats
+	##player_stats.heal(25)
+	##player_stats.speed_up(15)
+	##for type in WeaponType.values():
 		# This levels up damage, speed, and AOE by 10%
 		# while also adding or increasing modifier chance
-		Globalstats.GetWeaponStats(type).lvl_up(1.10, 1.10, 1.10, 
-		[Modifier.FIRE, Modifier.ICE, Modifier.CRIT])
+	##	Globalstats.GetWeaponStats(type).lvl_up(1.10, 1.10, 1.10, 
+	##	[Modifier.FIRE, Modifier.ICE, Modifier.CRIT])
 			
 	visible = true
 

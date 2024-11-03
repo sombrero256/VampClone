@@ -9,9 +9,10 @@ var player_in = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("chat") and player_in:
-		if subtract_upgrade_cost(Globalstats.times_healed, heal_cost_scale, heal_base_cost, animal):
-			Globalstats.player_stats.heal(heal_amt)
-			Globalstats.times_healed += 1
+		if Globalstats.player_stats.Cur_Health != Globalstats.player_stats.Max_Health:
+			if subtract_upgrade_cost(Globalstats.times_healed, heal_cost_scale, heal_base_cost, animal):
+				Globalstats.player_stats.heal(heal_amt)
+				Globalstats.times_healed += 1
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
