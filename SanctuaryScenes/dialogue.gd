@@ -70,7 +70,7 @@ func next_script():
 	if current_dialogue_id >= len(dialogue):
 		dialogue_active = false
 		$ColorRect.visible = false
-		%JustAGuy.speed = 300
+		%JustAGuy.speed = 200
 		return
 	else:
 		$ColorRect/SpeakerName.text = dialogue[current_dialogue_id]['name']

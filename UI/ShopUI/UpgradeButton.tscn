@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bc6332cefnqhn"]
+[gd_scene load_steps=12 format=3 uid="uid://bc6332cefnqhn"]
 
 [ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="1_ra1uo"]
 [ext_resource type="Texture2D" uid="uid://byx0v6cpk3v6h" path="res://UI/ShopUI/area.png" id="2_ewnnd"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bvnr5vbg1yta6" path="res://WeaponScenes/Heart/heart.png" id="3_oyrv3"]
 [ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="3_s6uax"]
 [ext_resource type="Texture2D" uid="uid://dx8isxv0hyfku" path="res://UI/ShopUI/speed.png" id="4_xwkbe"]
+[ext_resource type="Texture2D" uid="uid://cndxnqn15tuvv" path="res://UI/ShopUI/Ice.png" id="8_g571x"]
+[ext_resource type="Texture2D" uid="uid://cislw4rbqi44y" path="res://UI/ShopUI/Critical.png" id="9_vy3kt"]
+[ext_resource type="Texture2D" uid="uid://dqnjxoivd3l7" path="res://UI/ShopUI/Fire.png" id="10_aliv7"]
 
 [sub_resource type="Theme" id="Theme_pvwff"]
 default_font = ExtResource("3_s6uax")
@@ -139,7 +142,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("2_ewnnd")
+texture_normal = ExtResource("8_g571x")
 
 [node name="FreezeUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/FreezeContainer"]
 unique_name_in_owner = true
@@ -160,7 +163,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("2_ewnnd")
+texture_normal = ExtResource("9_vy3kt")
 
 [node name="CritUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/CritContainer"]
 unique_name_in_owner = true
@@ -181,7 +184,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("2_ewnnd")
+texture_normal = ExtResource("10_aliv7")
 
 [node name="FireUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/FireContainer"]
 unique_name_in_owner = true

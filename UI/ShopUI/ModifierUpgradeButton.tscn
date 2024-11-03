@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwmkf4dy3au1s"]
+[gd_scene load_steps=11 format=3 uid="uid://cwmkf4dy3au1s"]
 
 [ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="1_n4kxc"]
 [ext_resource type="Script" path="res://UI/ShopUI/upgrade_button.gd" id="2_ocak5"]
@@ -6,6 +6,9 @@
 [ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="4_23ubc"]
 [ext_resource type="Texture2D" uid="uid://dx8isxv0hyfku" path="res://UI/ShopUI/speed.png" id="5_i1vch"]
 [ext_resource type="Texture2D" uid="uid://did72sswvwecf" path="res://UI/ShopUI/crosshair.png" id="6_lc1ct"]
+[ext_resource type="Texture2D" uid="uid://cndxnqn15tuvv" path="res://UI/ShopUI/Ice.png" id="7_kqleu"]
+[ext_resource type="Texture2D" uid="uid://cislw4rbqi44y" path="res://UI/ShopUI/Critical.png" id="8_lyph7"]
+[ext_resource type="Texture2D" uid="uid://dqnjxoivd3l7" path="res://UI/ShopUI/Fire.png" id="9_r016i"]
 
 [sub_resource type="Theme" id="Theme_pvwff"]
 default_font = ExtResource("4_23ubc")
@@ -136,7 +139,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("3_83xaj")
+texture_normal = ExtResource("7_kqleu")
 
 [node name="FreezeUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/FreezeContainer"]
 unique_name_in_owner = true
@@ -157,7 +160,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("3_83xaj")
+texture_normal = ExtResource("8_lyph7")
 
 [node name="CritUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/CritContainer"]
 unique_name_in_owner = true
@@ -178,7 +181,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("3_83xaj")
+texture_normal = ExtResource("9_r016i")
 
 [node name="FireUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/FireContainer"]
 unique_name_in_owner = true
