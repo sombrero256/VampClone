@@ -2,9 +2,9 @@ extends TextureRect
 
 @export var CorrespondingWeapon: BaseWeapon.WeaponType
 
-@export var AreaLvlUpAmt: float
-@export var SpeedLvlUpAmt: float
-@export var DamageLvlUpAmt: float
+@export var AreaLvlUpAmt: float = 1.05
+@export var SpeedLvlUpAmt: float = 1.05
+@export var DamageLvlUpAmt: float = 1.05
 
 @export var SpeedCostScaling: float
 @export var AreaCostScaling: float

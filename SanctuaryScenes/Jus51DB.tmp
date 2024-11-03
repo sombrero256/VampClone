@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://ka6fhdls05bm"]
+
+[ext_resource type="Script" path="res://SanctuaryScenes/just_a_guy.gd" id="1_aufhe"]
+[ext_resource type="Texture2D" uid="uid://c07hx3wfbbi1q" path="res://PlayerScenes/assets/Character 1 Walking.png" id="2_vy4ja"]
+[ext_resource type="Texture2D" uid="uid://cbqkulfbx1kd8" path="res://PlayerScenes/assets/Character 1.png" id="3_gyx1o"]
+[ext_resource type="Texture2D" uid="uid://ir0n4uhi06rm" path="res://SanctuaryScenes/space_prompt.png" id="4_gj0yb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lby5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vy4ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gyx1o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4bags"]
+radius = 18.1108
+
+[node name="JustAGuy" type="CharacterBody2D"]
+script = ExtResource("1_aufhe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4lby5")
+autoplay = "default"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_4bags")
+
+[node name="SpacePrompt" type="ColorRect" parent="."]
+visible = false
+z_index = 10
+offset_left = -18.0
+offset_top = -39.0
+offset_bottom = -30.0
+scale = Vector2(2, 2)
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite" type="Sprite2D" parent="SpacePrompt"]
+position = Vector2(9, 5)
+texture = ExtResource("4_gj0yb")

@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://sej1axseiba0" path="res://Music/stage theme 1.wav" id="3_nkh07"]
 [ext_resource type="PackedScene" uid="uid://bwuxingjox15e" path="res://World.tscn" id="4_hb6vw"]
 [ext_resource type="PackedScene" uid="uid://dcl4qjrum74jl" path="res://UI/ui.tscn" id="5_6geqr"]
-[ext_resource type="PackedScene" uid="uid://cj68loky1haky" path="res://UI/ShopUI/UpgradeButton.tscn" id="6_s1n5u"]
+[ext_resource type="PackedScene" uid="uid://bc6332cefnqhn" path="res://UI/ShopUI/UpgradeButton.tscn" id="6_s1n5u"]
 
 [sub_resource type="Curve2D" id="Curve2D_qcrng"]
 _data = {
@@ -44,6 +44,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="ShopButton" parent="." instance=ExtResource("6_s1n5u")]
+visible = false
 offset_left = 351.0
 offset_top = 1429.0
 offset_right = 415.0

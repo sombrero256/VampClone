@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcl4qjrum74jl"]
+[gd_scene load_steps=12 format=3 uid="uid://dcl4qjrum74jl"]
 
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_5dd5d"]
 [ext_resource type="Script" path="res://UI/night_end.gd" id="2_46sdn"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="4_kt6el"]
 [ext_resource type="FontFile" uid="uid://cn3lytj1xsukt" path="res://UI/Font/QuinqueFive.woff2" id="5_4gr8p"]
 [ext_resource type="FontFile" uid="uid://cfs4cf06yomkj" path="res://Font/QuinqueFive.otf" id="5_4myye"]
+[ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="6_k0iet"]
 
 [sub_resource type="Theme" id="Theme_ebrej"]
 default_font = ExtResource("5_4myye")
@@ -40,9 +41,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -115.0
-offset_top = 50.0
+offset_top = 130.0
 offset_right = 141.0
-offset_bottom = 306.0
+offset_bottom = 386.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_ebrej")
@@ -51,11 +52,20 @@ text = "GO TO SANCTUARY"
 [node name="GoToSanctuary2" type="TextureButton" parent="Node2D/NightEnd"]
 layout_mode = 0
 offset_left = 425.0
-offset_top = 357.0
+offset_top = 437.0
 offset_right = 489.0
-offset_bottom = 373.0
+offset_bottom = 453.0
 scale = Vector2(4.88, 4.88)
 texture_normal = ExtResource("4_kt6el")
+
+[node name="NightsRemain" type="RichTextLabel" parent="Node2D/NightEnd"]
+custom_minimum_size = Vector2(500, 0)
+offset_left = 425.0
+offset_top = 281.0
+offset_right = 925.0
+offset_bottom = 321.0
+theme_override_fonts/normal_font = ExtResource("6_k0iet")
+text = "X Nights Remain"
 
 [node name="UpperRight" type="CanvasLayer" parent="."]
 

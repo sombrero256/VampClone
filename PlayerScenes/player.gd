@@ -4,6 +4,15 @@ enum Direction {LEFT, RIGHT}
 var direction_: Direction
 @onready var sprite_: = $AnimatedSprite2D
 
+@onready var bubble_cd_ = $bubble_cd
+@onready var heart_cd_ = $heart_cd
+@onready var boomerang_cd_ = $boomerang_cd
+
+func _ready() -> void:
+	heart_cd_.start()
+	bubble_cd_.start()
+	boomerang_cd_.start()
+
 func stats() -> PlayerStats:
 	return Globalstats.player_stats
 

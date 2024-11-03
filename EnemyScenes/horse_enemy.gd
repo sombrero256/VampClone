@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	elif health_.value/float(health_.max_value) < RAGE_THRESHOLD:
 		state_ = RAGING
 		rage_ani_.play("RAGING")
-		stats_.Speed += 130
+		stats_.Speed += 120
 
 func _physics_process(delta: float) -> void:
 	if frozen_: return

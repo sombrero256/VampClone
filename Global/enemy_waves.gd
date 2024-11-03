@@ -25,10 +25,11 @@ func _init() -> void:
 	_create_wave(6, 0, 0, 0)
 	# A smattering of rats
 	_create_wave(0, 0, 3, 0)
-	# Horse of course
-	_create_wave(0, 0, 0, 4)
 	# Cats and rats for days
 	_create_wave(0, 2, 2, 0)
+	if Globalstats.night >= 2:
+		# Horse of course
+		_create_wave(0, 0, 0, 4)
 	waves_.make_read_only()
 
 func _create_wave(

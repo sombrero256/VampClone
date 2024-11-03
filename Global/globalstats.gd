@@ -12,6 +12,7 @@ static var night: int = 0
 static var times_healed: int = 0
 
 # Which night has bosses
+const first_elite_night = 3
 const boss_nights = [2, 6]
 
 static var _enemy_saved: Dictionary = {

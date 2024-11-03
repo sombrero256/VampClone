@@ -20,10 +20,13 @@ const CRIT_AMOUNT = 50
 func _ready() -> void:
 	# Determine if they are an elite
 	sprite_.play("default")
-	if type_ != EnemyType.BOSS and randf() <= ELITE_CHANCE * Globalstats.night:
+	if type_ != EnemyType.BOSS \
+	and Globalstats.night >= Globalstats.first_elite_night \
+	and randf() <= ELITE_CHANCE * Globalstats.night:
 		is_elite_ = true
 		scale *= 1.5
-		stats_.Max_Health *= 3
+		stats_.speed *= 1.2
+		stats_.Max_Health *= 5
 		stats_.DPS *= 2
 	health_.max_value = stats_.Max_Health
 	health_.value = stats_.Max_Health

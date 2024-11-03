@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://djbiiaj4pqxvv" path="res://SanctuaryScenes/art/animals/Horse Walking.png" id="10_2tb61"]
 [ext_resource type="Texture2D" uid="uid://cbh4ckjbdnefl" path="res://SanctuaryScenes/art/animals/Rat.png" id="11_3pnrq"]
 [ext_resource type="Texture2D" uid="uid://c7bhul3kdfnb0" path="res://SanctuaryScenes/art/animals/Rat Walking.png" id="12_qn4lo"]
-[ext_resource type="PackedScene" uid="uid://cj68loky1haky" path="res://UI/ShopUI/UpgradeButton.tscn" id="14_5hiac"]
+[ext_resource type="PackedScene" uid="uid://bc6332cefnqhn" path="res://UI/ShopUI/UpgradeButton.tscn" id="14_5hiac"]
 [ext_resource type="Texture2D" uid="uid://84n6uplvkryl" path="res://ground_tiles.png" id="15_xbxve"]
 [ext_resource type="Texture2D" uid="uid://d1dpfca355yuw" path="res://building_tiles.png" id="16_cfkgu"]
 [ext_resource type="Texture2D" uid="uid://b8xqbnhdftxx0" path="res://Tileset/plants/PLANT-Shrub_A.png" id="17_xylpu"]
@@ -313,6 +313,7 @@ offset_right = 231.0
 offset_bottom = 3.0
 grow_horizontal = 1
 grow_vertical = 1
+CorrespondingWeapon = 1
 
 [node name="MrsCat" parent="." instance=ExtResource("2_ov6r2")]
 position = Vector2(759, -130)
@@ -335,6 +336,7 @@ offset_right = 235.0
 offset_bottom = 5.0
 grow_horizontal = 1
 grow_vertical = 1
+CorrespondingWeapon = 2
 
 [node name="Horsey" parent="." instance=ExtResource("2_ov6r2")]
 position = Vector2(-317, -244)
