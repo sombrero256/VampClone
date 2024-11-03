@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://bp3hc0a5eqsii"]
+[gd_scene load_steps=51 format=4 uid="uid://bp3hc0a5eqsii"]
 
 [ext_resource type="Texture2D" uid="uid://fytgj2balqfj" path="res://path_tiles.png" id="1_ai0i1"]
 [ext_resource type="PackedScene" uid="uid://ka6fhdls05bm" path="res://SanctuaryScenes/JustAGuy.tscn" id="1_gguxs"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cbh4ckjbdnefl" path="res://SanctuaryScenes/art/animals/Rat.png" id="11_3pnrq"]
 [ext_resource type="Texture2D" uid="uid://c7bhul3kdfnb0" path="res://SanctuaryScenes/art/animals/Rat Walking.png" id="12_qn4lo"]
 [ext_resource type="PackedScene" uid="uid://bc6332cefnqhn" path="res://UI/ShopUI/UpgradeButton.tscn" id="14_5hiac"]
+[ext_resource type="PackedScene" uid="uid://cwmkf4dy3au1s" path="res://UI/ShopUI/ModifierUpgradeButton.tscn" id="15_88f23"]
 [ext_resource type="Texture2D" uid="uid://84n6uplvkryl" path="res://ground_tiles.png" id="15_xbxve"]
 [ext_resource type="Texture2D" uid="uid://d1dpfca355yuw" path="res://building_tiles.png" id="16_cfkgu"]
 [ext_resource type="Texture2D" uid="uid://b8xqbnhdftxx0" path="res://Tileset/plants/PLANT-Shrub_A.png" id="17_xylpu"]
@@ -411,19 +412,13 @@ autoplay = "default"
 [node name="Dialogue" parent="Mouse" instance=ExtResource("3_qkpqa")]
 z_index = 4096
 
-[node name="ShopButton" parent="Mouse/Dialogue" instance=ExtResource("14_5hiac")]
+[node name="ShopButton" parent="Mouse/Dialogue" instance=ExtResource("15_88f23")]
 visible = false
-layout_mode = 1
-offset_left = 172.0
-offset_top = -13.0
-offset_right = 236.0
-offset_bottom = 3.0
-AreaLvlUpAmt = 0.0
-SpeedLvlUpAmt = 0.0
-DamageLvlUpAmt = 0.0
-FreezeCost = 0
-FireCost = 0
-CritCost = 0
+layout_mode = 0
+offset_left = 168.0
+offset_top = -11.0
+offset_right = 232.0
+offset_bottom = 5.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_7b38s")

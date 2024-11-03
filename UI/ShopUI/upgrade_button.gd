@@ -60,9 +60,14 @@ func _on_visibility_changed() -> void:
 	pass # Replace with function body.
 
 func update_labels() -> void:
-	%AreaUpgradeLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].area_levels, AreaCostScaling, AreaBaseCost))
-	%DamageUpgradeLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].damage_levels, DamageCostScaling, DamageBaseCost))
-	%SpeedUpgradeLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].speed_levels, SpeedCostScaling, SpeedBaseCost))
+	%AreaUpgradeCostLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].area_levels, AreaCostScaling, AreaBaseCost))
+	%DamageUpgradeCostLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].damage_levels, DamageCostScaling, DamageBaseCost))
+	%SpeedUpgradeCostLabel.text = str(calc_upgrade_cost(Globalstats._weapon_stats[CorrespondingWeapon].speed_levels, SpeedCostScaling, SpeedBaseCost))
+	
+	%AreaUpgradeLevelLabel.text = str(Globalstats._weapon_stats[CorrespondingWeapon].area_levels)
+	%SpeedUpgradeLevelLabel.text = str(Globalstats._weapon_stats[CorrespondingWeapon].speed_levels)
+	%DamageUpgradeLevelLabel.text = str(Globalstats._weapon_stats[CorrespondingWeapon].damage_levels)
+	
 	%FireUpgradeLabel.text = str(FireCost)
 	%CritUpgradeLabel.text = str(CritCost)
 	%FreezeUpgradeLabel.text = str(FreezeCost)
@@ -89,20 +94,19 @@ func update_weapon_icon() -> void:
 func _on_freeze_upgrade_button_button_up() -> void:
 	if Globalstats.GetSavedEnemies()[FreezeUpgradeAnimal] >= FreezeCost:
 		Globalstats._enemy_saved[FreezeUpgradeAnimal] -= FreezeCost
-		Globalstats._weapon_stats[CorrespondingWeapon].lvl_up(1, 1, 1, [WeaponStats.Modifier.ICE])
-
+		apply_modifer_to_all_weapons(WeaponStats.Modifier.ICE)
 		update_labels()
 
 func _on_crit_upgrade_button_button_up() -> void:
 	if Globalstats.GetSavedEnemies()[CritUpgradeAnimal] >= CritCost:
 		Globalstats._enemy_saved[CritUpgradeAnimal] -= CritCost
-		Globalstats._weapon_stats[CorrespondingWeapon].lvl_up(1, 1, 1, [WeaponStats.Modifier.CRIT])
+		apply_modifer_to_all_weapons(WeaponStats.Modifier.CRIT)
 		update_labels()
 
 func _on_fire_upgrade_button_button_up() -> void:
 	if Globalstats.GetSavedEnemies()[FireUpgradeAnimal] >= FireCost:
 		Globalstats._enemy_saved[FireUpgradeAnimal] -= FireCost
-		Globalstats._weapon_stats[CorrespondingWeapon].lvl_up(1, 1, 1, [WeaponStats.Modifier.FIRE])
+		apply_modifer_to_all_weapons(WeaponStats.Modifier.FIRE)
 		update_labels()
 
 func subtract_upgrade_cost(levels: int, scale_factor: float, base_cost: int, animal_used: Enemy.EnemyType) -> bool:
@@ -113,3 +117,7 @@ func subtract_upgrade_cost(levels: int, scale_factor: float, base_cost: int, ani
 
 func calc_upgrade_cost(levels: int, scale_factor: float, base_cost: int) -> int:
 	return int(base_cost + (levels * scale_factor))
+
+func apply_modifer_to_all_weapons(modifier: WeaponStats.Modifier) -> void:
+	for weapon in BaseWeapon.WeaponType.values():
+		Globalstats._weapon_stats[weapon].lvl_up(1, 1, 1, [modifier])

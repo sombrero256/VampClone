@@ -1,24 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://bc6332cefnqhn"]
+[gd_scene load_steps=8 format=3 uid="uid://cwmkf4dy3au1s"]
 
-[ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="1_ra1uo"]
-[ext_resource type="Texture2D" uid="uid://byx0v6cpk3v6h" path="res://UI/ShopUI/area.png" id="2_ewnnd"]
-[ext_resource type="Script" path="res://UI/ShopUI/upgrade_button.gd" id="2_nexer"]
-[ext_resource type="Texture2D" uid="uid://did72sswvwecf" path="res://UI/ShopUI/crosshair.png" id="3_erj85"]
-[ext_resource type="Texture2D" uid="uid://bvnr5vbg1yta6" path="res://WeaponScenes/Heart/heart.png" id="3_oyrv3"]
-[ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="3_s6uax"]
-[ext_resource type="Texture2D" uid="uid://dx8isxv0hyfku" path="res://UI/ShopUI/speed.png" id="4_xwkbe"]
+[ext_resource type="Texture2D" uid="uid://kfw0tbckrd1r" path="res://UI/button-64x16-rectangle-off.png" id="1_n4kxc"]
+[ext_resource type="Script" path="res://UI/ShopUI/upgrade_button.gd" id="2_ocak5"]
+[ext_resource type="Texture2D" uid="uid://byx0v6cpk3v6h" path="res://UI/ShopUI/area.png" id="3_83xaj"]
+[ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="4_23ubc"]
+[ext_resource type="Texture2D" uid="uid://dx8isxv0hyfku" path="res://UI/ShopUI/speed.png" id="5_i1vch"]
+[ext_resource type="Texture2D" uid="uid://did72sswvwecf" path="res://UI/ShopUI/crosshair.png" id="6_lc1ct"]
 
 [sub_resource type="Theme" id="Theme_pvwff"]
-default_font = ExtResource("3_s6uax")
+default_font = ExtResource("4_23ubc")
 default_font_size = 5
 
 [node name="ShopButton" type="TextureRect"]
 offset_right = 64.0
 offset_bottom = 16.0
 scale = Vector2(4, 6)
-texture = ExtResource("1_ra1uo")
+texture = ExtResource("1_n4kxc")
 stretch_mode = 2
-script = ExtResource("2_nexer")
+script = ExtResource("2_ocak5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -29,14 +28,13 @@ offset_bottom = 51.0
 scale = Vector2(0.5, 0.33)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="WeaponIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("3_oyrv3")
-expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -47,7 +45,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("2_ewnnd")
+texture_normal = ExtResource("3_83xaj")
 
 [node name="AreaUpgradeCostLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -76,7 +74,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("4_xwkbe")
+texture_normal = ExtResource("5_i1vch")
 
 [node name="SpeedUpgradeCostLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
 unique_name_in_owner = true
@@ -105,7 +103,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("3_erj85")
+texture_normal = ExtResource("6_lc1ct")
 
 [node name="DamageUpgradeCostLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
@@ -126,7 +124,6 @@ text = "12"
 horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 
 [node name="FreezeContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
@@ -139,7 +136,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("2_ewnnd")
+texture_normal = ExtResource("3_83xaj")
 
 [node name="FreezeUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/FreezeContainer"]
 unique_name_in_owner = true
@@ -160,7 +157,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("2_ewnnd")
+texture_normal = ExtResource("3_83xaj")
 
 [node name="CritUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/CritContainer"]
 unique_name_in_owner = true
@@ -181,7 +178,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("2_ewnnd")
+texture_normal = ExtResource("3_83xaj")
 
 [node name="FireUpgradeLabel" type="Label" parent="VBoxContainer/HBoxContainer2/FireContainer"]
 unique_name_in_owner = true
