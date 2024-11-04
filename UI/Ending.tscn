@@ -1,0 +1,282 @@
+[gd_scene load_steps=26 format=3 uid="uid://xhadyeoqp4lm"]
+
+[ext_resource type="AudioStream" uid="uid://bf1k7nv4tvs6x" path="res://Music/end credits.wav" id="1_cfark"]
+[ext_resource type="Script" path="res://UI/ending.gd" id="1_ytmmt"]
+[ext_resource type="Texture2D" uid="uid://s2rw3mncyt75" path="res://EnemyScenes/Boss/BossSprites/Souped Up Boss.png" id="2_jdb30"]
+[ext_resource type="Texture2D" uid="uid://bc8tuerqitfdj" path="res://EnemyScenes/Boss/BossSprites/End_Spider.png" id="3_k4tq7"]
+[ext_resource type="Texture2D" uid="uid://ckaqob5by3iaf" path="res://EnemyScenes/Enemy/Robot/robot dog size fix.png" id="4_nc4d0"]
+[ext_resource type="Texture2D" uid="uid://bc702be44dkhp" path="res://EnemyScenes/Enemy/Dog.png" id="5_jt5vi"]
+[ext_resource type="Texture2D" uid="uid://m13me7tdsi1v" path="res://EnemyScenes/Enemy/Robot/Robot Cat.png" id="6_a8x4v"]
+[ext_resource type="Texture2D" uid="uid://cg83r0npea2tj" path="res://EnemyScenes/Enemy/Cat.png" id="7_i51rk"]
+[ext_resource type="Texture2D" uid="uid://b1pqsfn2wapay" path="res://EnemyScenes/Enemy/Robot/Robot Rat.png" id="8_16hwm"]
+[ext_resource type="Texture2D" uid="uid://bqwsw1an5m4k6" path="res://EnemyScenes/Enemy/Rat.png" id="9_jr6cy"]
+[ext_resource type="Texture2D" uid="uid://cvthgcvoua4lm" path="res://EnemyScenes/Enemy/Robot/Robot Horse.png" id="10_biude"]
+[ext_resource type="Texture2D" uid="uid://cucnbpdlsxhfv" path="res://SanctuaryScenes/art/animals/Horse.png" id="11_ucurw"]
+[ext_resource type="PackedScene" uid="uid://bwuxingjox15e" path="res://World.tscn" id="12_sj604"]
+[ext_resource type="Texture2D" uid="uid://cbqkulfbx1kd8" path="res://PlayerScenes/assets/Character 1.png" id="13_nrgt2"]
+[ext_resource type="Script" path="res://UI/ending_script.gd" id="15_r1v5x"]
+[ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="15_tfecp"]
+[ext_resource type="PackedScene" uid="uid://dp0f16knh5pwu" path="res://UI/Credits.tscn" id="17_qk6wp"]
+
+[sub_resource type="Animation" id="Animation_ahgkj"]
+resource_name = "Revert"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EndScene/Boss:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.233333, 1, 2.23333, 3.33333, 4.4, 5.36667, 5.97294, 6.43961, 6.96667, 7.43333, 7.7, 7.93333, 8.06667, 8.2, 8.33333, 8.43333, 8.53333, 8.6, 8.7, 8.76667, 8.83333, 8.9, 9.13333, 9.36667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EndScene/Dog:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.23333, 2.46667, 3.56667, 4.63333, 5.6, 6.20627, 6.67294, 7.2, 7.66667, 7.93333, 8.16667, 8.3, 8.43333, 8.56667, 8.66667, 8.76667, 8.83333, 8.93333, 9, 9.06667, 9.13333, 9.36667, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EndScene/Cat:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.23333, 2.46667, 3.56667, 4.63333, 5.6, 6.20627, 6.67294, 7.2, 7.66667, 7.93333, 8.16667, 8.3, 8.43333, 8.56667, 8.66667, 8.76667, 8.83333, 8.93333, 9, 9.06667, 9.13333, 9.36667, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EndScene/Rat:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.23333, 2.46667, 3.56667, 4.63333, 5.6, 6.20627, 6.67294, 7.2, 7.66667, 7.93333, 8.16667, 8.3, 8.43333, 8.56667, 8.66667, 8.76667, 8.83333, 8.93333, 9, 9.06667, 9.13333, 9.36667, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EndScene/Horse:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.23333, 2.46667, 3.56667, 4.63333, 5.6, 6.20627, 6.67294, 7.2, 7.66667, 7.93333, 8.16667, 8.3, 8.43333, 8.56667, 8.66667, 8.76667, 8.83333, 8.93333, 9, 9.06667, 9.13333, 9.36667, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_ailq3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EndScene/Boss:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5du78"]
+_data = {
+"RESET": SubResource("Animation_ailq3"),
+"Revert": SubResource("Animation_ahgkj")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_er786"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jdb30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k4tq7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oip6x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nc4d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jt5vi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k84ef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_a8x4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i51rk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8rb0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_16hwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jr6cy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xnbpk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_biude")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ucurw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ending" type="Node2D"]
+script = ExtResource("1_ytmmt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_cfark")
+volume_db = -18.0
+autoplay = true
+
+[node name="Credits" parent="." instance=ExtResource("17_qk6wp")]
+visible = false
+
+[node name="EndScene" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EndScene"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_5du78")
+}
+autoplay = "Revert"
+
+[node name="Boss" type="AnimatedSprite2D" parent="EndScene"]
+position = Vector2(575.6, 267.6)
+sprite_frames = SubResource("SpriteFrames_er786")
+
+[node name="Dog" type="AnimatedSprite2D" parent="EndScene"]
+position = Vector2(718.6, 227.6)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_oip6x")
+flip_h = true
+
+[node name="Cat" type="AnimatedSprite2D" parent="EndScene"]
+position = Vector2(431.6, 208.6)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_k84ef")
+
+[node name="Rat" type="AnimatedSprite2D" parent="EndScene"]
+position = Vector2(431.6, 351.6)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_k8rb0")
+
+[node name="Horse" type="AnimatedSprite2D" parent="EndScene"]
+position = Vector2(723.6, 334.6)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_xnbpk")
+flip_h = true
+
+[node name="Node2D2" parent="EndScene" instance=ExtResource("12_sj604")]
+position = Vector2(572, -492)
+
+[node name="Sprite2D" type="Sprite2D" parent="EndScene"]
+position = Vector2(572.6, 425.6)
+texture = ExtResource("13_nrgt2")
+
+[node name="Control" type="Control" parent="EndScene"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -18.0
+offset_top = -56.0
+offset_right = 22.0
+offset_bottom = -16.0
+script = ExtResource("15_r1v5x")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="EndScene/Control"]
+visible = false
+layout_mode = 0
+offset_right = 568.0
+offset_bottom = 267.0
+
+[node name="ColorRect" type="ColorRect" parent="EndScene/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = 332.0
+offset_top = 510.0
+offset_right = 898.0
+offset_bottom = 775.0
+color = Color(0, 0, 0, 1)
+
+[node name="SpeakerName" type="RichTextLabel" parent="EndScene/Control/ColorRect"]
+layout_mode = 0
+offset_right = 561.0
+offset_bottom = 48.0
+theme_override_fonts/normal_font = ExtResource("15_tfecp")
+theme_override_font_sizes/normal_font_size = 24
+text = "Name:"
+
+[node name="Text" type="RichTextLabel" parent="EndScene/Control/ColorRect"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 53.0
+offset_right = 510.0
+offset_bottom = 237.0
+theme_override_fonts/normal_font = ExtResource("15_tfecp")
+theme_override_font_sizes/normal_font_size = 20
+text = "Chatting..."
+
+[node name="Label" type="Label" parent="EndScene/Control/ColorRect"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 156.0
+offset_right = 438.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("15_tfecp")
+text = "[space]"
+
+[node name="ChatSound" type="AudioStreamPlayer2D" parent="EndScene/Control"]
+unique_name_in_owner = true
+position = Vector2(332, 510)

@@ -1,0 +1,251 @@
+[gd_scene load_steps=21 format=3 uid="uid://dp0f16knh5pwu"]
+
+[ext_resource type="Texture2D" uid="uid://cqe1rn0eyldgh" path="res://UI/End_Screen.png" id="1_yypql"]
+[ext_resource type="Texture2D" uid="uid://ngg56u641uv5" path="res://SanctuaryScenes/art/animals/Cat.png" id="2_aft8d"]
+[ext_resource type="Texture2D" uid="uid://cy3pcs65t45o8" path="res://SanctuaryScenes/art/animals/Cat Walking.png" id="3_3tqo4"]
+[ext_resource type="Texture2D" uid="uid://bbgekusptj2v1" path="res://SanctuaryScenes/art/animals/Dog.png" id="3_50bht"]
+[ext_resource type="Texture2D" uid="uid://cucnbpdlsxhfv" path="res://SanctuaryScenes/art/animals/Horse.png" id="4_ghrlu"]
+[ext_resource type="Texture2D" uid="uid://cbh4ckjbdnefl" path="res://SanctuaryScenes/art/animals/Rat.png" id="5_7124g"]
+[ext_resource type="Texture2D" uid="uid://d1tjdhbdxpe5y" path="res://SanctuaryScenes/art/animals/Dog Walking.png" id="5_n7u1c"]
+[ext_resource type="Texture2D" uid="uid://djbiiaj4pqxvv" path="res://SanctuaryScenes/art/animals/Horse Walking.png" id="7_3n11t"]
+[ext_resource type="Texture2D" uid="uid://c7bhul3kdfnb0" path="res://SanctuaryScenes/art/animals/Rat Walking.png" id="8_y4rox"]
+[ext_resource type="Texture2D" uid="uid://bc8tuerqitfdj" path="res://EnemyScenes/Boss/BossSprites/End_Spider.png" id="10_fipgh"]
+[ext_resource type="Texture2D" uid="uid://c07hx3wfbbi1q" path="res://PlayerScenes/assets/Character 1 Walking.png" id="10_mxfly"]
+[ext_resource type="Texture2D" uid="uid://cbqkulfbx1kd8" path="res://PlayerScenes/assets/Character 1.png" id="11_lr1ei"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pqda3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aft8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3tqo4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwgb3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_50bht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n7u1c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j72nd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ghrlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3n11t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltedt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_y4rox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7124g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_na75b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_mxfly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lr1ei")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_fmbxk"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EndSpider:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D5:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ssnnn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EndSpider:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D5:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8d30i"]
+_data = {
+"RESET": SubResource("Animation_ssnnn"),
+"new_animation": SubResource("Animation_fmbxk")
+}
+
+[node name="Credits" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(574, 337)
+scale = Vector2(0.714914, 0.620469)
+texture = ExtResource("1_yypql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(157, 190)
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_pqda3")
+autoplay = "default"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(88.125, 61.25)
+sprite_frames = SubResource("SpriteFrames_pqda3")
+autoplay = "default"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D/AnimatedSprite2D"]
+position = Vector2(335, 7.50001)
+sprite_frames = SubResource("SpriteFrames_pqda3")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(926, 180)
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_hwgb3")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D2"]
+position = Vector2(-467.5, 86.875)
+sprite_frames = SubResource("SpriteFrames_hwgb3")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D2/AnimatedSprite2D2"]
+position = Vector2(501.25, -25.625)
+sprite_frames = SubResource("SpriteFrames_hwgb3")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(181, 416)
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_j72nd")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D3"]
+position = Vector2(-13, 40)
+sprite_frames = SubResource("SpriteFrames_j72nd")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D3/AnimatedSprite2D3"]
+position = Vector2(44, 38)
+sprite_frames = SubResource("SpriteFrames_j72nd")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(943, 417)
+scale = Vector2(1.55556, 1.55556)
+sprite_frames = SubResource("SpriteFrames_ltedt")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="AnimatedSprite2D4"]
+position = Vector2(-28, 30)
+sprite_frames = SubResource("SpriteFrames_ltedt")
+flip_h = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="AnimatedSprite2D4/AnimatedSprite2D4"]
+position = Vector2(50, 2)
+sprite_frames = SubResource("SpriteFrames_ltedt")
+flip_h = true
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="AnimatedSprite2D4"]
+position = Vector2(-7, 51)
+sprite_frames = SubResource("SpriteFrames_ltedt")
+flip_h = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="AnimatedSprite2D4/AnimatedSprite2D5"]
+position = Vector2(-28, 30)
+sprite_frames = SubResource("SpriteFrames_ltedt")
+flip_h = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="AnimatedSprite2D4/AnimatedSprite2D5/AnimatedSprite2D4"]
+position = Vector2(50, 2)
+sprite_frames = SubResource("SpriteFrames_ltedt")
+flip_h = true
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(614, 302)
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_na75b")
+
+[node name="EndSpider" type="Sprite2D" parent="."]
+position = Vector2(511, 299)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_fipgh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8d30i")
+}
+autoplay = "new_animation"

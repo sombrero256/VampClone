@@ -42,8 +42,11 @@ func process_hit(damages, color: Color = Color("a356ff")) -> void:
 		get_node("/root").add_child(_inst)
 		# Elites are worth more!
 		var saved_amt = 5 if is_elite_ else 1
-		Globalstats.SavedEnemy(type_, saved_amt)
-		queue_free()
+		if type_ == EnemyType.BOSS and Globalstats.night == 6:
+			get_tree().change_scene_to_file("res://UI/Ending.tscn")
+		else:
+			Globalstats.SavedEnemy(type_, saved_amt)
+			queue_free()
 
 func reset() -> void:
 	if frozen_:

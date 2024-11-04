@@ -222,6 +222,8 @@ Max_Health = 4500.0
 DPS = 25
 
 [node name="Fire" parent="." instance=ExtResource("6_v3ong")]
+position = Vector2(0, -22)
+scale = Vector2(2, 2)
 
 [node name="Status" type="RichTextLabel" parent="."]
 offset_left = -20.0
