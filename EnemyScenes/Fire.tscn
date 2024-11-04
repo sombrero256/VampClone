@@ -22,12 +22,11 @@ animations = [{
 script = ExtResource("1_c0ekd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 modulate = Color(0.84778, 0.5626, 0.97, 0.823529)
 scale = Vector2(1.20713, 1.20713)
 sprite_frames = SubResource("SpriteFrames_vlkll")
 autoplay = "default"
-frame_progress = 0.65406
+frame_progress = 0.747376
 
 [node name="FireTimer" type="Timer" parent="."]
 
