@@ -4,6 +4,7 @@ const WeaponType = preload("res://WeaponScenes/Base/base_weapon.gd").WeaponType
 const Modifier = preload("res://WeaponScenes/Base/weapon_stats_component.gd").Modifier
 
 @onready var nights_remain_ = $NightsRemain
+@onready var night_ends_jingle_ = $AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +19,7 @@ func OnNightEnd() -> void:
 	else:
 		nights_remain_.text = "%d Nights Remain" % (6 - Globalstats.night)
 	get_tree().paused = true
+	night_ends_jingle_.play()
 	Globalstats.night += 1
 	# Uncomment to have auto power leveling 
 	#var player_stats = Globalstats.player_stats
@@ -35,5 +37,6 @@ func _on_go_to_sanctuary_pressed() -> void:
 	print("pressed")
 	get_tree().paused = false
 	visible = false
-	# TEMPORARY, REPLACE WITH SCENE TRANSITION
+	if night_ends_jingle_.playing:
+		night_ends_jingle_.stop()
 	get_tree().change_scene_to_file("res://SanctuaryScenes/Sanctuary.tscn")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf1k7nv4tvs6x"
+path="res://.godot/imported/end credits.wav-2fec76975b77166415ba913749f07406.sample"
+
+[deps]
+
+source_file="res://Music/end credits.wav"
+dest_files=["res://.godot/imported/end credits.wav-2fec76975b77166415ba913749f07406.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

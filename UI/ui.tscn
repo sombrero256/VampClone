@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcl4qjrum74jl"]
+[gd_scene load_steps=13 format=3 uid="uid://dcl4qjrum74jl"]
 
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_5dd5d"]
 [ext_resource type="Script" path="res://UI/night_end.gd" id="2_46sdn"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://cn3lytj1xsukt" path="res://UI/Font/QuinqueFive.woff2" id="5_4gr8p"]
 [ext_resource type="FontFile" uid="uid://cfs4cf06yomkj" path="res://Font/QuinqueFive.otf" id="5_4myye"]
 [ext_resource type="FontFile" uid="uid://c87p3pwsvcjfo" path="res://UI/Font/QuinqueFive.otf" id="6_k0iet"]
+[ext_resource type="AudioStream" uid="uid://cqty7ym48fqrd" path="res://Music/night end (Minnmax melody).wav" id="7_nondw"]
 
 [sub_resource type="Theme" id="Theme_ebrej"]
 default_font = ExtResource("5_4myye")
@@ -71,6 +72,10 @@ offset_bottom = 321.0
 theme_override_fonts/normal_font = ExtResource("6_k0iet")
 text = "X Nights Remain"
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D/NightEnd"]
+stream = ExtResource("7_nondw")
+volume_db = -18.0
 
 [node name="UpperRight" type="CanvasLayer" parent="."]
 

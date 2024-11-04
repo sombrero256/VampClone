@@ -3,6 +3,7 @@ extends Node2D
 const stage_music_1_ = preload("res://Music/stage theme 1.wav")
 const stage_music_2_ = preload("res://Music/stage theme 2.wav")
 const boss_music_ = preload("res://Music/boss theme.wav")
+const final_boss_music_ = preload("res://Music/boss reprise.wav")
 
 const EnemyType = preload("res://EnemyScenes/enemy.gd").EnemyType
 const Modifier = preload("res://WeaponScenes/Base/weapon_stats_component.gd").Modifier
@@ -34,7 +35,10 @@ func _ready() -> void:
 	boss_summoned_ = false
 	wave_ = enemyWaves_.get_enemy_wave(prev_hour_)
 	if Globalstats.IsBossNight():
-		audio_player_.stream = boss_music_
+		if Globalstats.night == 6:
+			audio_player_.stream = final_boss_music_
+		else:
+			audio_player_.stream = boss_music_
 	else:
 		audio_player_.stream = [stage_music_1_, stage_music_2_].pick_random()
 	audio_player_.play()

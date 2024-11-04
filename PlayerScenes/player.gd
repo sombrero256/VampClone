@@ -4,6 +4,7 @@ enum Direction {LEFT, RIGHT}
 var direction_: Direction
 
 @onready var sprite_: = $AnimatedSprite2D
+@onready var ani_ = $AnimationPlayer
 
 @onready var bubble_cd_ = $bubble_cd
 @onready var heart_cd_ = $heart_cd
@@ -54,7 +55,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_dealt_damage(dmg):
 	stats().Cur_Health = stats().Cur_Health - dmg
+	ani_.play("Hurt")
 	if stats().Cur_Health <= 0:
 		print("ded") 
 		get_tree().change_scene_to_packed(game_over_)
-	

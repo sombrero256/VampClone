@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv2lth071a2o2"]
+[gd_scene load_steps=12 format=3 uid="uid://bv2lth071a2o2"]
 
 [ext_resource type="Script" path="res://PlayerScenes/player.gd" id="1_iyv2b"]
 [ext_resource type="Texture2D" uid="uid://cbqkulfbx1kd8" path="res://PlayerScenes/assets/Character 1.png" id="3_h5au2"]
@@ -21,6 +21,43 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
+
+[sub_resource type="Animation" id="Animation_e54gs"]
+resource_name = "Hurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.58, 0.029, 0.029, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i741u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_63wvs"]
+_data = {
+"Hurt": SubResource("Animation_e54gs"),
+"RESET": SubResource("Animation_i741u")
+}
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 8
@@ -60,6 +97,11 @@ offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_63wvs")
+}
 
 [connection signal="timeout" from="bubble_cd" to="bubble_cd" method="_on_timeout"]
 [connection signal="timeout" from="heart_cd" to="heart_cd" method="_on_timeout"]
