@@ -45,6 +45,8 @@ static func ResetGlobalState() -> void:
 		WeaponType.BOOMERANG: WeaponStats.new(50, 250),
 		WeaponType.BUBBLE: WeaponStats.new(2.5, 1)
 	}
+	health_levels = 0
+	speed_levels = 0
 	need_to_defeat_boss = false
 	player_stats= PlayerStats.new()
 	night = 0
