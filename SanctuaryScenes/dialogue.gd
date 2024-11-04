@@ -6,6 +6,7 @@ extends Control
 var dialogue = []
 var current_dialogue_id = 0
 var dialogue_active = false
+var shark_check = false
 
 func _ready():
 	$ColorRect.visible = false
@@ -40,6 +41,10 @@ func load_dialogue(speaker_select):
 		print ("talking to mouse")
 		load_audio("res://SanctuaryScenes/mouse.wav")
 		file = FileAccess.open("res://SanctuaryScenes/Mouse_dialogue.json", FileAccess.READ)
+	elif speaker_select == "TutorialShark":
+		print ("talking to shark")
+		shark_check = true
+		file = FileAccess.open("res://SanctuaryScenes/Shark_dialogue.json", FileAccess.READ)
 	else:
 		file = FileAccess.open("res://SanctuaryScenes/default_dialogue.json", FileAccess.READ)
 	var content = JSON.parse_string(file.get_as_text())
@@ -55,10 +60,11 @@ func load_audio(sfx):
 ##If yes allows the chat input to access the next line of dialogue
 func _input(event: InputEvent):
 	if !dialogue_active:
+		shark_check = false
 		return
 	if event.is_action_pressed("chat"):
 		next_script()
-		if dialogue_active == false:
+		if dialogue_active == false and !shark_check:
 			$ShopButton.visible = true
 			pass
 

@@ -23,4 +23,5 @@ func _on_chat_zone_body_exited(body):
 		body.hide_space_prompt()
 		print("guy left")
 		player_chatting = false
-		$Dialogue/ShopButton.visible = false
+		if self.name != "TutorialShark":
+			$Dialogue/ShopButton.visible = false
